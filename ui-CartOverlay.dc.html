@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   .ek-btn-main:hover { background: #B23803 !important; border-color: #B23803 !important; }
-  .ek-btn-primary:hover { background: #4C653D !important; border-color: #4C653D !important; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
   .ek-btn-ghost:hover { background: #EFE7D6 !important; }
   .ek-cart-row:hover { background: #FBF8F1; }
   .ek-cart-del:hover { background: #F2DDD8 !important; color: #A33203 !important; }
@@ -71,10 +71,15 @@
       </div>
     </sc-for>
     <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
-      <div style="padding:34px 20px; text-align:center; color:#7c7a6a; font-size:14.5px;">Košík je zatím prázdný.</div>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:22px 20px 18px; text-align:center;">
+        <img src="{{ emptyImg }}" alt="" style="display:block; width:150px; height:auto; margin-bottom:6px; filter:drop-shadow(0 12px 18px rgba(45,58,46,.14));">
+        <span style="font-family:'EB Garamond',serif; font-weight:500; font-size:22px; line-height:1.2; color:#2A2A24;">Košík je zatím prázdný</span>
+        <span style="font-size:14px; line-height:1.5; color:#7c7a6a; max-width:30ch;">Vyberte si suroviny, obaly nebo se nechte inspirovat receptem.</span>
+      </div>
     </sc-if>
   </div>
 
+  <sc-if value="{{ hasItems }}" hint-placeholder-val="{{ true }}">
   <div class="ek-cart-foot" style="padding:16px 18px; border-top:1px solid #EFE7D6; background:#FFFFFF; display:flex; flex-direction:column; gap:12px;">
     <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px;">
       <span style="font-size:14.5px; color:#5c5a4e;">Celkem</span>
@@ -86,6 +91,15 @@
       <a href="{{ checkoutHref }}" class="ek-btn-main" style="flex:1.4; display:flex; align-items:center; justify-content:center; gap:9px; background:#D14405; color:#fff; text-decoration:none; padding:14px 18px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s; white-space:nowrap;">Přejít do košíku<span style="{{ iconArrow }}"></span></a>
     </div>
   </div>
+  </sc-if>
+  <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+  <div class="ek-cart-foot" style="padding:16px 18px; border-top:1px solid #EFE7D6; background:#FFFFFF; display:flex; flex-direction:column; gap:10px;">
+    <div class="ek-cart-actions" style="display:flex; gap:10px;">
+      <button type="button" onClick="{{ onClose }}" class="ek-cart-back ek-btn-ghost" style="display:none; flex:1; appearance:none; cursor:pointer; align-items:center; justify-content:center; gap:8px; background:transparent; border:1.5px solid #4C653D; color:#4C653D; padding:14px 16px; border-radius:999px; font-family:'Work Sans',sans-serif; font-weight:600; font-size:15px; transition:background .2s;">Zavřít</button>
+      <a href="kategorie.html" class="ek-btn-primary" style="flex:1.4; display:flex; align-items:center; justify-content:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:14px 18px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s; white-space:nowrap;">Pokračovat v nákupu<span style="{{ iconArrow }}"></span></a>
+    </div>
+  </div>
+  </sc-if>
 </div>
 </div>
 </x-dc>
@@ -124,7 +138,8 @@ class Component extends DCLogic {
 
     return {
       items,
-      isEmpty: items.length === 0,
+      isEmpty: items.length === 0, hasItems: items.length > 0,
+      emptyImg: abs('assets/ui/kosik-prazdny.png'),
       countLabel: count > 0 ? '(' + count + ' ks)' : '',
       total: kc(sum),
       shippingNote: sum >= freeFrom

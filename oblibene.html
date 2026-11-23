@@ -146,7 +146,7 @@
               </div>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap; justify-self:end;">
-              <a href="muj-ucet.html" class="ek-btn-main" style="display:inline-flex; align-items:center; gap:9px; height:46px; padding:0 24px; border:1.5px solid #D14405; border-radius:999px; background:#D14405; color:#fff; text-decoration:none; font-size:15px; font-weight:600; white-space:nowrap; transition:background .2s, border-color .2s;">Přihlásit se</a>
+              <a href="muj-ucet.html" class="ek-btn-main" style="display:inline-flex; align-items:center; gap:9px; height:46px; padding:0 24px; border:1.5px solid #D14405; border-radius:999px; background:#D14405; color:#fff; text-decoration:none; font-size:15px; font-weight:600; white-space:nowrap; transition:background .2s, border-color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#fff; -webkit-mask:url('assets/icons/user.svg') center / contain no-repeat; mask:url('assets/icons/user.svg') center / contain no-repeat;"></span>Přihlásit se</a>
               <a href="#" class="ek-tool" style="height:46px; padding:0 20px; font-size:15px; white-space:nowrap;">Registrovat se</a>
             </div>
           </div>
@@ -243,13 +243,24 @@ class Component extends DCLogic {
     { title: 'Krémová pasta na holení', desc: 'Bohatá pěna bez tenzidů, která nedráždí.', category: 'Kosmetika', level: 'Pokročilý', time: '35 min', rating: 4.6, ratingCount: 17, img: 'assets/recipes/pasta-na-holeni.jpg', ingredients: ['Kokosový olej', 'Bambucké máslo', 'Olivem 1000'] },
   ];
 
-  state = { logged: true, empty: false, barOpen: true, tab: 'produkty' };
+  state = { logged: true, empty: (() => { try { return /[?&]prazdne=1/.test(window.location.search); } catch (e) { return false; } })(), barOpen: true, tab: 'produkty', offP: [], offR: [] };
+
+  componentDidMount() {
+    // srdíčko na kartě: odebraná položka zmizí ze seznamu (po krátké animaci srdíčka)
+    this._onFav = (e) => { const d = e.detail || {}; if (!d.id || d.fav !== false) return; setTimeout(() => this.setState(s => ({ offP: s.offP.includes(d.id) ? s.offP : s.offP.concat(d.id) })), 220); };
+    this._onFavR = (e) => { const d = e.detail || {}; if (!d.id || d.fav !== false) return; setTimeout(() => this.setState(s => ({ offR: s.offR.includes(d.id) ? s.offR : s.offR.concat(d.id) })), 220); };
+    window.addEventListener('ek-fav-change', this._onFav);
+    window.addEventListener('ek-fav-recipe-change', this._onFavR);
+  }
+  componentWillUnmount() { window.removeEventListener('ek-fav-change', this._onFav); window.removeEventListener('ek-fav-recipe-change', this._onFavR); }
 
   renderVals() {
     const S = this.state;
     const isR = S.tab === 'recepty';
-    const list = S.empty || isR ? [] : Component.FAVS;
-    const rlist = S.empty || !isR ? [] : Component.FAV_RECIPES;
+    const favP = S.empty ? [] : Component.FAVS.filter(p => !S.offP.includes(p.title));
+    const favR = S.empty ? [] : Component.FAV_RECIPES.filter(r => !S.offR.includes(r.title));
+    const list = isR ? [] : favP;
+    const rlist = !isR ? [] : favR;
     const n = isR ? rlist.length : list.length;
     const tab = (on) => on ? 'ek-seg-b ek-seg-on' : 'ek-seg-b';
     const seg = (on) => "font-family:'Work Sans',sans-serif; font-size:12.5px; font-weight:700; padding:8px 14px; min-height:32px; border-radius:999px; cursor:pointer; transition:background .18s, color .18s;"
@@ -263,7 +274,7 @@ class Component extends DCLogic {
       closeBar: () => this.setState({ barOpen: false }),
       setGuest: () => this.setState({ logged: false }),
       setLogged: () => this.setState({ logged: true }),
-      setFull: () => this.setState({ empty: false }),
+      setFull: () => { (window.__ekFav = window.__ekFav || new Set()); Component.FAVS.forEach(p => window.__ekFav.add(p.title)); (window.__ekFavRecipes = window.__ekFavRecipes || new Set()); Component.FAV_RECIPES.forEach(r => window.__ekFavRecipes.add(r.title)); this.setState({ empty: false, offP: [], offR: [] }); },
       setEmpty: () => this.setState({ empty: true }),
       guestStyle: seg(!S.logged),
       loggedStyle: seg(S.logged),
@@ -284,8 +295,8 @@ class Component extends DCLogic {
       tabProducts: !isR,
       tabRecipes: isR,
       recipes: rlist,
-      nProducts: String(S.empty ? 0 : Component.FAVS.length),
-      nRecipes: String(S.empty ? 0 : Component.FAV_RECIPES.length),
+      nProducts: String(favP.length),
+      nRecipes: String(favR.length),
       clsTabP: tab(!isR),
       clsTabR: tab(isR),
       setTabP: () => this.setState({ tab: 'produkty' }),

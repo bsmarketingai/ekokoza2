@@ -7,6 +7,13 @@
 </head>
 <body>
 <x-dc>
+<helmet>
+<style>
+  /* srdíčko – sjednocený hover (produkt i recept) */
+  .ek-fav.ek-fav-c:hover { background: #FFFFFF !important; border-color: #D8763B !important; color: #D8763B !important; transform: scale(1.06); }
+  .ek-fav.ek-fav-c.is-on:hover { background: #B23803 !important; border-color: #B23803 !important; color: #FFFFFF !important; }
+</style>
+</helmet>
 <a href="{{ href }}" class="ek-card" style="display:flex; flex-direction:column; background:#fff; border:1px solid #ECE3D2; border-radius:14px; overflow:hidden; text-decoration:none; color:#2A2A24; transition:transform .25s, box-shadow .25s; font-family:'Work Sans',sans-serif;">
   <div style="position:relative; aspect-ratio:4/3;">
     <div style="{{ imgStyle }}"></div>
@@ -66,6 +73,14 @@ class Component extends DCLogic {
     return window.__ekFavRecipes;
   }
 
+  componentDidUpdate(prev) {
+    if (prev.title !== this.props.title || prev.fav !== this.props.fav) {
+      const id = this.props.title ?? '';
+      if (this.props.fav && !this.favStore().has(id) && prev.title !== this.props.title) this.favStore().add(id);
+      this.setState({ fav: this.favStore().has(id) });
+    }
+  }
+
   componentDidMount() {
     const id = this.props.title ?? '';
     if (this.props.fav) this.favStore().add(id);
@@ -94,12 +109,12 @@ class Component extends DCLogic {
     if (ing.length > 4) shown.push({ label: '+' + (ing.length - 4), miss: false, ok: true });
     const fav = this.state.fav !== null ? this.state.fav : !!this.props.fav;
     return {
-      favClass: 'ek-fav' + (fav ? ' is-on' : ''),
+      favClass: 'ek-fav ek-fav-c' + (fav ? ' is-on' : ''),
       favTitle: fav ? 'Odebrat z oblíbených' : 'Přidat do oblíbených',
-      favIcon: this.hi(fav ? 'favourite-filled' : 'favourite', 20, fav ? '#FFFFFF' : '#8a8776'),
+      favIcon: this.hi(fav ? 'favourite-filled' : 'favourite', 20),
       favStyle: 'position:absolute; top:10px; right:10px; z-index:2; width:36px; height:36px; padding:0; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; border:1px solid '
         + (fav ? '#D8763B' : '#ECE3D2') + '; background:' + (fav ? '#D8763B' : 'rgba(255,255,255,.92)')
-        + '; box-shadow:0 2px 8px rgba(45,58,46,.12); transition:background .2s, border-color .2s;',
+        + '; color:' + (fav ? '#FFFFFF' : '#8a8776') + '; box-shadow:0 2px 8px rgba(45,58,46,.12); transition:background .2s, color .2s, border-color .2s, transform .2s;',
       toggleFav: (e) => {
         if (e) { e.preventDefault(); e.stopPropagation(); }
         const id = this.props.title ?? '';

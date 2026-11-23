@@ -4,6 +4,9 @@
 .LSOverride
 ._*
 Icon?
+!assets/icons/
+!design_handoff_ekokoza/icons/
+!design_handoff_ekokoza/design/assets/icons/
 .Spotlight-V100
 .Trashes
 .fseventsd

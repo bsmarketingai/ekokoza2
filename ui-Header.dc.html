@@ -136,6 +136,9 @@
   .ek-srch-v2 .ek-util-loyal { display: inline-flex !important; }
   .ek-srch-v2 .ek-util-loyal-sep { display: inline !important; }
   .ek-hsearch:focus-within { border-color: #4C653D !important; box-shadow: 0 0 0 3px rgba(76,101,61,.12); }
+  .ek-hs-clear { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 0; border-radius: 50%; border: 1px solid #E4DAC6; background: #F6F1E7; cursor: pointer; transition: background .2s, border-color .2s; }
+  .ek-hs-clear:hover { background: #EFE7D6; border-color: #D9D0BC; }
+  .ek-hsearch input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; display: none; }
   .ek-hsearch input::placeholder { color: #8a8778; }
   @media (min-width: 550px) and (max-width: 999px) {
     .ek-srch-v2 .ek-hsearch { flex: 1 1 auto !important; min-width: 0 !important; }
@@ -217,9 +220,12 @@
       </nav>
 
       <sc-if value="{{ srchV2 }}" hint-placeholder-val="{{ false }}">
-        <form class="ek-hsearch" onSubmit="{{ submitSearch }}" role="search" style="align-items:center; gap:10px; flex:0 1 300px; min-width:150px; height:44px; padding:0 16px; background:#fff; border:1px solid #E4DAC6; border-radius:999px; transition:border-color .2s, box-shadow .2s;">
+        <form class="ek-hsearch" onSubmit="{{ submitSearch }}" role="search" style="align-items:center; gap:10px; flex:0 1 300px; min-width:150px; height:44px; padding:0 6px 0 16px; background:#fff; border:1px solid #E4DAC6; border-radius:999px; transition:border-color .2s, box-shadow .2s;">
           <span style="{{ iconSearchIn }}"></span>
           <input value="{{ inlineQuery }}" onInput="{{ onInlineInput }}" onFocus="{{ onInlineFocus }}" onBlur="{{ onInlineBlur }}" onKeyDown="{{ onInlineKey }}" placeholder="Hledejte suroviny, recepty…" aria-label="Hledat" style="flex:1; min-width:0; border:none; outline:none; background:transparent; font-family:'Work Sans',sans-serif; font-size:15px; color:#2A2A24;">
+          <sc-if value="{{ hasInlineQuery }}" hint-placeholder-val="{{ false }}">
+            <button type="button" class="ek-hs-clear" onMouseDown="{{ keepFocus }}" onClick="{{ clearInline }}" aria-label="Vymazat hledaný text" title="Vymazat"><span style="{{ iconClear }}"></span></button>
+          </sc-if>
         </form>
       </sc-if>
 
@@ -473,9 +479,10 @@ class Component extends DCLogic {
       topbarCls: (this.props.topbarVariant ?? this.state.topbar ?? 'v2') === 'v2' ? 'ek-topbar-v2'
         : ((this.props.topbarVariant ?? this.state.topbar ?? 'v2') === 'v3' ? 'ek-topbar-v3' : ''),
       homeHref: this.props.homeHref ?? 'index.html',
-      cartCount: S.cart.reduce((a, p) => a + p.qty, 0),
-      hasCart: S.cart.length > 0,
-      cartItems: S.cart,
+      // prop cartCount === 0 → prázdný košík (např. stav „Prázdný košík“ na stránce košíku)
+      cartCount: this.props.cartCount === 0 ? 0 : S.cart.reduce((a, p) => a + p.qty, 0),
+      hasCart: this.props.cartCount === 0 ? false : S.cart.length > 0,
+      cartItems: this.props.cartCount === 0 ? [] : S.cart,
       cartOpen: S.cartOpen,
       cartHover: () => { if (window.innerWidth > 999) this.setState({ cartOpen: true, mega: -1 }); },
       cartLeave: () => { if (window.innerWidth > 999) this.setState({ cartOpen: false }); },
@@ -529,6 +536,10 @@ class Component extends DCLogic {
       srchCls: (this.props.searchVariant ?? S.srch ?? 'v2') === 'v2' ? 'ek-srch-v2' : '',
       iconSearchIn: this.mask('search-01', 20, '#7c7a6a'),
       inlineQuery: S.iq || '',
+      hasInlineQuery: !!(S.iq || '').length,
+      iconClear: this.mask('cancel-01', 14, '#4C653D'),
+      keepFocus: (e) => { e.preventDefault(); },
+      clearInline: (e) => { clearTimeout(this._blurT); this.setState({ iq: '', iFocus: true }); try { const f = e.currentTarget.closest('form'); const i = f && f.querySelector('input'); if (i) i.focus(); } catch (err) {} },
       inlineSuggOpen: (this.props.searchVariant ?? S.srch ?? 'v2') === 'v2' && !!S.iFocus && (S.iq || '').trim().length > 0,
       onInlineInput: (e) => this.setState({ iq: e.target.value, iFocus: true, mega: -1 }),
       onInlineFocus: () => { clearTimeout(this._blurT); this.setState({ iFocus: true, mega: -1, cartOpen: false, loginOpen: false }); },

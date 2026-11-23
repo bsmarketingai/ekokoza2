@@ -22,6 +22,9 @@
     .ek-c2-qty { flex: 1 1 auto !important; justify-content: space-between; }
   }
   .ek-c2-buy:hover { background: #B23803 !important; border-color: #B23803 !important; }
+  /* srdíčko – sjednocený hover (produkt i recept) */
+  .ek-fav.ek-fav-c:hover { background: #FFFFFF !important; border-color: #D8763B !important; color: #D8763B !important; transform: scale(1.06); }
+  .ek-fav.ek-fav-c.is-on:hover { background: #B23803 !important; border-color: #B23803 !important; color: #FFFFFF !important; }
 </style>
 </helmet>
 
@@ -100,6 +103,15 @@ class Component extends DCLogic {
   favStore() {
     if (!window.__ekFav) window.__ekFav = new Set();
     return window.__ekFav;
+  }
+
+  componentDidUpdate(prev) {
+    // karta znovu použitá pro jiný produkt (např. po odebrání z oblíbených) → stav srdíčka podle nového produktu
+    if (prev.title !== this.props.title || prev.fav !== this.props.fav) {
+      const id = this.props.title ?? '';
+      if (this.props.fav && !this.favStore().has(id) && prev.title !== this.props.title) this.favStore().add(id);
+      this.setState({ fav: this.favStore().has(id) });
+    }
   }
 
   componentDidMount() {
@@ -236,9 +248,9 @@ class Component extends DCLogic {
         'background:' + (fav ? '#D8763B' : 'rgba(255,255,255,.92)'),
         'color:' + (fav ? '#FFFFFF' : '#8a8776'),
         'box-shadow:0 2px 8px rgba(45,58,46,.12)',
-        'transition:background .2s, color .2s, border-color .2s',
+        'transition:background .2s, color .2s, border-color .2s, transform .2s',
       ].join('; ') + ';',
-      favClass: 'ek-fav' + (fav ? ' is-on' : ''),
+      favClass: 'ek-fav ek-fav-c' + (fav ? ' is-on' : ''),
       favTitle: fav ? 'Odebrat z oblíbených' : 'Přidat do oblíbených',
       favIcon: this.mask(fav ? 'favourite-filled' : 'favourite', 20),
       toggleFav: (e) => {
@@ -248,7 +260,7 @@ class Component extends DCLogic {
         const next = !fav;
         if (next) store.add(id); else store.delete(id);
         this.setState({ fav: next });
-        window.dispatchEvent(new CustomEvent('ek-fav-change', { detail: { count: store.size } }));
+        window.dispatchEvent(new CustomEvent('ek-fav-change', { detail: { id, fav: next, count: store.size } }));
       },
     };
   }
