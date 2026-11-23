@@ -84,7 +84,7 @@
   }
   .ek-photo { display: block; width: 100%; object-fit: cover; border-radius: 14px; }
   .ek-r-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
-  .ek-r-grid-new { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 16px; }
+  .ek-r-grid-new { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
   .ek-r-card { display: flex; flex-direction: column; gap: 8px; padding: 20px 20px 18px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; text-decoration: none; color: #2A2A24 !important; transition: transform .25s, box-shadow .25s, border-color .2s; }
   .ek-band .ek-r-card { background: #FFFDF6; }
   .ek-r-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(45,58,46,.45); border-color: #4C653D; }
@@ -120,13 +120,13 @@
           <p class="ek-eyebrow">Rozcestník návrhu</p>
           <h1 class="ek-h1">Všechny stránky návrhu na jednom místě.</h1>
           <p class="ek-lead" style="margin-top:20px; max-width:60ch;">Proklikejte si návrh nového webu Ekokozy. Nahoře jsou uživatelské stránky, které právě ladíme, pod nimi zbytek e-shopu, zákaznický účet a podklady pro tým.</p>
-          <div class="ek-r-jump"><a href="#nove">Nové uživatelské stránky<b>10</b></a><a href="#eshop">Nákup a obsah<b>14</b></a><a href="#ucet">Zákaznický účet<b>6</b></a><a href="#tym">Pro tým<b>2</b></a></div>
+          <div class="ek-r-jump"><a href="#nove">Nové uživatelské stránky<b>11</b></a><a href="#eshop">Nákup a obsah<b>14</b></a><a href="#ucet">Zákaznický účet<b>6</b></a><a href="#tym">Pro tým<b>2</b></a></div>
         </div>
         <div style="position:relative;">
           <img src="assets/onas/005-frycovice.jpg" alt="Sídlo Ekokozy ve Fryčovicích" class="ek-photo" style="aspect-ratio:5/4;">
           <div style="position:absolute; left:18px; right:18px; bottom:18px; padding:16px 18px; border-radius:12px; background:rgba(255,253,246,.94); box-shadow:0 18px 40px -22px rgba(45,58,46,.45);">
             <p style="margin:0 0 4px; font-family:'EB Garamond',serif; font-size:20px; font-weight:500; color:#2A2A24;">Návrh webu ekokoza.cz</p>
-            <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">32 stránek k proklikání · aktualizováno 23. 11. 2026</p>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">33 stránek k proklikání · aktualizováno 23. 11. 2026</p>
           </div>
         </div>
       </div>
@@ -160,6 +160,12 @@
           <span class="ek-r-t">Sledování zásilky</span>
           <span class="ek-r-d">Kde najít číslo zásilky, odkazy na sledování u PPL a Zásilkovny a video z balení ve formátu Shorts.</span>
           <span class="ek-r-f"><code>/sledovani-zasilky</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="reklamacni-formular.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat; mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Reklamační formulář</span>
+          <span class="ek-r-d">Vložený online formulář pro reklamaci a co si k ní připravit.</span>
+          <span class="ek-r-f"><code>/reklamacni-formular</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
         </a>
         <a href="vraceni-zbozi.html" class="ek-r-card">
           <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
@@ -413,6 +419,9 @@ class Component extends DCLogic {
         const r = n.getBoundingClientRect();
         if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
       });
+      // výška přilepené hlavičky i ve chvíli, kdy ještě není přilepená (stránka nahoře)
+      const hd = document.querySelector('.sc-host[data-sc-name="ui-Header"]');
+      if (hd) headH = Math.max(headH, hd.getBoundingClientRect().height + (parseFloat(getComputedStyle(hd).top) || 0));
       const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
       const base = root ? root.getBoundingClientRect().top : 0;
       // přilepená karta (stacking): zastavit přesně na místě, kde se karta přilepí

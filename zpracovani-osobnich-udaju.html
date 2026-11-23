@@ -211,7 +211,7 @@
         <div class="ek-seller">
           <div><p class="ek-k">Správce osobních údajů</p><p><strong>Ekokoza s.r.o.</strong><br>Fryčovice 297, 739 45 Fryčovice<br>Česká republika</p></div>
           <div><p class="ek-k">Firemní údaje</p><p>IČO: 07508247<br>DIČ: CZ07508247<br>Krajský soud v Ostravě, oddíl C, vložka 76047</p></div>
-          <div><p class="ek-k">Kontakt pro soukromí</p><p><a href="mailto:eshop@ekokoza.cz">eshop@ekokoza.cz</a><br>+420 601 365 245</p></div>
+          <div><p class="ek-k">Kontakt pro soukromí</p><p><a href="mailto:eshop@ekokoza.cz">eshop@ekokoza.cz</a><br>+420 601 365 245</p></div>
           <div><p class="ek-k">Web</p><p><a href="index.html">www.ekokoza.cz</a><br>Tyto zásady se vztahují na český e-shop a související zákaznickou komunikaci.</p></div>
         </div>
       <div class="ek-legal">
@@ -239,7 +239,7 @@
           </article>
           <article id="op-6" class="ek-art">
             <h3><span class="ek-num">6</span>Jak dlouho údaje uchováváme</h3>
-            <div class="ek-tbl"><div class="ek-tr ek-th"><span>Oblast</span><span>Obvyklá doba</span></div><div class="ek-tr"><span>Objednávka a smluvní dokumentace</span><span>Po dobu trvání smlouvy a právních nároků, zpravidla 3 roky; dokumenty podléhající účetním nebo daňovým povinnostem zpravidla až 10 let.</span></div><div class="ek-tr"><span>Účet a věrnostní program</span><span>Po dobu existence účtu nebo členství, následně po dobu nezbytnou pro ochranu práv a zákonné povinnosti.</span></div><div class="ek-tr"><span>Podpora, vrácení a reklamace</span><span>Po dobu vyřízení a následně zpravidla do uplynutí promlčecích lhůt; déle pouze při probíhajícím sporu.</span></div><div class="ek-tr"><span>Newsletter</span><span>Do odvolání souhlasu nebo námitky. Minimální záznam o odhlášení můžeme uchovat, abychom další zprávy neposílali a doložili splnění povinnosti.</span></div><div class="ek-tr"><span>Cookie souhlas</span><span>Podle nastavení platformy pro správu souhlasu, obvykle nejdéle 12 měsíců, pokud nedojde k významné změně.</span></div><div class="ek-tr"><span>Bezpečnostní logy</span><span>Zpravidla nejdéle 12 měsíců; déle jen při bezpečnostním incidentu, podezření na podvod nebo právním nároku.</span></div></div><p>Konkrétní doba může být kratší nebo delší podle povahy případu, zákonné povinnosti či probíhajícího sporu. Po skončení účelu údaje bezpečně vymažeme nebo anonymizujeme.</p>
+            <div class="ek-tbl"><div class="ek-tr ek-th"><span>Oblast</span><span>Obvyklá doba</span></div><div class="ek-tr"><span>Objednávka a smluvní dokumentace</span><span>Po dobu trvání smlouvy a právních nároků, zpravidla 3 roky; dokumenty podléhající účetním nebo daňovým povinnostem zpravidla až 10 let.</span></div><div class="ek-tr"><span>Účet a věrnostní program</span><span>Po dobu existence účtu nebo členství, následně po dobu nezbytnou pro ochranu práv a zákonné povinnosti.</span></div><div class="ek-tr"><span>Podpora, vrácení a reklamace</span><span>Po dobu vyřízení a následně zpravidla do uplynutí promlčecích lhůt; déle pouze při probíhajícím sporu.</span></div><div class="ek-tr"><span>Newsletter</span><span>Do odvolání souhlasu nebo námitky. Minimální záznam o odhlášení můžeme uchovat, abychom další zprávy neposílali a doložili splnění povinnosti.</span></div><div class="ek-tr"><span>Cookie souhlas</span><span>Podle nastavení platformy pro správu souhlasu, obvykle nejdéle 12 měsíců, pokud nedojde k významné změně.</span></div><div class="ek-tr"><span>Bezpečnostní logy</span><span>Zpravidla nejdéle 12 měsíců; déle jen při bezpečnostním incidentu, podezření na podvod nebo právním nároku.</span></div></div><p>Konkrétní doba může být kratší nebo delší podle povahy případu, zákonné povinnosti či probíhajícího sporu. Po skončení účelu údaje bezpečně vymažeme nebo anonymizujeme.</p>
           </article>
           <article id="op-7" class="ek-art">
             <h3><span class="ek-num">7</span>Cookies a podobné technologie</h3>
@@ -327,6 +327,9 @@ class Component extends DCLogic {
         const r = n.getBoundingClientRect();
         if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
       });
+      // výška přilepené hlavičky i ve chvíli, kdy ještě není přilepená (stránka nahoře)
+      const hd = document.querySelector('.sc-host[data-sc-name="ui-Header"]');
+      if (hd) headH = Math.max(headH, hd.getBoundingClientRect().height + (parseFloat(getComputedStyle(hd).top) || 0));
       const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
       const base = root ? root.getBoundingClientRect().top : 0;
       const top = el.getBoundingClientRect().top - base + cur - headH - 16;

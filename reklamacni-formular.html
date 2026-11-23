@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reklamační formulář | ekokoza.cz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #D14405; color: #fff; }
+  a { color: #4C653D; }
+  a:hover { color: #B23803; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
+  .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
+  .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
+  .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
+  .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
+  .ek-tear { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: 0; pointer-events: none; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28), inset 0 -14px 26px -14px rgba(45,58,46,.24); clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% calc(100% - 6.3px), 97.83% calc(100% - 11.1px), 95.65% calc(100% - 7.6px), 93.48% calc(100% - 13.4px), 91.3% calc(100% - 9.2px), 89.13% calc(100% - 5.3px), 86.96% calc(100% - 12.2px), 84.78% calc(100% - 8.7px), 82.61% calc(100% - 11.6px), 80.43% calc(100% - 6.1px), 78.26% calc(100% - 14.3px), 76.09% calc(100% - 9.6px), 73.91% calc(100% - 12.9px), 71.74% calc(100% - 7.1px), 69.57% calc(100% - 10.8px), 67.39% calc(100% - 4.8px), 65.22% calc(100% - 13.7px), 63.04% calc(100% - 8.2px), 60.87% calc(100% - 11.3px), 58.7% calc(100% - 6.7px), 56.52% calc(100% - 10.1px), 54.35% calc(100% - 14.6px), 52.17% calc(100% - 9.4px), 50% calc(100% - 5.6px), 47.83% calc(100% - 12.4px), 45.65% calc(100% - 8.9px), 43.48% calc(100% - 11.8px), 41.3% calc(100% - 6.9px), 39.13% calc(100% - 13.2px), 36.96% calc(100% - 9.7px), 34.78% calc(100% - 5.2px), 32.61% calc(100% - 12.7px), 30.43% calc(100% - 8.3px), 28.26% calc(100% - 11.5px), 26.09% calc(100% - 7.3px), 23.91% calc(100% - 14.5px), 21.74% calc(100% - 9.9px), 19.57% calc(100% - 6.2px), 17.39% calc(100% - 12.8px), 15.22% calc(100% - 8.5px), 13.04% calc(100% - 11.2px), 10.87% calc(100% - 5.8px), 8.7% calc(100% - 13.9px), 6.52% calc(100% - 9.3px), 4.35% calc(100% - 6.4px), 2.17% calc(100% - 12.3px), 0% calc(100% - 8.6px)); }
+  .ek-h1 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 42px; line-height: 1.1; color: #4C653D; margin: 0; text-wrap: pretty; }
+  .ek-h2 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 30px; line-height: 1.15; color: #4C653D; margin: 0 0 14px; text-wrap: pretty; }
+  .ek-h3 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 21px; line-height: 1.25; color: #2A2A24; margin: 0 0 8px; text-wrap: pretty; }
+  .ek-eyebrow { margin: 0 0 10px; color: #4F6E2A; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+  .ek-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: #4A4A42; text-wrap: pretty; }
+  .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
+  .ek-t { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #4A4A42; text-wrap: pretty; }
+  .ek-t:last-child { margin-bottom: 0; }
+  .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ek-ul li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4A4A42; }
+  .ek-ul li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: #4F6E2A; }
+  .ek-check li { padding-left: 30px; }
+  .ek-check li::before { left: 0; top: .15em; width: 20px; height: 20px; border-radius: 0; background: #4F6E2A; -webkit-mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; }
+  .ek-price { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; color: #4C653D; white-space: nowrap; }
+  .ek-price-free { background: #EEF4DC; border: 1px solid #D9E5BF; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: start; }
+  .ek-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+  .ek-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .ek-four { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-video { position: relative; display: block; aspect-ratio: 9/16; width: 100%; max-width: 340px; margin: 0 auto; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; text-decoration: none; }
+  .ek-video:hover .ek-play { transform: translate(-50%,-50%) scale(1.06); }
+  .ek-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #4C653D; box-shadow: 0 16px 34px -14px rgba(34,48,31,.7); transition: transform .25s; }
+  .ek-acc { display: flex; flex-direction: column; gap: 14px; }
+  .ek-acc > div { border: 1px solid #ECE3D2; border-radius: 14px; overflow: hidden; background: #FFFFFF; }
+  .ek-q { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 22px; background: #FDFBF5; border: none; cursor: pointer; text-align: left; font: inherit; transition: background .18s; }
+  .ek-q:hover { background: #F4F7EA; }
+  .ek-q-n { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 17px; font-weight: 500; color: #4C653D; }
+  .ek-q-t { flex: 1; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 24px; line-height: 1.22; color: #4C653D; text-wrap: pretty; }
+  .ek-a-wrap { display: grid; transition: grid-template-rows .32s ease; }
+  .ek-a-in { min-height: 0; overflow: hidden; }
+  .ek-a { padding: 20px 22px 26px 72px; }
+  .ek-a p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.7; color: #4A4A42; max-width: 78ch; text-wrap: pretty; }
+  .ek-a p:last-child { margin-bottom: 0; }
+  @media (max-width: 1149px) {
+    .ek-hero { gap: 36px; }
+    .ek-four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 999px) {
+    .ek-hero { grid-template-columns: 1fr; }
+    .ek-three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 819px) {
+    .ek-h1 { font-size: 31px; }
+    .ek-h2 { font-size: 25px; }
+    .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .ek-dark { padding: 32px 24px !important; }
+  }
+  @media (max-width: 549px) {
+    .ek-two, .ek-three, .ek-four { grid-template-columns: 1fr; }
+    .ek-q { padding: 16px; gap: 12px; }
+    .ek-q-t { font-size: 20px; }
+    .ek-q-n { width: 30px; height: 30px; font-size: 15px; }
+    .ek-a { padding: 16px 16px 20px; }
+    .ek-a { padding: 0 16px 18px; }
+  }
+  .ek-photo { display: block; width: 100%; object-fit: cover; border-radius: 14px; }
+  .ek-rf-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,340px); gap: 40px; align-items: start; }
+  .ek-rf-frame { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 16px; padding: 8px; box-shadow: 0 26px 50px -34px rgba(45,58,46,.45); }
+  .ek-rf-frame iframe { display: block; width: 100%; height: 760px; border: 0; border-radius: 10px; background: #FFFFFF; }
+  .ek-rf-side { position: sticky; top: 150px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-rf-side .ek-card { background: #FFFDF6; }
+  .ek-rf-tip { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.55; color: #2A2A24; }
+  .ek-rf-fallback { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 14px; padding: 14px 18px; border-radius: 12px; background: #FFFDF6; border: 1px solid #ECE3D2; font-size: 14.5px; color: #4A4A42; }
+  @media (max-width: 999px) { .ek-rf-grid { grid-template-columns: 1fr; } .ek-rf-side { position: static; } .ek-rf-frame iframe { height: 880px; } }
+  .ek-tear-last { clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% 100%, 0% 100%); bottom: -34px; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28); }
+  [id] { scroll-margin-top: 140px; }
+  html, body { scroll-behavior: smooth; }
+</style>
+</helmet>
+
+<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+  <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
+  <dc-import name="ui-Header" hint-size="100%,140px"></dc-import>
+  <div style="max-width:1720px; margin:0 auto; position:relative;">
+  <section style="padding:22px 32px 8px;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
+      <div class="ek-hero" style="margin-top:26px; align-items:center;">
+        <div>
+          <p class="ek-eyebrow">Reklamace</p>
+          <h1 class="ek-h1">Reklamační formulář</h1>
+          <p class="ek-lead" style="margin-top:20px; max-width:60ch;">Je s objednávkou něco v nepořádku? Vyplňte krátký formulář a my se vám ozveme s konkrétním řešením. Většinu běžných případů vyřešíme během několika dnů.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:26px;">
+            <a href="#formular" class="ek-btn-primary" style="display:inline-flex; align-items:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat; mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat;"></span>Vyplnit formulář</a>
+            <a href="vraceni-zbozi.html" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;">Jak reklamace probíhá<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></a>
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:22px; font-size:14.5px; color:#4A4A42;">
+            <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/clock-01.svg') center / contain no-repeat; mask:url('assets/icons/clock-01.svg') center / contain no-repeat;"></span>Vyřízení nejpozději do 30 dnů</span>
+            <span style="display:inline-flex; align-items:center; gap:8px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span><a href="mailto:eshop@ekokoza.cz">eshop@ekokoza.cz</a></span>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <img src="assets/onas/005-frycovice.jpg" alt="Zázemí Ekokozy ve Fryčovicích" class="ek-photo" style="aspect-ratio:5/4;">
+          <div style="position:absolute; left:18px; right:18px; bottom:18px; padding:16px 18px; border-radius:12px; background:rgba(255,253,246,.94); box-shadow:0 18px 40px -22px rgba(45,58,46,.45);">
+            <p style="margin:0 0 4px; font-family:'EB Garamond',serif; font-size:20px; font-weight:500; color:#2A2A24;">Vyřešíme to s vámi</p>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">reklamaci u dopravce zpravidla řešíme sami</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 26px;">
+    <div aria-hidden="true" class="ek-tear ek-tear-last" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="formular" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+      <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Formulář</p>
+        <h2 class="ek-h2">Popište, co se stalo.</h2>
+        <p class="ek-p" style="margin:0;">Formulář se odešle přímo nám. Po odeslání vám přijde potvrzení s datem uplatnění reklamace.</p>
+      </div>
+      <div class="ek-rf-grid">
+        <div>
+          <div class="ek-rf-frame"><iframe title="Reklamační formulář" src="https://tally.so/r/wz5eRq" loading="lazy"></iframe></div>
+        </div>
+        <aside class="ek-rf-side">
+          <div class="ek-card" style="gap:14px;">
+            <p class="ek-eyebrow" style="margin:0;">Co si připravit</p>
+            <div class="ek-rf-tip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/task-01.svg') center / contain no-repeat; mask:url('assets/icons/task-01.svg') center / contain no-repeat;"></span><span><strong>Číslo objednávky</strong> – najdete ho v potvrzovacím e-mailu nebo v účtu.</span></div><div class="ek-rf-tip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/camera-01.svg') center / contain no-repeat; mask:url('assets/icons/camera-01.svg') center / contain no-repeat;"></span><span><strong>Fotografie</strong> produktu, obalu, zásilky a štítku.</span></div><div class="ek-rf-tip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/tag-01.svg') center / contain no-repeat; mask:url('assets/icons/tag-01.svg') center / contain no-repeat;"></span><span><strong>Číslo šarže a datum spotřeby</strong> u surovin.</span></div><div class="ek-rf-tip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span><span><strong>Jaké řešení</strong> by vám vyhovovalo – náhrada, sleva nebo vrácení peněz.</span></div>
+          </div>
+          <div class="ek-card" style="gap:10px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border-color:#D9E5BF;">
+            <p class="ek-h3" style="margin:0; font-size:20px;">Nechcete vyplňovat formulář?</p>
+            <p style="margin:0; font-size:14.5px; line-height:1.6; color:#4A4A42;">Napište nám na <a href="mailto:eshop@ekokoza.cz" style="font-weight:600;">eshop@ekokoza.cz</a>. Reklamaci vyřídíme stejně rychle.</p>
+          </div>
+        </aside>
+      </div>
+      </div>
+    </section>
+  </div>
+  </div>
+  <div style="overflow-x:clip;">
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:-2px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  // Plynulý posun na kotvy (#…) pod přilepenou hlavičku – jednou pro celou stránku
+  static ekAnchor = (() => {
+    if (typeof document === 'undefined' || window.__ekAnchor) return true;
+    window.__ekAnchor = true;
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a || e.defaultPrevented) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      let el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      // kotva uvnitř bílého trhaného pásu → zastavit na horním okraji pásu
+      if (el.parentElement && el.parentElement.querySelector(':scope > .ek-tear')) el = el.parentElement;
+      let sc = el.parentElement;
+      while (sc && sc !== document.body && sc !== document.documentElement) {
+        const o = getComputedStyle(sc).overflowY;
+        if ((o === 'auto' || o === 'scroll') && sc.scrollHeight > sc.clientHeight) break;
+        sc = sc.parentElement;
+      }
+      const root = (!sc || sc === document.body || sc === document.documentElement) ? null : sc;
+      let headH = 0;
+      document.querySelectorAll('.sc-host[data-sc-name="ui-Header"], [style*="sticky"]').forEach((n) => {
+        if (getComputedStyle(n).position !== 'sticky') return;
+        const r = n.getBoundingClientRect();
+        if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
+      });
+      // výška přilepené hlavičky i ve chvíli, kdy ještě není přilepená (stránka nahoře)
+      const hd = document.querySelector('.sc-host[data-sc-name="ui-Header"]');
+      if (hd) headH = Math.max(headH, hd.getBoundingClientRect().height + (parseFloat(getComputedStyle(hd).top) || 0));
+      const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+      const base = root ? root.getBoundingClientRect().top : 0;
+      // přilepená karta (stacking): zastavit přesně na místě, kde se karta přilepí
+      const card = el.nextElementSibling;
+      const stick = (el.dataset && el.dataset.stick && card && getComputedStyle(card).position === 'sticky') ? parseFloat(getComputedStyle(card).top) : null;
+      const top = el.getBoundingClientRect().top - base + cur - (stick != null ? stick : headH + 16);
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      (root || window).scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + id); } catch (err) {}
+    }, true);
+    return true;
+  })();
+  renderVals() {
+    return { crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Kontakty', href: 'kontakty.html' }, { label: 'Reklamační formulář' }] };
+  }
+}
+</script>
+</body>
+</html>

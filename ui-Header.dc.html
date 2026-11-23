@@ -273,23 +273,23 @@
         <sc-for list="{{ drawerMenu }}" as="l" hint-placeholder-count="3">
           <div style="border-bottom:1px solid #ECE3D2;">
             <div onClick="{{ l.toggle }}" style="{{ l.headStyle }}">{{ l.label }}<span style="{{ l.chevStyle }}"></span></div>
-            <div style="{{ l.subStyle }}">
+            <div style="{{ l.subStyle }}"><div style="min-height:0; overflow:hidden;">
               <sc-for list="{{ l.sub }}" as="s" hint-placeholder-count="4">
                 <sc-if value="{{ s.leaf }}" hint-placeholder-val="{{ true }}">
                   <a href="{{ s.href }}" onClick="{{ closeDrawer }}" style="display:flex; align-items:center; min-height:44px; padding:8px 20px 8px 34px; text-decoration:none; color:#52524a; font-size:15px;">{{ s.name }}</a>
                 </sc-if>
                 <sc-if value="{{ s.hasKids }}" hint-placeholder-val="{{ false }}">
                   <div onClick="{{ s.toggle }}" aria-expanded="{{ s.open }}" style="{{ s.headStyle }}"><span style="min-width:0;">{{ s.name }}</span><span style="{{ s.chevStyle }}"></span></div>
-                  <div style="{{ s.kidsStyle }}">
+                  <div style="{{ s.kidsStyle }}"><div style="min-height:0; overflow:hidden;"><div style="padding:0 0 6px;">
                     <sc-for list="{{ s.children }}" as="k" hint-placeholder-count="4">
                       <a href="{{ k.href }}" onClick="{{ closeDrawer }}" style="display:flex; align-items:center; min-height:40px; padding:7px 20px 7px 48px; text-decoration:none; color:#52524a; font-size:14.5px; line-height:1.35;">{{ k.name }}</a>
                     </sc-for>
                     <a href="{{ s.href }}" onClick="{{ closeDrawer }}" style="display:flex; align-items:center; min-height:40px; padding:7px 20px 12px 48px; text-decoration:none; color:#4C653D; font-weight:600; font-size:14.5px;">{{ s.allLabel }}</a>
-                  </div>
+                  </div></div></div>
                 </sc-if>
               </sc-for>
               <a href="{{ l.allHref }}" onClick="{{ closeDrawer }}" style="display:flex; align-items:center; min-height:40px; padding:8px 20px 14px 34px; text-decoration:none; color:#D8763B; font-weight:600; font-size:15px;">Zobrazit vše</a>
-            </div>
+            </div></div>
           </div>
         </sc-for>
         <a href="#" onClick="{{ closeDrawer }}" style="display:flex; align-items:center; justify-content:space-between; padding:15px 20px; min-height:44px; text-decoration:none; color:#2A2A24; font-size:17px; font-weight:500; border-bottom:1px solid #ECE3D2;">Dárkové poukazy</a>
@@ -449,14 +449,14 @@ class Component extends DCLogic {
             allLabel: 'Vše v kategorii ' + g.name,
             toggle: () => this.setState(s => ({ drawerSub: s.drawerSub === key ? null : key })),
             headStyle: 'display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:44px; padding:8px 20px 8px 34px; color:' + (sOpen ? '#4C653D' : '#52524a') + '; font-size:15px; font-weight:' + (sOpen ? '600' : '400') + '; cursor:pointer;',
-            chevStyle: this.mask('arrow-down-01', 16, '#9b9888') + ' transition:transform .25s;' + (sOpen ? ' transform:rotate(180deg);' : ''),
-            kidsStyle: 'display:' + (sOpen ? 'block' : 'none') + '; padding:0 0 6px;',
+            chevStyle: this.mask('arrow-down-01', 16, '#9b9888') + ' transition:transform .32s cubic-bezier(.65,0,.35,1);' + (sOpen ? ' transform:rotate(180deg);' : ''),
+            kidsStyle: 'display:grid; grid-template-rows:' + (sOpen ? '1fr' : '0fr') + '; opacity:' + (sOpen ? '1' : '0') + '; transition:grid-template-rows .32s cubic-bezier(.65,0,.35,1), opacity .32s cubic-bezier(.65,0,.35,1);',
           };
         }),
         toggle: () => this.setState(s => ({ drawerExp: s.drawerExp === i ? -1 : i })),
-        headStyle: 'display:flex; align-items:center; justify-content:space-between; padding:15px 20px; min-height:44px; color:#2A2A24; font-size:17px; font-weight:500; cursor:pointer; background:' + (open ? '#F6F1E7' : 'transparent') + ';',
-        chevStyle: this.mask('arrow-right-01', 18, '#9b9888') + ' transition:transform .25s;' + (open ? ' transform:rotate(90deg);' : ''),
-        subStyle: 'overflow:hidden; display:' + (open ? 'block' : 'none') + ';',
+        headStyle: 'display:flex; align-items:center; justify-content:space-between; padding:15px 20px; min-height:44px; color:#2A2A24; font-size:17px; font-weight:500; cursor:pointer; transition:background .3s ease; background:' + (open ? '#F6F1E7' : 'transparent') + ';',
+        chevStyle: this.mask('arrow-right-01', 18, '#9b9888') + ' transition:transform .36s cubic-bezier(.65,0,.35,1);' + (open ? ' transform:rotate(90deg);' : ''),
+        subStyle: 'display:grid; grid-template-rows:' + (open ? '1fr' : '0fr') + '; opacity:' + (open ? '1' : '0') + '; transition:grid-template-rows .36s cubic-bezier(.65,0,.35,1), opacity .36s cubic-bezier(.65,0,.35,1);',
       };
     });
 
@@ -589,9 +589,9 @@ class Component extends DCLogic {
       openDrawer: () => this.setState({ drawerOpen: true }),
       closeDrawer: () => this.setState({ drawerOpen: false }),
       stopProp: (e) => e.stopPropagation(),
-      drawerWrapStyle: 'position:fixed; inset:0; z-index:200; visibility:' + (S.drawerOpen ? 'visible' : 'hidden') + '; pointer-events:' + (S.drawerOpen ? 'auto' : 'none') + ';',
-      drawerBdStyle: 'position:absolute; inset:0; background:rgba(20,26,20,.5); opacity:' + (S.drawerOpen ? '1' : '0') + '; transition:opacity .3s ease;',
-      drawerPanelStyle: 'position:absolute; top:0; right:0; height:100%; width:84%; max-width:360px; background:#F6F1E7; transform:translateX(' + (S.drawerOpen ? '0' : '100%') + '); transition:transform .3s cubic-bezier(.32,.72,0,1); display:flex; flex-direction:column; box-shadow:-20px 0 50px -20px rgba(20,26,20,.5);',
+      drawerWrapStyle: 'position:fixed; inset:0; z-index:200; visibility:' + (S.drawerOpen ? 'visible' : 'hidden') + '; pointer-events:' + (S.drawerOpen ? 'auto' : 'none') + '; transition:visibility 0s linear ' + (S.drawerOpen ? '0s' : '.38s') + ';',
+      drawerBdStyle: 'position:absolute; inset:0; background:rgba(20,26,20,.5); opacity:' + (S.drawerOpen ? '1' : '0') + '; transition:opacity .36s cubic-bezier(.65,0,.35,1);',
+      drawerPanelStyle: 'position:absolute; top:0; right:0; height:100%; width:84%; max-width:360px; background:#F6F1E7; transform:translateX(' + (S.drawerOpen ? '0' : '100%') + '); transition:transform .36s cubic-bezier(.65,0,.35,1); display:flex; flex-direction:column; box-shadow:-20px 0 50px -20px rgba(20,26,20,.5);',
     };
   }
 }

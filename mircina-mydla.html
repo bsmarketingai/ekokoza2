@@ -85,7 +85,8 @@
   .ek-ocards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; align-items: stretch; }
   .ek-ocard { padding: 30px 32px 18px; gap: 0; }
   .ek-ocard .ek-p { font-size: 16px; }
-  .ek-oicon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; }
+  .ek-oicon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 16px; }
+  .ek-oicon > span { width: 34px !important; height: 34px !important; background-color: #D14405 !important; }
   .ek-ocard-wide { grid-column: 1 / -1; }
   .ek-gal { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-top: 40px; }
   .ek-gal-item { position: relative; display: block; width: 100%; padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: zoom-in; background: #EFE7D6; aspect-ratio: 4/3; }
@@ -104,6 +105,76 @@
   }
   @media (max-width: 549px) { .ek-quote { font-size: 29px; } .ek-ocard { padding: 24px 20px 12px; } .ek-gal { gap: 10px; } .ek-gal-zoom { opacity: 1; transform: none; width: 34px; height: 34px; } .ek-g-nav { width: 40px; height: 40px; } }
   .ek-band .ek-card, .ek-band .ek-quick, .ek-band .ek-carrier, .ek-band .ek-topic, .ek-band .ek-tipnav a { background: #FFFDF6; }
+  .ek-ocard { padding: 30px 32px 18px; gap: 0; }
+  .ek-ocard .ek-p { font-size: 16px; }
+  .ek-oicon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 16px; }
+  .ek-oicon > span { width: 34px !important; height: 34px !important; background-color: #D14405 !important; }
+  .ek-stack { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; padding-bottom: 8px; }
+  .ek-stk { position: sticky; display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.3fr); gap: 20px 48px; align-items: center; align-content: center; min-height: min(56vh, 440px); background: #FFFDF6; padding: 40px 44px 28px; border-radius: 24px; box-shadow: 0 -14px 36px -22px rgba(45,58,46,.35), 0 24px 48px -32px rgba(45,58,46,.4); transform-origin: 50% 0%; }
+  .ek-stk-n { display: inline-block; margin-right: 10px; padding-right: 10px; border-right: 1px solid #D9E5BF; font-family: 'EB Garamond',serif; font-size: 16px; letter-spacing: 0; color: #4C653D; }
+  .ek-stk-body { padding-top: 6px; }
+  .ek-stk-body > :last-child { margin-bottom: 0; }
+  .ek-stk { padding-bottom: 40px !important; }
+  @keyframes ek-stk-cover { to { transform: scale(.94); } }
+  .ek-stk-img { display: block; width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 14px; margin-top: 20px; }
+  @media (max-width: 999px) { .ek-stk { grid-template-columns: 1fr; gap: 4px; padding: 32px 30px 20px; min-height: 0; } .ek-stk-img { max-width: 520px; margin: 6px 0 14px; } }
+  @media (max-width: 549px) { .ek-ocard { padding: 24px 20px 12px; } .ek-stack { gap: 20px; } .ek-stk { border-radius: 18px; } }
+  .ek-stack { timeline-scope: --ek-stk-2, --ek-stk-3, --ek-stk-4, --ek-stk-5, --ek-stk-6; }
+  .ek-stk-1 { top: calc(150px + 0 * 18px); z-index: 1; }
+  .ek-stk-2 { top: calc(150px + 1 * 18px); z-index: 2; view-timeline-name: --ek-stk-2; }
+  .ek-stk-3 { top: calc(150px + 2 * 18px); z-index: 3; view-timeline-name: --ek-stk-3; }
+  .ek-stk-4 { top: calc(150px + 3 * 18px); z-index: 4; view-timeline-name: --ek-stk-4; }
+  .ek-stk-5 { top: calc(150px + 4 * 18px); z-index: 5; view-timeline-name: --ek-stk-5; }
+  .ek-stk-6 { top: calc(150px + 5 * 18px); z-index: 6; view-timeline-name: --ek-stk-6; }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-stk-1 { animation: ek-stk-cover linear both; animation-timeline: --ek-stk-2; animation-range: entry 0% entry 100%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-stk-2 { animation: ek-stk-cover linear both; animation-timeline: --ek-stk-3; animation-range: entry 0% entry 100%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-stk-3 { animation: ek-stk-cover linear both; animation-timeline: --ek-stk-4; animation-range: entry 0% entry 100%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-stk-4 { animation: ek-stk-cover linear both; animation-timeline: --ek-stk-5; animation-range: entry 0% entry 100%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-stk-5 { animation: ek-stk-cover linear both; animation-timeline: --ek-stk-6; animation-range: entry 0% entry 100%; } } }
+  @media (max-width: 549px) { .ek-stk { position: relative; top: auto !important; animation: none !important; box-shadow: 0 18px 40px -30px rgba(45,58,46,.4); } }
+  .ek-gal { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin-top: 40px; }
+  .ek-gal-item { position: relative; display: block; width: 100%; padding: 0; border: none; border-radius: 14px; overflow: hidden; cursor: zoom-in; background: #EFE7D6; aspect-ratio: 4/3; }
+  .ek-gal-item img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+  .ek-gal-item:hover img { transform: scale(1.04); }
+  .ek-gal-zoom { position: absolute; right: 12px; bottom: 12px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,253,246,.94); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -12px rgba(34,48,31,.6); opacity: 0; transform: translateY(4px); transition: opacity .25s, transform .25s; }
+  .ek-gal-item:hover .ek-gal-zoom, .ek-gal-item:focus-visible .ek-gal-zoom { opacity: 1; transform: none; }
+  .ek-g-nav { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(246,241,231,.5); background: rgba(34,48,31,.5); cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; transition: background .2s, border-color .2s; }
+  .ek-g-nav:hover { background: #4C653D; border-color: #4C653D; }
+  @media (max-width: 999px) { .ek-gal { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 549px) { .ek-gal { gap: 10px; } .ek-gal-zoom { opacity: 1; transform: none; width: 34px; height: 34px; } .ek-g-nav { width: 40px; height: 40px; } }
+  .ek-cta-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 56px; align-items: center; }
+  .ek-browser { display: block; text-decoration: none; border-radius: 12px; overflow: hidden; background: #FFFDF6; box-shadow: 0 30px 60px -28px rgba(0,0,0,.65), 0 0 0 1px rgba(246,241,231,.18); transform: rotate(1.2deg); transition: transform .35s ease, box-shadow .35s ease; }
+  .ek-browser:hover { transform: rotate(0deg) translateY(-4px); box-shadow: 0 38px 70px -28px rgba(0,0,0,.7), 0 0 0 1px rgba(246,241,231,.3); }
+  .ek-browser-bar { display: flex; align-items: center; gap: 12px; padding: 11px 14px; background: #EFE7D6; border-bottom: 1px solid #E4DAC6; }
+  .ek-browser-dots { display: flex; gap: 6px; flex: 0 0 auto; }
+  .ek-browser-dots span { width: 10px; height: 10px; border-radius: 50%; background: #D9CDB6; }
+  .ek-browser-url { flex: 1; min-width: 0; display: flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; background: #FFFDF6; font-size: 13px; color: #4A4A42; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ek-browser-screen { position: relative; aspect-ratio: 4/3; overflow: hidden; background: #FFFFFF; }
+  .ek-browser-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; transition: object-position 5s ease; }
+  .ek-browser:hover .ek-browser-screen img { object-position: 50% 100%; }
+  @media (max-width: 999px) { .ek-cta-grid { grid-template-columns: 1fr; gap: 36px; } .ek-browser { transform: none; max-width: 640px; } }
+  @media (max-width: 549px) { .ek-browser-screen { aspect-ratio: 1/1; } .ek-browser-bar { padding: 9px 11px; gap: 9px; } .ek-browser-dots span { width: 8px; height: 8px; } }
+  .ek-ccard { border-radius: 14px; padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 14px; transition: transform .25s ease, box-shadow .25s ease; }
+  .ek-ccard:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -24px rgba(45,58,46,.5); }
+  .ek-ccard .ek-num { background: rgba(255,253,246,.7); }
+  .ek-ccard-1 { background: #DDE7D2; }
+  .ek-ccard-2 { background: #CFE0B4; }
+  .ek-ccard-3 { background: linear-gradient(155deg,#4C653D 0%,#22301F 100%); }
+  .ek-ccard-3 .ek-h3 { color: #F6F1E7; }
+  .ek-ccard-3 .ek-t { color: #E7EEDD; }
+  .ek-ccard-3 .ek-num { background: rgba(246,241,231,.16); color: #F6F1E7; }
+  .ek-stackwrap { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: 32px; align-items: start; }
+  .ek-stackwrap .ek-stack { max-width: none; margin: 0; }
+  .ek-stackwrap .ek-stk { transform-origin: 0% 0%; }
+  .ek-aside { position: sticky; top: 150px; background: #FFFDF6; border: 1px solid #ECE3D2; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 48px -32px rgba(45,58,46,.4); }
+  .ek-aside-img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+  .ek-aside-in { padding: 22px 24px 24px; }
+  .ek-aside-ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  .ek-aside-li { display: flex; gap: 12px; align-items: flex-start; }
+  .ek-aside-li > span:last-child { display: flex; flex-direction: column; gap: 1px; font-size: 14px; line-height: 1.45; color: #6B6B5E; }
+  .ek-aside-li strong { font-size: 15px; font-weight: 600; color: #2A2A24; }
+  @media (max-width: 1279px) { .ek-stackwrap { grid-template-columns: minmax(0,1fr) 300px; gap: 24px; } .ek-stackwrap .ek-stk { grid-template-columns: 1fr; gap: 4px; } }
+  @media (max-width: 999px) { .ek-stackwrap { grid-template-columns: 1fr; } .ek-aside { display: none; } .ek-stackwrap .ek-stk { transform-origin: 50% 0%; } }
 </style>
 </helmet>
 
@@ -127,7 +198,7 @@
           </div>
         </div>
         <div style="position:relative;">
-          <img src="assets/onas/003-mydla.jpg" alt="Ručně vyráběná mýdla" class="ek-photo" style="aspect-ratio:4/3;">
+          <img src="assets/partneri/mircina-mydla-srdce.jpg" alt="Ručně vyrobené mýdlo ve tvaru srdce na dlani" class="ek-photo" style="aspect-ratio:5/4; object-position:42% 50%;">
           <div style="position:absolute; left:18px; right:18px; bottom:18px; padding:16px 18px; border-radius:12px; background:rgba(255,253,246,.94); box-shadow:0 18px 40px -22px rgba(45,58,46,.45);">
             <p style="margin:0 0 4px; font-family:'EB Garamond',serif; font-size:20px; font-weight:500; color:#2A2A24;">Poctivá dílna s rodinnou energií</p>
             <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">ručně vyráběná mýdla, kosmetika, tuhé šampony a vonné doplňky</p>
@@ -140,60 +211,88 @@
 
   <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
     <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
-    <section class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
-    <div style="max-width:1560px; margin:0 auto;">
-      <div class="ek-split">
-        <div>
-          <p class="ek-eyebrow">V jejich dílně vzniká</p>
-          <h2 class="ek-h2">Voňavá péče v malých šaržích</h2>
-          <p class="ek-p">V malé dílně vznikají s péčí jemná přírodní mýdla pro každodenní použití i výrazné designové kousky, které se hodí jako originální dárek. Nechybí květinové motivy, levandulová mýdla, sladší varianty s medem nebo ovocnými tóny ani další voňavá přírodní kosmetika – tuhé šampony, šumivky do vany a vonné vosky.</p>
-        </div>
-        <img src="assets/make/mydla.png" alt="Přírodní mýdla" class="ek-photo" style="aspect-ratio:4/3;">
-      </div>
-    </div>
-    </section>
-  </div>
-
-  <section style="padding:56px 32px 0;" class="ek-pad">
+    <section style="position:relative; z-index:1; padding:44px 32px;" class="ek-pad">
       <div style="max-width:1560px; margin:0 auto;">
-      <div class="ek-split ek-split-r">
-        <div>
-          <p class="ek-eyebrow">Příběh</p>
-          <h2 class="ek-h2">Jak to celé začalo</h2>
+      <div class="ek-stackwrap">
+      <div class="ek-stack">
+        <article class="ek-card ek-ocard ek-stk ek-stk-1">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat; mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">01</span>V jejich dílně vzniká</p>
+            <h2 class="ek-h2" style="font-size:30px;">Voňavá péče v malých šaržích</h2>
+          </div>
+          <div class="ek-stk-body">
+          <p class="ek-p">V malé dílně vznikají s péčí jemná přírodní mýdla pro každodenní použití i výrazné designové kousky, které se hodí jako originální dárek. Nechybí květinové motivy, levandulová mýdla, sladší varianty s medem nebo ovocnými tóny ani další voňavá přírodní kosmetika – tuhé šampony, šumivky do vany a vonné vosky.</p>
+          </div>
+        </article>
+        <article class="ek-card ek-ocard ek-stk ek-stk-2">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/book-open-01.svg') center / contain no-repeat; mask:url('assets/icons/book-open-01.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">02</span>Příběh</p>
+            <h2 class="ek-h2" style="font-size:30px;">Jak to celé začalo</h2>
+          </div>
+          <div class="ek-stk-body">
           <p class="ek-p">Příběh Mirčiných mýdel se začal psát v roce 2013. Zakladatelka Mirka tehdy vyráběla první mýdla jen pro radost. O dva roky později se rozhodla opustit stálé zaměstnání a naplno se ponořit do světa vůní, olejů a kreativní tvorby. Sama říká, že jí mýdla změnila život a přinesla svobodu, klid, nové přátele i nový spokojený směr.</p><p class="ek-p">Z koníčku se tak stala malá rodinná mýdlárna. V roce 2017 se zapojil i manžel, který pomáhá hlavně s prodejem, a postupně se přidala celá rodina napříč generacemi. Maminka se podílí na výrobě mýdlových ozdob, tatínek vymýšlí technologické vychytávky, které šetří práci, a dcera Jana pomáhá s fotografiemi a webem.</p>
-        </div>
-        <img src="assets/ugc/05.png" alt="Ruční výroba mýdel" class="ek-photo" style="aspect-ratio:4/3;">
-      </div>
-      </div>
-  </section>
-
-  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
-    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
-    <section class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
-    <div style="max-width:1560px; margin:0 auto;">
-      <div class="ek-blocks">
-        <div>
-          <p class="ek-eyebrow">Řemeslo</p>
-          <h2 class="ek-h2">Co tvoří a proč nás to baví</h2>
+          </div>
+        </article>
+        <article class="ek-card ek-ocard ek-stk ek-stk-3">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/sparkles.svg') center / contain no-repeat; mask:url('assets/icons/sparkles.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">03</span>Řemeslo</p>
+            <h2 class="ek-h2" style="font-size:30px;">Co tvoří a proč nás to baví</h2>
+          </div>
+          <div class="ek-stk-body">
           <p class="ek-p">Základem každého výrobku je poctivá ruční práce. Mýdla vznikají v malých šaržích, díky čemuž má dílna prostor hlídat kvalitu, pracovat s detailem a zároveň si uchovat kreativitu. Používají se především rostlinné oleje, jako je olivový, kokosový a ricinový, doplněné o přírodní másla a další šetrné ingredience.</p><ul class="ek-ul ek-check" style="margin-top:6px;"><li>Suroviny jsou vybírány s důrazem na udržitelnost a původ.</li><li>Produkty mají být jemné k pokožce a bez zbytečné chemie.</li><li>Každý kus je originál, který krásně vypadá, voní a přirozeně pečuje.</li></ul>
-        </div>
-        <div>
-          <p class="ek-eyebrow">Spolupráce s Ekokozou</p>
-          <h2 class="ek-h2">Proč jsme si blízcí</h2>
+          </div>
+        </article>
+        <article class="ek-card ek-ocard ek-stk ek-stk-4">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/exchange-01.svg') center / contain no-repeat; mask:url('assets/icons/exchange-01.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">04</span>Spolupráce s Ekokozou</p>
+            <h2 class="ek-h2" style="font-size:30px;">Proč jsme si blízcí</h2>
+          </div>
+          <div class="ek-stk-body">
           <p class="ek-p">Mirčina mýdla si dodavatele vybírají s velkou pečlivostí. „Nejdelší spolupráci máme s firmou Ekokoza, která nabízí široký sortiment a nadstandardní zákaznický servis,“ říkají. Váží si širokého sortimentu, dobrého výběru surovin i vstřícného zákaznického servisu. Společný je jim také důraz na původ surovin, udržitelnost, ruční práci a výrobky, které nevznikají anonymně ve velkém, ale poctivě a s péčí.</p>
-        </div>
-        <div>
-          <p class="ek-eyebrow">Region a lidé</p>
-          <h2 class="ek-h2">Značka s osobním příběhem</h2>
+          </div>
+        </article>
+        <article class="ek-card ek-ocard ek-stk ek-stk-5">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/location-01.svg') center / contain no-repeat; mask:url('assets/icons/location-01.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">05</span>Region a lidé</p>
+            <h2 class="ek-h2" style="font-size:30px;">Značka s osobním příběhem</h2>
+          </div>
+          <div class="ek-stk-body">
           <p class="ek-p">Kvalitu a lokální původ potvrzuje ocenění Regionální produkt Jizerské hory. Mirčina mýdla tak nejsou jen kosmetika, ale připomínka toho, že i v uspěchané době má smysl zpomalit, vrátit se k přírodě a dát přednost věcem, které vznikají s péčí a radostí. Pořídit si je můžete online i osobně na trzích, kde je možné poznat značku zblízka a přivonět k novinkám.</p>
-        </div>
-        <div>
-          <p class="ek-eyebrow">Proč to sedí k Ekokoze</p>
-          <h2 class="ek-h2">Stejné hodnoty v praxi</h2>
+          </div>
+        </article>
+        <article class="ek-card ek-ocard ek-stk ek-stk-6">
+          <div class="ek-stk-head">
+            <div class="ek-oicon"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/leaf-01.svg') center / contain no-repeat; mask:url('assets/icons/leaf-01.svg') center / contain no-repeat;"></span></div>
+            <p class="ek-eyebrow"><span class="ek-stk-n">06</span>Proč to sedí k Ekokoze</p>
+            <h2 class="ek-h2" style="font-size:30px;">Stejné hodnoty v praxi</h2>
+          </div>
+          <div class="ek-stk-body">
           <p class="ek-p">Mirčina mýdla ukazují, jak může z kvalitních surovin a poctivého přístupu vzniknout radostná, osobní a krásně použitelná péče. Přesně takové projekty máme rádi: tvoří lokálně, dávají smysl řemeslu a dokazují, že i malé výrobky mohou mít velký příběh.</p>
-        </div>
+          </div>
+        </article>
       </div>
-    </div>
+        <aside class="ek-aside" aria-label="Mirčina mýdla v kostce">
+          <img src="assets/partneri/mircina-mydla-galerie-4.jpg" alt="Ručně vyrobená mýdla s medovou pláství" class="ek-aside-img">
+          <div class="ek-aside-in">
+            <p class="ek-eyebrow" style="margin-bottom:6px;">V kostce</p>
+            <p class="ek-h3" style="font-size:24px; margin-bottom:16px;">Mirčina mýdla</p>
+            <ul class="ek-aside-ul">
+              <li class="ek-aside-li"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/calendar-01.svg') center / contain no-repeat; mask:url('assets/icons/calendar-01.svg') center / contain no-repeat;"></span><span><strong>Od roku 2013</strong><span>z koníčku rodinná mýdlárna</span></span></li>
+              <li class="ek-aside-li"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/user-group.svg') center / contain no-repeat; mask:url('assets/icons/user-group.svg') center / contain no-repeat;"></span><span><strong>Rodina napříč generacemi</strong><span>výroba, prodej, foto i web</span></span></li>
+              <li class="ek-aside-li"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/award-01.svg') center / contain no-repeat; mask:url('assets/icons/award-01.svg') center / contain no-repeat;"></span><span><strong>Regionální produkt Jizerské hory</strong><span>ocenění kvality a lokálního původu</span></span></li>
+              <li class="ek-aside-li"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat; mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat;"></span><span><strong>Ruční výroba v malých šaržích</strong><span>každý kus je originál</span></span></li>
+              <li class="ek-aside-li"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/store-01.svg') center / contain no-repeat; mask:url('assets/icons/store-01.svg') center / contain no-repeat;"></span><span><strong>Online i na trzích</strong><span>přivoňte si k novinkám osobně</span></span></li>
+            </ul>
+            <a target="_blank" rel="noopener" href="https://www.mircinamydla.cz/" class="ek-btn-primary" style="display:flex; align-items:center; justify-content:center; gap:9px; margin-top:20px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 22px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s;">Navštívit web výrobce<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></a>
+          </div>
+        </aside>
+      </div>
+      </div>
     </section>
   </div>
 
@@ -204,25 +303,34 @@
         <h2 class="ek-h2">Mýdla, dárky i další péče</h2>
       </div>
       <div class="ek-three">
-        <div class="ek-card" style="padding:0; overflow:hidden; gap:0;">
-          <img src="assets/ugc/01.png" alt="" style="display:block; width:100%; aspect-ratio:3/2; object-fit:cover;">
-          <div style="padding:20px 22px 24px;">
+        <div class="ek-ccard ek-ccard-1">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4C653D; -webkit-mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat; mask:url('assets/icons/body-soap-02.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">01</span>
+          </div>
+          <div>
             <p class="ek-h3" style="font-size:21px;">Mýdla pro každý den</p>
-            <p class="ek-t">Jemná přírodní mýdla určená pro běžné mytí, která pokožku čistí šetrně a zanechávají příjemný pocit.</p>
+            <p class="ek-t" style="margin:0;">Jemná přírodní mýdla určená pro běžné mytí, která pokožku čistí šetrně a zanechávají příjemný pocit.</p>
           </div>
         </div>
-        <div class="ek-card" style="padding:0; overflow:hidden; gap:0;">
-          <img src="assets/ugc/02.png" alt="" style="display:block; width:100%; aspect-ratio:3/2; object-fit:cover;">
-          <div style="padding:20px 22px 24px;">
+        <div class="ek-ccard ek-ccard-2">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4C653D; -webkit-mask:url('assets/icons/gift.svg') center / contain no-repeat; mask:url('assets/icons/gift.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">02</span>
+          </div>
+          <div>
             <p class="ek-h3" style="font-size:21px;">Dárkové originály</p>
-            <p class="ek-t">Designově propracované kousky s květinami, medem, ovocnými tóny nebo uklidňující levandulí potěší vzhledem i vůní.</p>
+            <p class="ek-t" style="margin:0;">Designově propracované kousky s květinami, medem, ovocnými tóny nebo uklidňující levandulí potěší vzhledem i vůní.</p>
           </div>
         </div>
-        <div class="ek-card" style="padding:0; overflow:hidden; gap:0;">
-          <img src="assets/ugc/04.png" alt="" style="display:block; width:100%; aspect-ratio:3/2; object-fit:cover;">
-          <div style="padding:20px 22px 24px;">
+        <div class="ek-ccard ek-ccard-3">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/flower.svg') center / contain no-repeat; mask:url('assets/icons/flower.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">03</span>
+          </div>
+          <div>
             <p class="ek-h3" style="font-size:21px;">Širší péče</p>
-            <p class="ek-t">Vedle mýdel v nabídce najdete také přírodní kosmetiku, tuhé šampony, šumivky do vany, vonné vosky a mýdlenky.</p>
+            <p class="ek-t" style="margin:0;">Vedle mýdel v nabídce najdete také přírodní kosmetiku, tuhé šampony, šumivky do vany, vonné vosky a mýdlenky.</p>
           </div>
         </div>
       </div>
@@ -235,6 +343,7 @@
   <section style="padding:64px 32px 0;" class="ek-pad">
     <div style="max-width:1560px; margin:0 auto;">
       <div class="ek-dark" style="background:linear-gradient(155deg,#4C653D 0%,#22301F 100%); border-radius:14px; padding:48px 56px;">
+        <div class="ek-cta-grid">
         <div style="max-width:72ch;">
           <p class="ek-eyebrow" style="color:#B9D096;">Mirčina mýdla × Ekokoza</p>
           <h2 class="ek-h2" style="color:#F6F1E7;">Objevte rodinnou mýdlárnu, kde má každý kousek svůj příběh</h2>
@@ -244,7 +353,39 @@
             <a href="kategorie.html" class="ek-btn-ghostDark" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F6F1E7; border:1.5px solid rgba(246,241,231,.5); text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;">Suroviny k tvoření</a>
           </div>
         </div>
+        <a href="https://www.mircinamydla.cz/" target="_blank" rel="noopener" class="ek-browser" aria-label="Otevřít web mircinamydla.cz">
+          <div class="ek-browser-bar">
+            <div class="ek-browser-dots"><span></span><span></span><span></span></div>
+            <div class="ek-browser-url"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#6B6B5E; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>mircinamydla.cz</div>
+          </div>
+          <div class="ek-browser-screen"><img src="assets/partneri/mircina-mydla-web.jpg" alt="Ukázka úvodní stránky webu Mirčina mýdla" loading="lazy"></div>
+        </a>
+        </div>
       </div>
+    </div>
+  </section>
+  <section style="padding:64px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <h2 class="ek-h2">Fotogalerie</h2>
+      <div class="ek-gal" style="margin-top:20px;" aria-label="Fotogalerie">
+        <sc-for list="{{ photos }}" as="ph" hint-placeholder-count="6">
+          <button type="button" class="ek-gal-item" onClick="{{ ph.open }}" aria-label="{{ ph.label }}">
+            <img src="{{ ph.src }}" alt="{{ ph.alt }}" loading="lazy">
+            <span class="ek-gal-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span></span>
+          </button>
+        </sc-for>
+      </div>
+      <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ lbClose }}" role="dialog" aria-label="Fotogalerie" style="position:fixed; inset:0; z-index:300; background:rgba(34,48,31,.9); display:flex; align-items:center; justify-content:center; gap:18px; padding:28px; cursor:zoom-out;">
+          <button onClick="{{ lbPrev }}" class="ek-g-nav" aria-label="Předchozí" style="flex:0 0 auto;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-left-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-left-01.svg') center / contain no-repeat;"></span></button>
+          <div onClick="{{ stop }}" style="position:relative; cursor:default; display:flex; flex-direction:column; align-items:center; gap:12px; min-width:0;">
+            <img src="{{ lbSrc }}" alt="{{ lbAlt }}" style="display:block; max-width:min(1040px,76vw); max-height:80vh; width:auto; height:auto; border-radius:16px; background:#1E261E;">
+            <span style="font-size:13px; color:#D6E0C8;">{{ lbCounter }}</span>
+          </div>
+          <button onClick="{{ lbNext }}" class="ek-g-nav" aria-label="Další" style="flex:0 0 auto;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-01.svg') center / contain no-repeat;"></span></button>
+          <span style="position:absolute; top:22px; right:24px; display:flex; align-items:center; gap:8px; color:#F6F1E7; font-size:14px; font-weight:600;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+        </div>
+      </sc-if>
     </div>
   </section>
   </div>
@@ -256,8 +397,58 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{}'>
 class Component extends DCLogic {
+  // vrstvené karty (stacking): stejná výška všech karet, aby na konci balíčku nevykukovala delší karta
+  static ekEq = (() => {
+    if (typeof document === 'undefined' || window.__ekEq) return true;
+    window.__ekEq = true;
+    const run = () => {
+      document.querySelectorAll('.ek-vstack, .ek-stack').forEach((st) => {
+        const cards = [...st.children].filter((c) => c.tagName === 'ARTICLE');
+        if (!cards.length) return;
+        cards.forEach((c) => { c.style.minHeight = ''; });
+        if (getComputedStyle(cards[0]).position !== 'sticky') return;
+        const h = Math.max(...cards.map((c) => c.getBoundingClientRect().height / (parseFloat(getComputedStyle(c).scale) || 1)));
+        cards.forEach((c) => { c.style.minHeight = Math.ceil(h) + 'px'; });
+      });
+    };
+    let t; const later = () => { clearTimeout(t); t = setTimeout(run, 120); };
+    window.addEventListener('resize', later);
+    window.addEventListener('load', later);
+    [400, 1200, 2500, 5000].forEach((ms) => setTimeout(run, ms));
+    return true;
+  })();
+  state = { lb: null };
+  static PHOTOS = [{"src": "assets/partneri/mircina-mydla-galerie-1.jpg", "alt": "Stánek Mirčiných mýdel s dřevěnou cedulí na trhu"}, {"src": "assets/partneri/mircina-mydla-galerie-2.jpg", "alt": "Zdobení mýdla v dřevěné formě sáčkem se špičkou"}, {"src": "assets/partneri/mircina-mydla-galerie-3.jpg", "alt": "Mirčin manžel při krájení mýdla v dílně"}, {"src": "assets/partneri/mircina-mydla-galerie-4.jpg", "alt": "Razítkování ručně vyrobených mýdel s medovou pláství"}, {"src": "assets/partneri/mircina-mydla-galerie-5.jpg", "alt": "Krájení růžového mýdlového bloku na kostky"}, {"src": "assets/partneri/mircina-mydla-galerie-6.jpg", "alt": "Dcera Jana nalévá mýdlovou hmotu do formy"}];
+  componentDidMount() {
+    this.onKey = (e) => {
+      if (this.state.lb === null) return;
+      if (e.key === 'Escape') this.setState({ lb: null });
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    window.addEventListener('keydown', this.onKey);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
+  step(d) {
+    const n = Component.PHOTOS.length;
+    this.setState(s => ({ lb: (s.lb + d + n) % n }));
+  }
   renderVals() {
-    return { crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Mirčina mýdla' }] };
+    const P = Component.PHOTOS;
+    const i = this.state.lb;
+    const cur = i === null ? P[0] : P[i];
+    return {
+      crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Mirčina mýdla' }],
+      photos: P.map((p, idx) => ({ ...p, label: 'Zobrazit fotku ' + (idx + 1) + ' v plné velikosti', open: () => this.setState({ lb: idx }) })),
+      lbOpen: i !== null,
+      lbSrc: cur.src,
+      lbAlt: cur.alt,
+      lbCounter: ((i ?? 0) + 1) + ' / ' + P.length,
+      lbClose: () => this.setState({ lb: null }),
+      lbPrev: (e) => { e.stopPropagation(); this.step(-1); },
+      lbNext: (e) => { e.stopPropagation(); this.step(1); },
+      stop: (e) => e.stopPropagation(),
+    };
   }
 }
 </script>

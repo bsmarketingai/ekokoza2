@@ -93,7 +93,449 @@
 
   <section class="day">
     <h2>23. listopadu 2026</h2>
-    <p class="sum">Nová stránka Rozcestník s odkazy na všechny stránky návrhu.</p>
+    <p class="sum">Hlavička: plynulé zavírání mobilního menu i rozbalování podkategorií; Mirčina mýdla a Organic Lab: karty na tabletu a mobilu na střed; Mirčina mýdla: karty bez obrázků; Mirčina mýdla a Organic Lab: panel V kostce jen na desktopu; Organic Lab: karty vlevo a sticky panel V kostce; Mirčina mýdla: karty zarovnané vlevo; Mirčina mýdla a Organic Lab: oranžové ikony karet bez podbarvení; Mirčina mýdla: sticky panel V kostce vedle karet; Mirčina mýdla a Organic Lab: číslované barevné karty; Organic Lab: nadpis Fotogalerie; Mirčina mýdla: náhled webu v prohlížeči, fotogalerie na konci stránky, nová fotka v hlavičce, sekce jako vrstvené karty; Věrnostní program: nadpis Chci B2B spolupráci, ikona opakovaných nákupů, karty skupin jako číslované karty, Profesionál tmavě zelený; FAQ: obrázek u tématu Obaly, výroba a odborná pomoc; O nás: číslované karty jako na ostatních stránkách; FAQ: obrázky u témat Vrácení, reklamace a refundace Suroviny, dokumentace a použití a Účet, věrnostní program a B2B; O nás: výraznější nadpis sekce o Evropě; hlavička a střídání sekcí podle nového layoutu; FAQ: obrázky u témat Objednávka a expedice a Doručení a sledování zásilky, oranžové ikony témat bez podkladu; témata v obtaženém kontejneru; počet otázek v kartách témat jako chip; Rozbalit vše / Sbalit vše přímo nad otázkami; vyhledávání bez modrého křížku prohlížeče, Vymazat jako tlačítko v poli; Vychytávky a Organic Lab: vrstvené karty mají stejnou výšku, na konci balíčku už nevykukuje delší karta; reklamační formulář: odebrán řádek „Formulář se nezobrazuje?“; čísla a ceny se už nikde nezalamují (2&nbsp;000&nbsp;Kč); „nad 2&nbsp;000&nbsp;Kč“ na vlastním řádku; Platba a doprava: karty dopravy v barvách PPL, Zásilkovny a Ekokozy; nová stránka Reklamační formulář s vloženým formulářem; posun na kotvy (např. Kontakty → „Napsat zprávu“) se zastaví pod hlavičkou i když je stránka nahoře; Sledování zásilky: poslední bílý pás navazuje přímo na zápatí; karty dopravců v barvách PPL a Zásilkovny; tlačítka „Otevřít sledování zásilky“ jako primární; ikona otazníku u tlačítka „Kde číslo hledat“; nová stránka Rozcestník s odkazy na všechny stránky návrhu.</p>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Vrstvené karty bez obrázků</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Odebrat obrázky z vrstvených karet.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Fotky z karet 01 a 02 jsou odebrané; všechny karty mají jen ikonu, nadpis a text a jsou nižší a jednotné.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla + Organic Lab</span>
+      <h3>Vrstvené karty na tabletu a mobilu na střed</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Na tabletu a mobilu jsou stack karty vlevo, udělat je centrálně vyrovnané.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Pod 1000&nbsp;px (bez panelu V kostce) se překryté karty zmenšují od středu, takže balíček je symetrický a vycentrovaný; na desktopu vedle panelu zůstává zarovnání vlevo.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Hlavička</span>
+      <h3>Plynulé rozbalování podkategorií v mobilním menu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Rozbalování podkategorií v mobilním menu udělat plynule.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Hlavní kategorie i jejich podkategorie se nyní rozbalují a sbalují plynulou animací výšky s prolnutím (ease-in-out), šipka se otáčí stejným tempem. Dříve se obsah zobrazil a skryl okamžitě.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Hlavička</span>
+      <h3>Plynulé zavírání mobilního menu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Schování draweru s menu je okamžité; udělat plynulou animaci jak při otevření (ease in), tak při zavření (ease out).</p>
+        <span class="k">Řešení</span>
+        <p class="v">Drawer při zavření hned mizel, protože se obal okamžitě skrýval. Nyní se skryje až po doběhnutí animace: panel odjede doprava a pozadí plynule zmizí (0,36&nbsp;s, ease-in-out), otevření má stejnou křivku. Platí na všech stránkách, protože jde o společnou hlavičku.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla + Organic Lab</span>
+      <h3>Panel „V kostce“ jen na desktopu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Na tabletu a mobilu sticky panel vynechat, nechat ho jen na desktopu; stejně v Labu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Panel „V kostce“ se na obou stránkách zobrazuje jen od 1000&nbsp;px výš jako sticky sloupec; na tabletu a mobilu se skrývá a karty jsou přes celou šířku.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab</span>
+      <h3>Vrstvené karty vlevo + sticky panel „V kostce“</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Stejné úpravy jako na Mirčiných mýdlech a do pravého sloupce relevantní sticky box.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Balíček vrstvených karet je zarovnaný úplně vlevo (zmenšování od levého rohu) a vpravo stojí sticky panel „V kostce – Workshopy Organic Lab“: fotka z parfémového workshopu, pět faktů s ikonami (přibližně 2 hodiny, komorní skupiny, nic si nemusíte nosit, pražská Letná, workshop jako dárek) a tlačítko Vybrat workshop. Pod 1000&nbsp;px je panel pod kartami a není sticky. Ikony jsou oranžové bez podbarvení jako na Mirčiných mýdlech.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Vrstvené karty zarovnané úplně vlevo</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Karta musí být úplně vlevo, nyní je tam nelogický odsazení.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Překrytá karta se při skládání zmenšovala od středu, takže její levý okraj ustupoval doprava. Nyní se zmenšuje od levého horního rohu – levý okraj všech karet zůstává na linii obsahu stránky.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla + Organic Lab</span>
+      <h3>Ikony vrstvených karet bez podbarvení, oranžově</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Ikony s podbarvením nepoužívat, dát je oranžově jako jinde.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Ikony ve vrstvených kartách na Mirčiných mýdlech i v Organic Lab jsou bez podkladu a rámečku, 34&nbsp;px v oranžové #D14405 (stejně jako ikony témat ve FAQ a USP na homepage).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Sticky panel „V kostce“ vedle vrstvených karet</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Vyplnit prostor vpravo od vrstvených karet sticky prvkem (zvolena varianta 2).</p>
+        <span class="k">Řešení</span>
+        <p class="v">Vedle balíčku karet stojí sticky panel „V kostce – Mirčina mýdla“: fotka z dílny, pět faktů s ikonami (od roku 2013, rodina napříč generacemi, Regionální produkt Jizerské hory, ruční výroba v malých šaržích, online i na trzích) a tlačítko Navštívit web výrobce. Panel zůstává na místě, zatímco se karty skládají. Pod 1000&nbsp;px je panel pod kartami a není sticky.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla + Organic Lab</span>
+      <h3>Trojice karet jako číslované barevné karty</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Karty „Na co se těšit“ udělat jako číslované barevné karty a stejně upravit i obdobnou sekci v Organic Lab.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Na obou stránkách jsou tři karty místo fotek barevné: světle zelená, středně zelená a tmavě zelený přechod (nejkontrastnější). Každá má ikonu vlevo nahoře, číslo v kroužku vpravo, nadpis a text. Mirčina mýdla: mýdlo, dárek, květina; Organic Lab: parfém, lahvička kosmetiky (šampon), svíčka.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Náhled webu v prohlížeči v závěrečné výzvě</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Do závěrečné zelené výzvy dát náhled webu v okně prohlížeče jako u Organic Lab; screen webu dodán.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Vpravo ve výzvě je okno prohlížeče s adresou mircinamydla.cz a dodaným screenem webu; po najetí se screen pomalu posune dolů, klik otevře web výrobce. Na tabletu a mobilu je náhled pod textem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Fotogalerie na konci stránky</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Na konec stránky Mirčina mýdla dát fotogalerii jako v Organic Lab, s nadpisem sekce Fotogalerie.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Za závěrečnou zelenou výzvu je přidána sekce „Fotogalerie“ (bez kickeru) se 6 dodanými fotkami v mřížce 3 × 2 (na tabletu a mobilu 2 sloupce) a lightboxem se šipkami, klávesami a počítadlem stejně jako v Organic Lab.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab</span>
+      <h3>Nadpis „Fotogalerie“</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Do sekce s fotkami dát nadpis Fotogalerie.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Nad mřížku fotek s lightboxem je přidán nadpis sekce „Fotogalerie“ ve stylu ostatních nadpisů.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Sekce jako vrstvené (sticky) karty</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Sekce od „Voňavá péče v malých šaržích“ až po „Stejné hodnoty v praxi“ dát jako stuck scroll karty, stejně jako jinde.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Šest sekcí je nyní v jednom bílém pásu jako vrstvené karty stejně jako na Organic Lab: číslo + kicker, ikona, nadpis vlevo, text vpravo, karty se při scrollu skládají na sebe a předchozí se jemně zmenšuje; všechny mají stejnou výšku. Fotky ze sekcí 01 a 02 jsou v kartě pod nadpisem. Na mobilu se karty neskládají, jen řadí pod sebe.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Mirčina mýdla</span>
+      <h3>Nová fotka v hlavičce</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodanou fotku (mýdlové srdce na dlani) dát do první sekce stránky Mirčina mýdla.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Fotka nahradila původní ilustrační fotku v hlavičce (assets/partneri/mircina-mydla-srdce.jpg); poměr sjednocen na 5:4 jako u ostatních hlaviček, štítek „Poctivá dílna s rodinnou energií“ zůstává.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Věrnostní program</span>
+      <h3>Nadpis „Chci B2B spolupráci“</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Do tmavého pruhu s poptávkou dát nadpis „Chci B2B spolupráci“.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Pruh má nadpis „Chci B2B spolupráci“ nad popisem; tlačítko Napsat poptávku zůstává vpravo. Odkaz tlačítka sjednocen na eshop@ekokoza.cz (dříve info@).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Věrnostní program</span>
+      <h3>Ikona „Pravidelné nákupy“ – kalendář se šipkami dokola</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Pravidelné nákupy by měly mít ikonu kalendáře s šipkami dokola nebo podobný příznak opakující se akce.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Nová ikona kalendáře se dvěma šipkami v kruhu (assets/ui/calendar-repeat.svg) ve stejném stylu tahu jako ostatní ikony; nahradila obyčejný kalendář u karty Pravidelné nákupy.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Věrnostní program</span>
+      <h3>Karty skupin jako číslované karty, Profesionál tmavě zelený</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Číselné karty skupin udělat jako jinde; karta Profesionál má být tmavě zelená s přechodem, nejkontrastnější.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Karty mají ikonu vlevo nahoře (lístek, rostlinka, pohár) a číslo v kroužku vpravo, štítek „Vaše skupina“ je vedle čísla. Profesionál má tmavě zelený přechod #4C653D → #22301F se světlým textem, světlým štítkem a světlým rámečkem u aktivní skupiny.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu Obaly, výroba a odborná pomoc</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodaný obrázek (lahvička s pumpičkou, kelímky, plechovka, nálevka, odměrka) dát k poslední sekci FAQ.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Obrázek (assets/faq/obaly.png) je pod počtem otázek u tématu Obaly, výroba a odborná pomoc; zobrazuje se jen na desktopu. Všech pět témat FAQ tak má svůj obrázek.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">O nás</span>
+      <h3>Číslované karty jako na ostatních stránkách</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Číslované karty udělat stejně jako jinde.</p>
+        <span class="k">Řešení</span>
+        <p class="v">„Čtyři věci, o které se opíráme“ a trojice „Vyzkoušet / Popsat / Zpřístupnit“ jsou nyní karty jako na Kontaktech: ikona vlevo nahoře, číslo v kroužku vpravo, nadpis a text; v bílém pásu podklad #FFFDF6 s jemným rámečkem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu Účet, věrnostní program a B2B</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodaný obrázek (notebook s profilem, dárková karta, kostka s procentem) dát k tématu Účet, věrnostní program a B2B.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Obrázek (assets/faq/ucet.png) je pod počtem otázek u tématu Účet, věrnostní program a B2B; zobrazuje se jen na desktopu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu Suroviny, dokumentace a použití</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodaný obrázek (olej, bambucké máslo, levandule, hmoždíř) dát k tématu Suroviny, dokumentace a použití.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Obrázek (assets/faq/suroviny.png) je pod počtem otázek u tématu Suroviny, dokumentace a použití; zobrazuje se jen na desktopu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu Vrácení, reklamace a refundace</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodaný obrázek (krabice se symbolem vrácení) dát k tématu Vrácení, reklamace a refundace.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Obrázek (assets/faq/vraceni.png) je pod počtem otázek u tématu Vrácení, reklamace a refundace; zobrazuje se jen na desktopu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">O nás</span>
+      <h3>Výraznější nadpis „Jazyk se mění. Naše odpovědnost ne.“</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Výraznější nadpis, je to stěžejní sekce.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Nadpis je nyní plný nadpis sekce (36&nbsp;px, na mobilu 28&nbsp;px) s kickerem „Ekokoza napříč Evropou“ a oranžovou ikonou glóbu; karta má větší odsazení a text 17&nbsp;px.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">O nás</span>
+      <h3>Stránka O nás sjednocená s novým layoutem</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Stránku O nás upravit podle stávajícího designu; hlavičku poskládat jako na ostatních nově stavěných stránkách.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Hlavička jako u Organic Lab a Kontaktů: text vlevo, fotka zakladatelů 5:4 se štítkem „Marta a Hugo Čapkovi“ vpravo, sloupce 1,2:1 svisle na střed; citát přesunut pod úvodní text jako zvýrazněná citace; přidána tlačítka Ekokozí receptář a Napište nám. Sekce se pravidelně střídají béžová / bílý trhaný pás („Od sýra k mýdlu“ je nově bílý pás, růžový pás „Když hodnoty nejsou jen slova“ je bílý, karta v něm má podklad #FFFDF6). Čísla se nezalamují (500&nbsp;000+).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu Doručení a sledování zásilky</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dodaný obrázek (balík se špendlíkem a telefonem se sledováním) dát k tématu Doručení a sledování zásilky.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Obrázek (assets/faq/doruceni.png) je pod počtem otázek u tématu Doručení a sledování zásilky; stejně jako u Objednávky se zobrazuje jen na desktopu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Obrázek u tématu a oranžová ikona</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Pod chip „7 otázek“ u Objednávka a expedice přidat obrázek (na mobilu nezobrazovat); ikonu nad nadpisem bez podkladu a oranžově jako v USP na homepage.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Pod počtem otázek je obrázek krabic s checklistem (assets/faq/objednavka.png), zobrazuje se jen na desktopu, kde je hlavička tématu vlevo; pod 1150&nbsp;px se skrývá. Ikony témat jsou bez podkladu a rámečku, 36&nbsp;px v oranžové #D14405 jako ikony v USP na homepage.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Témata otázek v kontejneru</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Jednotlivé sekce (témata) dát do kontejneru, minimálně obtáhnout; bez béžového podkladu, aby otázky byly v kontrastu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Každé téma (hlavička + otázky) je v kontejneru s jemným rámečkem a zaobleným rohem, na bílém podkladu (béžový snižoval kontrast otázek); na mobilu s menším odsazením.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Počet otázek v kartách témat jako chip</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Počet otázek v kartách témat nahoře zobrazit stejným chipem jako u nadpisů sekcí níže.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Počet otázek v kartách témat má nyní stejný zelený chip (ek-topic-chip) jako hlavička každého tématu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ</span>
+      <h3>Rozbalit vše a Sbalit vše nad otázkami</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Ovládání Rozbalit vše / Sbalit vše přesunout až k otázkám, nad ně, aby bylo jasné, k čemu patří.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Na začátku bílého pásu s otázkami je krémová lišta: vlevo počet odpovědí, vpravo jedno dvoustavové tlačítko: „Rozbalit vše“ se šipkou dolů, a jakmile jsou všechny zobrazené otázky otevřené, přepne se na „Sbalit vše“ se šipkou nahoru (zelená obrysová pilulka, při najetí plná). Počet nalezených odpovědí je v hlavičce vpravo na řádku s vyhledávacím polem (na úzkých displejích pod ním). U každého tématu je nad nadpisem velká ikona (30 px) v zeleném rámečku a počet otázek je ve světle zeleném chipu. Nadtitulek „Téma“ u sekcí je odstraněn – pod ikonou rovnou následuje nadpis. Na desktopu (od 1150 px) je levý sloupec tématu (ikona, nadpis, popis, počet) přilepený pod hlavičkou, dokud se neodscrollují jeho otázky. Na užších šířkách (pod 1150 px) je ikona vlevo vedle nadpisu, popisu a počtu otázek, na mobilu menší.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ · Vyhledávání</span>
+      <h3>Vyhledávací pole bez systémového křížku</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Ve vyhledávání se zobrazoval modrý křížek prohlížeče; „Vymazat“ má být tlačítko v poli.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Systémový křížek vyhledávacího pole (Safari, Chrome, Edge) je skrytý. „Vymazat“ je plné tmavě zelené tlačítko s křížkem uvnitř pole vpravo (při najetí ztmavne); zobrazuje se jen, když je něco napsáno.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vychytávky · Organic Lab · Stacking</span>
+      <h3>Na konci balíčku karet nevykukuje starší karta</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Při scrollování na konec vrstvených karet vykukovala nad poslední kartou karta 03 Objednávka.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Na konci balíčku se všechny přilepené karty zarovnají spodní hranou ke konci sekce; nejvyšší karta (03 se třemi kroky) proto vyčnívala nahoru. Teď si stránka změří nejvyšší kartu a všem kartám nastaví stejnou výšku (přepočítá se i při změně velikosti okna), takže poslední karta překryje všechny předchozí a zůstanou vidět jen jejich úzké horní okraje. Ověřeno v náhledu na šířce 900 px. Platí i pro karty na Organic Lab.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Nové stránky · Typografie čísel</span>
+      <h3>Čísla a ceny se nezalamují</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">„nad 2 000 Kč“ dát na vlastní řádek a nikde nedělit 2 a 000 Kč.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Na Platbě a dopravě je „nad 2&nbsp;000&nbsp;Kč“ na samostatném řádku a nikdy se nerozdělí. Na všech nových stránkách (Kontakty, FAQ, Vrácení zboží, Platba a doprava, Vychytávky, Obchodní podmínky, Zpracování osobních údajů, Reklamační formulář) jsou mezery uvnitř čísel (2&nbsp;000, 1&nbsp;091) a mezi číslem a jednotkou (Kč, ks, kg, ml, %, dnů …) nezlomitelné – celkem 91 míst. Telefonní čísla se tím také drží pohromadě.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Platba a doprava</span>
+      <h3>Karty dopravy v barvách dopravců</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Karty PPL ladit do barev PPL, Zásilkovnu do barev Zásilkovny, osobní odběr do tmavě zeleného přechodu Ekokozy.</p>
+        <span class="k">Řešení</span>
+        <p class="v">PPL na adresu a PPL Parcelshop/Parcelbox: modrý přechod PPL (#1E55AB → #4A86D8); Zásilkovna: cihlově červený přechod (#AD3114 → #C9502F); Osobní odběr: tmavě zelený přechod Ekokozy (#4C653D → #22301F), stejně jako na Sledování zásilky. Texty jsou bílé, loga na bílém štítku, cenovka bílá s cenou v barvě dopravce, „Zdarma“ zůstává ve světle zeleném štítku. Nadpisy karet jsou výraznější: větší (27 px) a tučnější EB Garamond; podnadpis je menší a tlumený a od textu ho odděluje jemná linka, aby nadpis nesplýval s textem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Reklamační formulář</span>
+      <h3>Nová stránka Reklamační formulář</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Tlačítko „Otevřít reklamační formulář“ má vést na samostatnou stránku s vloženým (iframe) formulářem ze stránky ekokoza.cz/reklamacni-formular-m51.</p>
+        <span class="k">Řešení</span>
+        <p class="v">reklamacni-formular.html: béžová hlavička (nadpis, úvod, tlačítka Vyplnit formulář / Jak reklamace probíhá, lhůta 30 dnů a e-mail, fotka se štítkem) → bílý trhaný pás napojený rovnou na zápatí: vlevo vložený formulář Tally (tally.so/r/wz5eRq) v bílém rámu, vpravo přilepený panel „Co si připravit“ (číslo objednávky, fotografie, šarže, požadované řešení) a box s e-mailem. Drobečková navigace Úvod › Kontakty › Reklamační formulář.</p>
+        <span class="k">Odkazy</span>
+        <p class="v">Kontakty: tlačítko „Otevřít reklamační formulář“ i odkaz v sekci údajů. FAQ: odkaz „reklamační formulář“ v otázce o uplatnění reklamace. Rozcestník: nová karta mezi upravovanými stránkami.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Více stránek · Posun na kotvy</span>
+      <h3>Posun na kotvu už nezajede pod hlavičku</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Tlačítko „Napsat zprávu“ na Kontaktech odscrollovalo stránku tak, že nadpis „Napište nám“ a začátek formuláře zůstaly pod hlavičkou.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Výška přilepené hlavičky se dřív měřila jen ve chvíli, kdy už byla přilepená – při kliknutí nahoře na stránce se proto počítala nulová. Teď se měří vždy, takže cíl skončí 16 px pod hlavičkou a nadpis sekce je vidět. Ověřeno v náhledu: „Napište nám.“ je celý vidět i s formulářem. Oprava platí pro FAQ, Kontakty, Obchodní podmínky, Zpracování osobních údajů, Platbu a dopravu, Sledování zásilky, Vychytávky, Věrnostní program a Rozcestník.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Sledování zásilky</span>
+      <h3>Poslední pás napojený na zápatí</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Poslední bílý trhaný pás (Jak balíme) má navazovat přímo na zápatí, bez zbytečného krémového pruhu mezi nimi.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Bílý pás už dole nemá trhaný okraj a pokračuje až k zelenému trhanému okraji zápatí; krémová mezera 56 px je pryč. Bílý podklad navíc pokračuje i pod zubatý horní okraj zápatí, takže mezi jeho zuby už neprosvítá béžová. Pravidlo pro všechny stránky: končí-li stránka bílým pásem, napojí se rovnou na zápatí.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Sledování zásilky</span>
+      <h3>Karty dopravců v jejich barvách</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Box PPL podbarvit do barev PPL a Zásilkovnu do barev Zásilkovny; barvy pošle klient.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Podle dodaných podkladů: karta PPL je celá v modré PPL (přechod #1E55AB → #4A86D8), karta Zásilkovny v cihlově červené Zásilkovny (#AD3114 → #C9502F). Název dopravce je bílý, logo na bílém štítku se stínem, tlačítko „Otevřít sledování zásilky“ je bílé s textem a šipkou v barvě dopravce; při najetí se karta zvedne se stínem a tlačítko zkrémoví.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Sledování zásilky</span>
+      <h3>Tlačítka u dopravců jako primární</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Tlačítka „Otevřít sledování zásilky“ u PPL a Zásilkovny dát jako primární – jsou hlavní akcí stránky.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Tlačítka jsou plná tmavě zelená (#4C653D) se slonovinovým textem a šipkou; při najetí na kartu dopravce ztmavnou na #3E5432. Na desktopu je tlačítko v řádku vedle loga a názvu; pod 1280 px se v obou kartách současně přesune pod logo, takže se nikdy nestane, že by jedna karta byla zalomená a druhá ne.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Sledování zásilky</span>
+      <h3>Ikona u tlačítka „Kde číslo hledat“</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Doplnit ikonu otazníku v kolečku.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Sekundární tlačítko „Kde číslo hledat“ v hlavičce má před textem ikonu otazníku v kolečku (help-circle, 20 px, tmavě zelená), stejně jako má primární tlačítko „Vybrat dopravce“ ikonu sledování.</p>
+      </div>
+    </div>
 
     <div class="item">
       <span class="tag">Rozcestník</span>

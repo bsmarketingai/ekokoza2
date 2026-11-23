@@ -20,6 +20,7 @@
   .ek-btn-main:hover { background: #B23803 !important; border-color: #B23803 !important; }
   .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
   .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
   .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
   .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
   .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
@@ -43,11 +44,15 @@
   .ek-tl-d { margin: 0; font-size: 14.5px; line-height: 1.55; color: #4A4A42; text-wrap: pretty; }
   .ek-tl-i:hover .ek-tl-year { color: #D14405; }
   .ek-tl-i:hover .ek-tl-dot { background: #D14405; box-shadow: 0 0 0 1.5px #D14405, 0 0 0 6px rgba(209,68,5,.16); }
-  .ek-hero { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(0,1fr); gap: 56px; align-items: end; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: center; }
+  .ek-quote { margin: 26px 0 0; padding: 4px 0 4px 20px; border-left: 3px solid #B9D096; font-family: 'EB Garamond',serif; font-size: 21px; line-height: 1.5; font-style: italic; color: #2A2A24; max-width: 58ch; text-wrap: pretty; }
+  .ek-card { background: #FFFDF6; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-card-w { background: #FFFDF6; border: 1px solid #ECE3D2; border-radius: 14px; }
   .ek-two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 56px; align-items: start; }
   .ek-nums { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 32px; }
   .ek-thirds { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
-  .ek-quad { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0 32px; }
+  .ek-quad { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
   .ek-photo { display: block; width: 100%; object-fit: cover; border-radius: 14px; }
   @media (max-width: 1149px) {
     .ek-hero, .ek-two { gap: 36px; }
@@ -68,8 +73,11 @@
     .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
     .ek-thirds { grid-template-columns: 1fr; }
     .ek-dark { padding: 36px 26px !important; }
+    .ek-key { padding: 30px 24px !important; }
+    .ek-key .ek-h2 { font-size: 28px !important; }
   }
   @media (max-width: 549px) {
+    .ek-quote { font-size: 19px; }
     .ek-nums, .ek-quad { grid-template-columns: 1fr; }
     .ek-tl { grid-template-columns: 1fr; row-gap: 0; }
     .ek-tl-i { display: block; padding: 0 0 28px 30px; border-left: 2px solid #DCE3CE; }
@@ -90,23 +98,31 @@
   <section style="padding:22px 32px 0;" class="ek-pad">
     <div style="max-width:1560px; margin:0 auto;">
       <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
-      <div style="margin-top:26px; max-width:78ch;">
+      <div class="ek-hero" style="margin-top:26px;">
         <div>
           <p class="ek-eyebrow">Náš příběh · od roku 2007</p>
           <h1 class="ek-h1">Začalo to jednou kozou. Pokračuje to ve vašich rukou.</h1>
-          <p class="ek-lead" style="margin-top:20px; max-width:66ch;">Ekokoza nevznikla z obchodního plánu. Vznikla z obyčejné rodinné potřeby, z práce rukama a z touhy rozumět tomu, co jíme, používáme a tvoříme. Od první kozy přes sýry a mýdla až po evropské zázemí pro více než půl milionu zákazníků se měnilo měřítko. <strong style="color:#2A2A24;">Důvod zůstal stejný.</strong></p>
+          <p class="ek-lead" style="margin-top:20px; max-width:62ch;">Ekokoza nevznikla z obchodního plánu. Vznikla z obyčejné rodinné potřeby, z práce rukama a z touhy rozumět tomu, co jíme, používáme a tvoříme. Od první kozy přes sýry a mýdla až po evropské zázemí pro více než půl milionu zákazníků se měnilo měřítko. <strong style="color:#2A2A24;">Důvod zůstal stejný.</strong></p>
+          <blockquote class="ek-quote">Návrat ke kořenům pro nás neznamená odmítnout současnost. Znamená znovu vzít část odpovědnosti do vlastních rukou — vědět, z čeho věci vznikají, umět se rozhodnout a tvořit s pochopením.</blockquote>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:28px;">
+            <a href="receptar.dc.html" class="ek-btn-primary" style="display:inline-flex; align-items:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cook-book.svg') center / contain no-repeat; mask:url('assets/icons/cook-book.svg') center / contain no-repeat;"></span>Ekokozí receptář</a>
+            <a href="kontakty.html" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Napište nám</a>
+          </div>
         </div>
-      </div>
-      <div class="ek-two" style="margin-top:34px; align-items:center;">
         <div>
-          <img src="assets/onas/001-zakladatele.jpg" alt="Marta a Hugo Čapkovi, zakladatelé Ekokozy, ve své kozí stáji" class="ek-photo" style="height:480px; object-position:center 32%;">
-          <p class="ek-cap">Marta a Hugo Čapkovi v začátcích Ekokozy — v době, kdy každodenní život s kozami určoval rytmus celé rodiny.</p>
+          <div style="position:relative;">
+            <img src="assets/onas/001-zakladatele.jpg" alt="Marta a Hugo Čapkovi, zakladatelé Ekokozy, ve své kozí stáji" class="ek-photo" style="aspect-ratio:5/4; object-position:center 32%;">
+            <div style="position:absolute; left:18px; right:18px; bottom:18px; padding:16px 18px; border-radius:12px; background:rgba(255,253,246,.94); box-shadow:0 18px 40px -22px rgba(45,58,46,.45);">
+              <p style="margin:0 0 4px; font-family:'EB Garamond',serif; font-size:20px; font-weight:500; color:#2A2A24;">Marta a Hugo Čapkovi</p>
+              <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">zakladatelé Ekokozy, v době, kdy rytmus celé rodiny určoval život s kozami</p>
+            </div>
+          </div>
         </div>
-        <blockquote style="margin:0; max-width:40ch; padding:0; font-family:'EB Garamond',serif; font-size:24px; line-height:1.5; color:#2A2A24; text-wrap:pretty;">Návrat ke kořenům pro nás neznamená odmítnout současnost. Znamená znovu vzít část odpovědnosti do vlastních rukou — vědět, z čeho věci vznikají, umět se rozhodnout a tvořit s pochopením.</blockquote>
       </div>
     </div>
   </section>
-  <div style="position:relative; margin:48px 0 0; padding:34px 0 44px;">
+
+  <div style="position:relative; margin:56px 0 0; padding:34px 0 44px;">
     <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
     <section style="position:relative; z-index:1; padding:44px 32px;" class="ek-pad">
       <div style="max-width:1560px; margin:0 auto;">
@@ -120,11 +136,11 @@
             <p style="margin:0; font-size:15px; line-height:1.55; color:#4A4A42; text-wrap:pretty;">Ověřených receptů a postupů, které propojují surovinu s konkrétním výsledkem</p>
           </div>
           <div>
-            <p style="margin:0 0 10px; font-family:'EB Garamond',serif; font-size:40px; font-weight:500; color:#4C653D; line-height:1;">500 000+</p>
+            <p style="margin:0 0 10px; font-family:'EB Garamond',serif; font-size:40px; font-weight:500; color:#4C653D; line-height:1;">500&nbsp;000+</p>
             <p style="margin:0; font-size:15px; line-height:1.55; color:#4A4A42; text-wrap:pretty;">Zákazníků z celé Evropy, kteří u nás našli suroviny, postupy nebo zázemí pro svou výrobu</p>
           </div>
           <div>
-            <p style="margin:0 0 10px; font-family:'EB Garamond',serif; font-size:40px; font-weight:500; color:#4C653D; line-height:1;">Napříč EU</p>
+            <p style="margin:0 0 10px; font-family:'EB Garamond',serif; font-size:40px; font-weight:500; color:#4C653D; line-height:1;">Napříč&nbsp;EU</p>
             <p style="margin:0; font-size:15px; line-height:1.55; color:#4A4A42; text-wrap:pretty;">Pro domácí tvůrce, nadšence i profesionální výrobce</p>
           </div>
         </div>
@@ -229,7 +245,9 @@
       </div>
     </div>
   </section>
-  <section style="padding:64px 32px 0;" class="ek-pad">
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section style="position:relative; z-index:1; padding:44px 32px;" class="ek-pad">
     <div style="max-width:1560px; margin:0 auto;">
       <div class="ek-two">
         <div style="max-width:66ch;">
@@ -244,24 +262,40 @@
         </div>
       </div>
       <div class="ek-thirds" style="margin-top:36px;">
-        <div style="background:#DDE7D2; border-radius:14px; padding:26px 28px;">
-          <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:30px; font-weight:500; color:#4C653D; line-height:1;">1</p>
+      <div class="ek-card">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/test-tube-01.svg') center / contain no-repeat; mask:url('assets/icons/test-tube-01.svg') center / contain no-repeat;"></span>
+          <span class="ek-num">01</span>
+        </div>
+        <div>
           <p class="ek-h3" style="font-size:20px;">Vyzkoušet v praxi</p>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:#2A2A24;">Nejdříve pochopit surovinu, postup i jeho hranice.</p>
-        </div>
-        <div style="background:#CFE0B4; border-radius:14px; padding:26px 28px;">
-          <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:30px; font-weight:500; color:#4C653D; line-height:1;">2</p>
-          <p class="ek-h3" style="font-size:20px;">Popsat souvislosti</p>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:#2A2A24;">Sdílet recept, zkušenost, chyby i důvod, proč něco funguje.</p>
-        </div>
-        <div style="background:#B9D096; border-radius:14px; padding:26px 28px;">
-          <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:30px; font-weight:500; color:#4C653D; line-height:1;">3</p>
-          <p class="ek-h3" style="font-size:20px;">Zpřístupnit ostatním</p>
-          <p style="margin:0; font-size:15px; line-height:1.55; color:#2A2A24;">Nabídnout suroviny, obaly, pomůcky a možnost se zeptat.</p>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Nejdříve pochopit surovinu, postup i jeho hranice.</p>
         </div>
       </div>
+      <div class="ek-card">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat; mask:url('assets/icons/pencil-edit-01.svg') center / contain no-repeat;"></span>
+          <span class="ek-num">02</span>
+        </div>
+        <div>
+          <p class="ek-h3" style="font-size:20px;">Popsat souvislosti</p>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Sdílet recept, zkušenost, chyby i důvod, proč něco funguje.</p>
+        </div>
+      </div>
+      <div class="ek-card">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/share-01.svg') center / contain no-repeat; mask:url('assets/icons/share-01.svg') center / contain no-repeat;"></span>
+          <span class="ek-num">03</span>
+        </div>
+        <div>
+          <p class="ek-h3" style="font-size:20px;">Zpřístupnit ostatním</p>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Nabídnout suroviny, obaly, pomůcky a možnost se zeptat.</p>
+        </div>
+      </div>
+      </div>
     </div>
-  </section>
+    </section>
+  </div>
   <section style="padding:64px 32px 0;" class="ek-pad">
     <div style="max-width:1560px; margin:0 auto;">
       <div class="ek-two ek-two-rev">
@@ -280,7 +314,7 @@
     </div>
   </section>
   <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
-    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FDF1F4 0%,#FBE9EE 58%,#F7DDE4 100%);"></div>
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
     <section style="position:relative; z-index:1; padding:44px 32px;" class="ek-pad">
       <div style="max-width:1560px; margin:0 auto;">
         <div style="max-width:74ch;">
@@ -295,7 +329,7 @@
           </div>
           <div>
             <p class="ek-p"><strong style="color:#2A2A24;">O to více si vážíme všech farmářů, kteří v této práci pokračují a každý den hledají co nejlepší podobu soužití lidí, zvířat a krajiny.</strong> Je to tvrdá, krásná a potřebná práce. Jsme upřímně vděční, že ji někdo dělá.</p>
-            <div style="margin-top:24px; background:#FFFFFF; border:1px solid #F0D2DB; border-radius:14px; padding:26px 28px;">
+            <div class="ek-card-w" style="margin-top:24px; padding:26px 28px;">
               <p class="ek-h3" style="font-size:22px;">Nebyl to konec našich hodnot.</p>
               <p style="margin:0; font-size:15.5px; line-height:1.65; color:#4A4A42; text-wrap:pretty;">Byl to důkaz, že je bereme vážně i ve chvíli, kdy je poctivé rozhodnutí těžší než pokračovat ve známém způsobu. Farma nás zároveň naučila hledat rovnováhu i tam, kde žádné dokonale čisté řešení neexistuje.</p>
             </div>
@@ -319,9 +353,10 @@
           <p class="ek-cap">Dnešní Ekokoza ve Fryčovicích pod Beskydami — profesionální zázemí, které stále stojí na stejné poctivosti a blízkosti k lidem.</p>
         </div>
       </div>
-      <div style="margin-top:36px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #E2EACF; border-radius:14px; padding:30px 34px;">
-        <p class="ek-h3" style="font-size:22px;">Jazyk se mění. Naše odpovědnost ne.</p>
-        <p style="margin:0; font-size:16px; line-height:1.7; color:#4A4A42; max-width:100ch; text-wrap:pretty;">Od roku 2023 rozvíjíme Ekokozu ve Francii, Německu, Rakousku, Itálii a dalších zemích Evropské unie. Objednávky stále připravujeme ve Fryčovicích pod Beskydami. V zahraničí však nechceme pouze překládat stejná slova do jiného jazyka — nasloucháme konkrétním lidem, jejich zkušenostem a potřebám a podle nich přizpůsobujeme také naši komunikaci a podporu. Za každou zásilkou stojí tentýž tým a stejná odpovědnost. Potřeba rozumět tomu, co si dáváme na tělo, co používáme doma a z čeho vyrábíme, totiž žádné hranice nemá.</p>
+      <div class="ek-key" style="margin-top:36px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #E2EACF; border-radius:14px; padding:40px 44px;">
+        <p class="ek-eyebrow" style="display:flex; align-items:center; gap:10px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#D14405; -webkit-mask:url('assets/icons/globe-02.svg') center / contain no-repeat; mask:url('assets/icons/globe-02.svg') center / contain no-repeat;"></span>Ekokoza napříč Evropou</p>
+        <h2 class="ek-h2" style="font-size:36px; margin-bottom:18px;">Jazyk se mění. Naše odpovědnost ne.</h2>
+        <p style="margin:0; font-size:17px; line-height:1.7; color:#4A4A42; max-width:100ch; text-wrap:pretty;">Od roku 2023 rozvíjíme Ekokozu ve Francii, Německu, Rakousku, Itálii a dalších zemích Evropské unie. Objednávky stále připravujeme ve Fryčovicích pod Beskydami. V zahraničí však nechceme pouze překládat stejná slova do jiného jazyka — nasloucháme konkrétním lidem, jejich zkušenostem a potřebám a podle nich přizpůsobujeme také naši komunikaci a podporu. Za každou zásilkou stojí tentýž tým a stejná odpovědnost. Potřeba rozumět tomu, co si dáváme na tělo, co používáme doma a z čeho vyrábíme, totiž žádné hranice nemá.</p>
       </div>
     </div>
   </section>
@@ -335,26 +370,46 @@
           <p class="ek-p" style="margin:0;">Sortiment, technologie i měřítko se vyvíjejí. Tyto principy jsou ale stejné od chvíle, kdy jsme poprvé hledali syřidlo pro vlastní sýr.</p>
         </div>
         <div class="ek-quad">
-          <div style="padding:22px 0 26px; border-top:1px solid #E4DAC6;">
-            <p style="margin:0 0 10px; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4F6E2A;">01</p>
-            <p class="ek-h3">Příroda jako kompas, ne kulisa</p>
-            <p style="margin:0; font-size:15px; line-height:1.65; color:#4A4A42; text-wrap:pretty;">Máme hranice, které nepřekračujeme. Zároveň hledáme šetrná a funkční řešení i tam, kde ideální možnost neexistuje. Kompromisy nezakrýváme — otevřeně vysvětlujeme jejich důvody i to, proč jsme se rozhodli právě tak.</p>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/leaf-01.svg') center / contain no-repeat; mask:url('assets/icons/leaf-01.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">01</span>
           </div>
-          <div style="padding:22px 0 26px; border-top:1px solid #E4DAC6;">
-            <p style="margin:0 0 10px; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4F6E2A;">02</p>
-            <p class="ek-h3">Vědět je stejně důležité jako mít</p>
-            <p style="margin:0; font-size:15px; line-height:1.65; color:#4A4A42; text-wrap:pretty;">Surovina bez souvislostí není úplné řešení. Proto ji propojujeme s receptem, postupem, dokumentací a možností obrátit se na člověka, který poradí.</p>
+          <div>
+            <p class="ek-h3" style="font-size:20px;">Příroda jako kompas, ne kulisa</p>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Máme hranice, které nepřekračujeme. Zároveň hledáme šetrná a funkční řešení i tam, kde ideální možnost neexistuje. Kompromisy nezakrýváme — otevřeně vysvětlujeme jejich důvody i to, proč jsme se rozhodli právě tak.</p>
           </div>
-          <div style="padding:22px 0 26px; border-top:1px solid #E4DAC6;">
-            <p style="margin:0 0 10px; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4F6E2A;">03</p>
-            <p class="ek-h3">Poctivé řemeslo a ověřená praxe</p>
-            <p style="margin:0; font-size:15px; line-height:1.65; color:#4A4A42; text-wrap:pretty;">Vycházíme z toho, co lze skutečně vyrobit, zopakovat a vysvětlit. Ne z líbivých zkratek. Odbornost pro nás znamená přesnost bez povýšenosti.</p>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/book-open-01.svg') center / contain no-repeat; mask:url('assets/icons/book-open-01.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">02</span>
           </div>
-          <div style="padding:22px 0 26px; border-top:1px solid #E4DAC6;">
-            <p style="margin:0 0 10px; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4F6E2A;">04</p>
-            <p class="ek-h3">Spolutvorba místo anonymního prodeje</p>
-            <p style="margin:0; font-size:15px; line-height:1.65; color:#4A4A42; text-wrap:pretty;">Recepty, zkušenosti a otázky zákazníků se vracejí zpět do Ekokozy. Co objeví jeden člověk, může pomoci dalšímu — v jiném městě, zemi i jazyce.</p>
+          <div>
+            <p class="ek-h3" style="font-size:20px;">Vědět je stejně důležité jako mít</p>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Surovina bez souvislostí není úplné řešení. Proto ji propojujeme s receptem, postupem, dokumentací a možností obrátit se na člověka, který poradí.</p>
           </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/checkmark-badge-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-badge-01.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">03</span>
+          </div>
+          <div>
+            <p class="ek-h3" style="font-size:20px;">Poctivé řemeslo a ověřená praxe</p>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Vycházíme z toho, co lze skutečně vyrobit, zopakovat a vysvětlit. Ne z líbivých zkratek. Odbornost pro nás znamená přesnost bez povýšenosti.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/user-group.svg') center / contain no-repeat; mask:url('assets/icons/user-group.svg') center / contain no-repeat;"></span>
+            <span class="ek-num">04</span>
+          </div>
+          <div>
+            <p class="ek-h3" style="font-size:20px;">Spolutvorba místo anonymního prodeje</p>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42; text-wrap:pretty;">Recepty, zkušenosti a otázky zákazníků se vracejí zpět do Ekokozy. Co objeví jeden člověk, může pomoci dalšímu — v jiném městě, zemi i jazyce.</p>
+          </div>
+        </div>
         </div>
       </div>
     </section>

@@ -31,10 +31,10 @@
   .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
   .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
   .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
-  .ek-carrier { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding: 22px 24px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .2s; }
+  .ek-carrier { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 24px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; text-decoration: none; transition: transform .25s, box-shadow .25s, border-color .2s; }
   .ek-carrier:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(45,58,46,.45); border-color: #4C653D; }
-  .ek-carrier-cta { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border: 1.5px solid #4C653D; border-radius: 999px; color: #4C653D; font-weight: 600; font-size: 14.5px; transition: background .2s, color .2s; }
-  .ek-carrier:hover .ek-carrier-cta { background: #4C653D; color: #F6F1E7; }
+  .ek-carrier-cta { display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border: 1.5px solid #4C653D; border-radius: 999px; background: #4C653D; color: #F6F1E7; font-weight: 600; font-size: 14.5px; transition: background .2s, border-color .2s; }
+  .ek-carrier:hover .ek-carrier-cta { background: #3E5432; border-color: #3E5432; color: #F6F1E7; }
   .ek-carrier:hover .ek-carrier-cta span { background-color: #F6F1E7 !important; }
   .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: center; }
   .ek-two { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 56px; align-items: start; }
@@ -63,6 +63,26 @@
   .ek-band .ek-card, .ek-band .ek-quick, .ek-band .ek-carrier, .ek-band .ek-topic, .ek-band .ek-tipnav a { background: #FFFDF6; }
   .ek-two-short { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); align-items: center; }
   @media (max-width: 999px) { .ek-two-short { grid-template-columns: 1fr; } }
+  /* barvy dopravců – podle podkladů klienta: PPL #1E55AB, Zásilkovna #AD3114 */
+  .ek-band .ek-carrier-ppl, .ek-carrier-ppl { background: linear-gradient(135deg,#1E55AB 0%,#2F68BF 55%,#4A86D8 100%); border-color: #1E55AB; }
+  .ek-band .ek-carrier-zas, .ek-carrier-zas { background: linear-gradient(135deg,#AD3114 0%,#B93A1C 55%,#C9502F 100%); border-color: #AD3114; }
+  .ek-carrier-ppl span[style*="EB Garamond"], .ek-carrier-zas span[style*="EB Garamond"] { color: #FFFFFF !important; }
+  .ek-carrier-ppl img, .ek-carrier-zas img { border-radius: 12px; box-shadow: 0 10px 24px -14px rgba(0,0,0,.45); }
+  .ek-carrier-ppl .ek-carrier-cta, .ek-carrier-zas .ek-carrier-cta { background: #FFFFFF; border-color: #FFFFFF; }
+  .ek-carrier-ppl .ek-carrier-cta { color: #1E55AB; }
+  .ek-carrier-zas .ek-carrier-cta { color: #AD3114; }
+  .ek-carrier-ppl .ek-carrier-cta span { background-color: #1E55AB !important; }
+  .ek-carrier-zas .ek-carrier-cta span { background-color: #AD3114 !important; }
+  .ek-carrier-ppl:hover, .ek-carrier-zas:hover { border-color: transparent; box-shadow: 0 22px 44px -22px rgba(30,40,60,.55); }
+  .ek-carrier-ppl:hover .ek-carrier-cta, .ek-carrier-zas:hover .ek-carrier-cta { background: #F6F1E7; border-color: #F6F1E7; }
+  .ek-carrier-ppl:hover .ek-carrier-cta { color: #1E55AB; }
+  .ek-carrier-zas:hover .ek-carrier-cta { color: #AD3114; }
+  .ek-carrier-ppl:hover .ek-carrier-cta span { background-color: #1E55AB !important; }
+  .ek-carrier-zas:hover .ek-carrier-cta span { background-color: #AD3114 !important; }
+  /* obě karty dopravců se zalamují současně – tlačítko pod logo až na užších šířkách */
+  @media (max-width: 1279px) { .ek-carrier { flex-direction: column; align-items: flex-start; } }
+  /* poslední bílý pás navazuje přímo na zápatí – bez spodního trhaného okraje a béžové mezery */
+  .ek-tear-last { clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% 100%, 0% 100%); bottom: -34px; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28); }
 </style>
 </helmet>
 
@@ -84,7 +104,7 @@
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:24px;">
             <a href="#dopravci" class="ek-btn-primary" style="display:inline-flex; align-items:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat;"></span>Vybrat dopravce</a>
-            <a href="#kde-cislo" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, color .2s;">Kde číslo hledat</a>
+            <a href="#kde-cislo" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/help-circle.svg') center / contain no-repeat; mask:url('assets/icons/help-circle.svg') center / contain no-repeat;"></span>Kde číslo hledat</a>
           </div>
         </div>
         <img src="assets/usp/6-doprava.png" alt="" aria-hidden="true" style="display:block; width:100%; max-width:440px; justify-self:center; filter:drop-shadow(0 18px 26px rgba(76,101,61,.22));">
@@ -129,19 +149,19 @@
           <p class="ek-p" style="margin:0;">Připravte si číslo zásilky a otevřete sledování na stránce dopravce. Odkaz se otevře v nové kartě.</p>
         </div>
         <div class="ek-duo">
-        <a href="https://www.ppl.cz/vyhledat-zasilku" target="_blank" rel="noopener" class="ek-carrier">
+        <a href="https://www.ppl.cz/vyhledat-zasilku" target="_blank" rel="noopener" class="ek-carrier ek-carrier-ppl">
           <span style="display:flex; align-items:center; gap:16px;">
             <img src="assets/carriers/carrier-1.svg" alt="PPL" width="104" height="64" style="display:block; width:104px; height:64px; flex:0 0 auto;">
             <span style="font-family:'EB Garamond',serif; font-weight:500; font-size:24px; color:#2A2A24;">PPL</span>
           </span>
-          <span class="ek-carrier-cta">Otevřít sledování zásilky<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+          <span class="ek-carrier-cta">Otevřít sledování zásilky<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
         </a>
-        <a href="https://www.zasilkovna.cz/" target="_blank" rel="noopener" class="ek-carrier">
+        <a href="https://www.zasilkovna.cz/" target="_blank" rel="noopener" class="ek-carrier ek-carrier-zas">
           <span style="display:flex; align-items:center; gap:16px;">
             <img src="assets/carriers/carrier-5.svg" alt="Zásilkovna" width="104" height="64" style="display:block; width:104px; height:64px; flex:0 0 auto;">
             <span style="font-family:'EB Garamond',serif; font-weight:500; font-size:24px; color:#2A2A24;">Zásilkovna</span>
           </span>
-          <span class="ek-carrier-cta">Otevřít sledování zásilky<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+          <span class="ek-carrier-cta">Otevřít sledování zásilky<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
         </a>
         </div>
         <div style="display:flex; align-items:flex-start; gap:14px; margin-top:16px; padding:20px 22px; border-radius:14px; background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%); border:1px solid #EADCA8;">
@@ -155,8 +175,8 @@
       </div>
   </section>
 
-  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
-    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 26px;">
+    <div aria-hidden="true" class="ek-tear ek-tear-last" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
     <section class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
     <div style="max-width:1560px; margin:0 auto;" class="ek-two ek-two-short">
       <div>
@@ -181,7 +201,7 @@
   </div>
   </div>
   <div style="overflow-x:clip;">
-  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:-2px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
   <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
   </div>
 </div>
@@ -216,6 +236,9 @@ class Component extends DCLogic {
         const r = n.getBoundingClientRect();
         if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
       });
+      // výška přilepené hlavičky i ve chvíli, kdy ještě není přilepená (stránka nahoře)
+      const hd = document.querySelector('.sc-host[data-sc-name="ui-Header"]');
+      if (hd) headH = Math.max(headH, hd.getBoundingClientRect().height + (parseFloat(getComputedStyle(hd).top) || 0));
       const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
       const base = root ? root.getBoundingClientRect().top : 0;
       const top = el.getBoundingClientRect().top - base + cur - headH - 16;

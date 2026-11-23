@@ -35,6 +35,11 @@
   .ek-tier:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -24px rgba(45,58,46,.5); }
   .ek-tier-on { box-shadow: 0 0 0 2px #4C653D; }
   .ek-tier-on:hover { box-shadow: 0 0 0 2px #4C653D, 0 18px 34px -24px rgba(45,58,46,.5); }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-tier .ek-num { background: rgba(255,253,246,.7); }
+  .ek-tier .ek-num-d { background: rgba(246,241,231,.16); color: #F6F1E7; }
+  .ek-tier-d.ek-tier-on { box-shadow: 0 0 0 2px #B9D096; }
+  .ek-tier-d.ek-tier-on:hover { box-shadow: 0 0 0 2px #B9D096, 0 18px 34px -24px rgba(45,58,46,.5); }
   .ek-range { width: 100%; accent-color: #4C653D; height: 28px; cursor: pointer; }
   .ek-hero { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 56px; align-items: start; }
   .ek-two { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 56px; align-items: start; }
@@ -125,10 +130,13 @@
         <div class="ek-thirds">
           <div class="{{ t1cls }}" style="position:relative; background:#DDE7D2; border-radius:14px; padding:28px 28px 30px; display:flex; flex-direction:column;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; min-height:26px; margin:0 0 14px;">
-              <p style="margin:0; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4C653D;">01</p>
+              <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/leaf-01.svg') center / contain no-repeat; mask:url('assets/icons/leaf-01.svg') center / contain no-repeat;"></span>
+              <span style="display:inline-flex; align-items:center; gap:10px;">
               <sc-if value="{{ t1on }}" hint-placeholder-val="{{ false }}">
                 <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:#4C653D; color:#F6F1E7; font-size:12px; font-weight:600;"><span style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Vaše skupina</span>
-              </sc-if>
+</sc-if>
+              <span class="ek-num">01</span>
+              </span>
             </div>
             <p class="ek-h3" style="font-size:24px;">Ekokozí fanoušek</p>
             <p style="margin:0 0 22px; font-size:14.5px; color:#3F4A38;">Čtvrtletní obrat 5 000–9 999 Kč</p>
@@ -137,27 +145,33 @@
           </div>
           <div class="{{ t2cls }}" style="position:relative; background:#CFE0B4; border-radius:14px; padding:28px 28px 30px; display:flex; flex-direction:column;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; min-height:26px; margin:0 0 14px;">
-              <p style="margin:0; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4C653D;">02</p>
+              <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/plant-02.svg') center / contain no-repeat; mask:url('assets/icons/plant-02.svg') center / contain no-repeat;"></span>
+              <span style="display:inline-flex; align-items:center; gap:10px;">
               <sc-if value="{{ t2on }}" hint-placeholder-val="{{ false }}">
                 <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:#4C653D; color:#F6F1E7; font-size:12px; font-weight:600;"><span style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Vaše skupina</span>
-              </sc-if>
+</sc-if>
+              <span class="ek-num">02</span>
+              </span>
             </div>
             <p class="ek-h3" style="font-size:24px;">Nadšený výrobce</p>
             <p style="margin:0 0 22px; font-size:14.5px; color:#3F4A38;">Čtvrtletní obrat 10 000–29 999 Kč</p>
             <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:52px; line-height:1; color:#4C653D; font-weight:500;">10 %</p>
             <p style="margin:0; font-size:15px; line-height:1.6; color:#2A2A24;">Sleva na všechny objednávky po přihlášení k vašemu účtu.</p>
           </div>
-          <div class="{{ t3cls }}" style="position:relative; background:#B9D096; border-radius:14px; padding:28px 28px 30px; display:flex; flex-direction:column;">
+          <div class="{{ t3cls }}" style="position:relative; background:linear-gradient(155deg,#4C653D 0%,#22301F 100%); border-radius:14px; padding:28px 28px 30px; display:flex; flex-direction:column;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; min-height:26px; margin:0 0 14px;">
-              <p style="margin:0; font-size:12px; letter-spacing:.12em; font-weight:700; color:#4C653D;">03</p>
+              <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/award-01.svg') center / contain no-repeat; mask:url('assets/icons/award-01.svg') center / contain no-repeat;"></span>
+              <span style="display:inline-flex; align-items:center; gap:10px;">
               <sc-if value="{{ t3on }}" hint-placeholder-val="{{ false }}">
-                <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:#4C653D; color:#F6F1E7; font-size:12px; font-weight:600;"><span style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Vaše skupina</span>
-              </sc-if>
+                <span style="display:inline-flex; align-items:center; gap:6px; padding:5px 11px; border-radius:999px; background:#F6F1E7; color:#4C653D; font-size:12px; font-weight:600;"><span style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#4C653D; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Vaše skupina</span>
+</sc-if>
+              <span class="ek-num ek-num-d">03</span>
+              </span>
             </div>
-            <p class="ek-h3" style="font-size:24px;">Profesionál</p>
-            <p style="margin:0 0 22px; font-size:14.5px; color:#3F4A38;">Čtvrtletní obrat 30 000 Kč a více</p>
-            <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:52px; line-height:1; color:#4C653D; font-weight:500;">15 %</p>
-            <p style="margin:0; font-size:15px; line-height:1.6; color:#2A2A24;">Sleva na všechny objednávky a přednostní odeslání všech vašich objednávek bez poplatku.</p>
+            <p class="ek-h3" style="font-size:24px; color:#F6F1E7;">Profesionál</p>
+            <p style="margin:0 0 22px; font-size:14.5px; color:#D6E0C8;">Čtvrtletní obrat 30 000 Kč a více</p>
+            <p style="margin:0 0 12px; font-family:'EB Garamond',serif; font-size:52px; line-height:1; color:#F6F1E7; font-weight:500;">15 %</p>
+            <p style="margin:0; font-size:15px; line-height:1.6; color:#E7EEDD;">Sleva na všechny objednávky a přednostní odeslání všech vašich objednávek bez poplatku.</p>
           </div>
         </div>
       </div>
@@ -229,7 +243,7 @@
         </div>
         <div style="display:grid; gap:16px;">
           <div style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #E2EACF; border-radius:14px; padding:28px 30px;">
-            <p style="margin:0 0 14px;"><span style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/calendar-01.svg') center / contain no-repeat; mask:url('assets/icons/calendar-01.svg') center / contain no-repeat;"></span></p>
+            <p style="margin:0 0 14px;"><span style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/ui/calendar-repeat.svg') center / contain no-repeat; mask:url('assets/ui/calendar-repeat.svg') center / contain no-repeat;"></span></p>
             <p class="ek-eyebrow" style="font-size:12px;">Pravidelné nákupy</p>
             <p class="ek-h3">Obrat za celé čtvrtletí</p>
             <p style="margin:0; font-size:15px; line-height:1.6; color:#4A4A42;">Vaše uhrazené objednávky sčítáme. Podle výsledku vám automaticky nastavíme odpovídající skupinu.</p>
@@ -271,8 +285,11 @@
           </div>
         </div>
         <div class="ek-cbar" style="margin-top:16px; background:linear-gradient(155deg,#4C653D 0%,#22301F 100%); border-radius:14px; padding:28px 32px;">
-          <p style="margin:0; font-size:16px; line-height:1.65; color:#F6F1E7; max-width:84ch; text-wrap:pretty;">Pro individuální nabídku nebo dlouhodobou B2B spolupráci nám napište. Do zprávy je ideální uvést produkty, předpokládaná množství a četnost odběrů.</p>
-          <a href="mailto:info@ekokoza.cz" class="ek-btn-onDark" style="display:inline-flex; align-items:center; gap:9px; justify-content:center; background:#F6F1E7; color:#4C653D; border:1.5px solid #F6F1E7; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; white-space:nowrap; transition:background .2s, color .2s;"><span style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Napsat poptávku</a>
+          <div>
+            <h2 class="ek-h2" style="color:#F6F1E7; margin:0 0 8px;">Chci B2B spolupráci</h2>
+            <p style="margin:0; font-size:16px; line-height:1.65; color:#D6E0C8; max-width:84ch; text-wrap:pretty;">Pro individuální nabídku nebo dlouhodobou B2B spolupráci nám napište. Do zprávy je ideální uvést produkty, předpokládaná množství a četnost odběrů.</p>
+          </div>
+          <a href="mailto:eshop@ekokoza.cz" class="ek-btn-onDark" style="display:inline-flex; align-items:center; gap:9px; justify-content:center; background:#F6F1E7; color:#4C653D; border:1.5px solid #F6F1E7; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; white-space:nowrap; transition:background .2s, color .2s;"><span style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Napsat poptávku</a>
         </div>
       </div>
     </section>
@@ -380,6 +397,9 @@ class Component extends DCLogic {
         const r = n.getBoundingClientRect();
         if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
       });
+      // výška přilepené hlavičky i ve chvíli, kdy ještě není přilepená (stránka nahoře)
+      const hd = document.querySelector('.sc-host[data-sc-name="ui-Header"]');
+      if (hd) headH = Math.max(headH, hd.getBoundingClientRect().height + (parseFloat(getComputedStyle(hd).top) || 0));
       const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
       const base = root ? root.getBoundingClientRect().top : 0;
       const top = el.getBoundingClientRect().top - base + cur - headH - 16;
@@ -418,7 +438,7 @@ class Component extends DCLogic {
         : 'Nejvyšší skupina — k slevě i přednostní odeslání bez poplatku.',
       t1cls: on(0) ? 'ek-tier ek-tier-on' : 'ek-tier', t1on: on(0),
       t2cls: on(1) ? 'ek-tier ek-tier-on' : 'ek-tier', t2on: on(1),
-      t3cls: on(2) ? 'ek-tier ek-tier-on' : 'ek-tier', t3on: on(2),
+      t3cls: on(2) ? 'ek-tier ek-tier-d ek-tier-on' : 'ek-tier ek-tier-d', t3on: on(2),
     };
   }
 }
