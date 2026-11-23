@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rozcestník | ekokoza.cz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #D14405; color: #fff; }
+  a { color: #4C653D; }
+  a:hover { color: #B23803; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
+  .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
+  .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
+  .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
+  .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
+  .ek-tear { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: 0; pointer-events: none; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28), inset 0 -14px 26px -14px rgba(45,58,46,.24); clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% calc(100% - 6.3px), 97.83% calc(100% - 11.1px), 95.65% calc(100% - 7.6px), 93.48% calc(100% - 13.4px), 91.3% calc(100% - 9.2px), 89.13% calc(100% - 5.3px), 86.96% calc(100% - 12.2px), 84.78% calc(100% - 8.7px), 82.61% calc(100% - 11.6px), 80.43% calc(100% - 6.1px), 78.26% calc(100% - 14.3px), 76.09% calc(100% - 9.6px), 73.91% calc(100% - 12.9px), 71.74% calc(100% - 7.1px), 69.57% calc(100% - 10.8px), 67.39% calc(100% - 4.8px), 65.22% calc(100% - 13.7px), 63.04% calc(100% - 8.2px), 60.87% calc(100% - 11.3px), 58.7% calc(100% - 6.7px), 56.52% calc(100% - 10.1px), 54.35% calc(100% - 14.6px), 52.17% calc(100% - 9.4px), 50% calc(100% - 5.6px), 47.83% calc(100% - 12.4px), 45.65% calc(100% - 8.9px), 43.48% calc(100% - 11.8px), 41.3% calc(100% - 6.9px), 39.13% calc(100% - 13.2px), 36.96% calc(100% - 9.7px), 34.78% calc(100% - 5.2px), 32.61% calc(100% - 12.7px), 30.43% calc(100% - 8.3px), 28.26% calc(100% - 11.5px), 26.09% calc(100% - 7.3px), 23.91% calc(100% - 14.5px), 21.74% calc(100% - 9.9px), 19.57% calc(100% - 6.2px), 17.39% calc(100% - 12.8px), 15.22% calc(100% - 8.5px), 13.04% calc(100% - 11.2px), 10.87% calc(100% - 5.8px), 8.7% calc(100% - 13.9px), 6.52% calc(100% - 9.3px), 4.35% calc(100% - 6.4px), 2.17% calc(100% - 12.3px), 0% calc(100% - 8.6px)); }
+  .ek-h1 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 42px; line-height: 1.1; color: #4C653D; margin: 0; text-wrap: pretty; }
+  .ek-h2 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 30px; line-height: 1.15; color: #4C653D; margin: 0 0 14px; text-wrap: pretty; }
+  .ek-h3 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 21px; line-height: 1.25; color: #2A2A24; margin: 0 0 8px; text-wrap: pretty; }
+  .ek-eyebrow { margin: 0 0 10px; color: #4F6E2A; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+  .ek-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: #4A4A42; text-wrap: pretty; }
+  .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
+  .ek-t { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #4A4A42; text-wrap: pretty; }
+  .ek-t:last-child { margin-bottom: 0; }
+  .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ek-ul li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4A4A42; }
+  .ek-ul li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: #4F6E2A; }
+  .ek-check li { padding-left: 30px; }
+  .ek-check li::before { left: 0; top: .15em; width: 20px; height: 20px; border-radius: 0; background: #4F6E2A; -webkit-mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; }
+  .ek-price { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; color: #4C653D; white-space: nowrap; }
+  .ek-price-free { background: #EEF4DC; border: 1px solid #D9E5BF; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: start; }
+  .ek-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+  .ek-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .ek-four { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-video { position: relative; display: block; aspect-ratio: 9/16; width: 100%; max-width: 340px; margin: 0 auto; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; text-decoration: none; }
+  .ek-video:hover .ek-play { transform: translate(-50%,-50%) scale(1.06); }
+  .ek-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #4C653D; box-shadow: 0 16px 34px -14px rgba(34,48,31,.7); transition: transform .25s; }
+  .ek-acc { display: flex; flex-direction: column; gap: 14px; }
+  .ek-acc > div { border: 1px solid #ECE3D2; border-radius: 14px; overflow: hidden; background: #FFFFFF; }
+  .ek-q { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 22px; background: #FDFBF5; border: none; cursor: pointer; text-align: left; font: inherit; transition: background .18s; }
+  .ek-q:hover { background: #F4F7EA; }
+  .ek-q-n { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 17px; font-weight: 500; color: #4C653D; }
+  .ek-q-t { flex: 1; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 24px; line-height: 1.22; color: #4C653D; text-wrap: pretty; }
+  .ek-a-wrap { display: grid; transition: grid-template-rows .32s ease; }
+  .ek-a-in { min-height: 0; overflow: hidden; }
+  .ek-a { padding: 20px 22px 26px 72px; }
+  .ek-a p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.7; color: #4A4A42; max-width: 78ch; text-wrap: pretty; }
+  .ek-a p:last-child { margin-bottom: 0; }
+  @media (max-width: 1149px) {
+    .ek-hero { gap: 36px; }
+    .ek-four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 999px) {
+    .ek-hero { grid-template-columns: 1fr; }
+    .ek-three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 819px) {
+    .ek-h1 { font-size: 31px; }
+    .ek-h2 { font-size: 25px; }
+    .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .ek-dark { padding: 32px 24px !important; }
+  }
+  @media (max-width: 549px) {
+    .ek-two, .ek-three, .ek-four { grid-template-columns: 1fr; }
+    .ek-q { padding: 16px; gap: 12px; }
+    .ek-q-t { font-size: 20px; }
+    .ek-q-n { width: 30px; height: 30px; font-size: 15px; }
+    .ek-a { padding: 16px 16px 20px; }
+    .ek-a { padding: 0 16px 18px; }
+  }
+  .ek-photo { display: block; width: 100%; object-fit: cover; border-radius: 14px; }
+  .ek-r-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-r-grid-new { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 16px; }
+  .ek-r-card { display: flex; flex-direction: column; gap: 8px; padding: 20px 20px 18px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; text-decoration: none; color: #2A2A24 !important; transition: transform .25s, box-shadow .25s, border-color .2s; }
+  .ek-band .ek-r-card { background: #FFFDF6; }
+  .ek-r-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -22px rgba(45,58,46,.45); border-color: #4C653D; }
+  .ek-r-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .ek-r-ic { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; }
+  .ek-r-new { padding: 4px 11px; border-radius: 999px; background: #4C653D; color: #F6F1E7; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+  .ek-r-t { font-family: 'EB Garamond',serif; font-size: 22px; font-weight: 500; line-height: 1.2; color: #2A2A24; }
+  .ek-r-d { font-size: 14.5px; line-height: 1.55; color: #4A4A42; flex: 1; }
+  .ek-r-f { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; padding-top: 12px; border-top: 1px solid #EFE7D6; }
+  .ek-r-f code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: #6B6B5E; }
+  .ek-r-card:hover .ek-r-f code { color: #4C653D; }
+  .ek-r-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .ek-r-jump a { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E4DAC6; font-size: 14px; font-weight: 600; color: #4C653D; text-decoration: none; }
+  .ek-r-jump a:hover { border-color: #4C653D; }
+  .ek-r-jump b { display: inline-flex; min-width: 22px; height: 22px; padding: 0 6px; align-items: center; justify-content: center; border-radius: 999px; background: #EEF4DC; font-size: 12px; }
+  @media (max-width: 1149px) { .ek-r-grid, .ek-r-grid-new { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+  @media (max-width: 999px) { .ek-r-grid, .ek-r-grid-new { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media (max-width: 549px) { .ek-r-grid, .ek-r-grid-new { grid-template-columns: 1fr; } }
+  [id] { scroll-margin-top: 140px; }
+  html, body { scroll-behavior: smooth; }
+</style>
+</helmet>
+
+<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+  <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
+  <dc-import name="ui-Header" hint-size="100%,140px"></dc-import>
+  <div style="max-width:1720px; margin:0 auto; position:relative;">
+  <section style="padding:22px 32px 8px;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
+      <div class="ek-hero" style="margin-top:26px; align-items:center;">
+        <div>
+          <p class="ek-eyebrow">Rozcestník návrhu</p>
+          <h1 class="ek-h1">Všechny stránky návrhu na jednom místě.</h1>
+          <p class="ek-lead" style="margin-top:20px; max-width:60ch;">Proklikejte si návrh nového webu Ekokozy. Nahoře jsou uživatelské stránky, které právě ladíme, pod nimi zbytek e-shopu, zákaznický účet a podklady pro tým.</p>
+          <div class="ek-r-jump"><a href="#nove">Nové uživatelské stránky<b>10</b></a><a href="#eshop">Nákup a obsah<b>14</b></a><a href="#ucet">Zákaznický účet<b>6</b></a><a href="#tym">Pro tým<b>2</b></a></div>
+        </div>
+        <div style="position:relative;">
+          <img src="assets/onas/005-frycovice.jpg" alt="Sídlo Ekokozy ve Fryčovicích" class="ek-photo" style="aspect-ratio:5/4;">
+          <div style="position:absolute; left:18px; right:18px; bottom:18px; padding:16px 18px; border-radius:12px; background:rgba(255,253,246,.94); box-shadow:0 18px 40px -22px rgba(45,58,46,.45);">
+            <p style="margin:0 0 4px; font-family:'EB Garamond',serif; font-size:20px; font-weight:500; color:#2A2A24;">Návrh webu ekokoza.cz</p>
+            <p style="margin:0; font-size:14px; line-height:1.5; color:#4A4A42;">32 stránek k proklikání · aktualizováno 23. 11. 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="nove" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+      <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Právě ladíme</p>
+        <h2 class="ek-h2">Nové uživatelské stránky</h2>
+        <p class="ek-p" style="margin:0;">Stránky převedené ze současného webu do nového designu. Tady se teď nejvíc mění – každá změna je zapsaná v deníku úprav.</p>
+      </div>
+      <div class="ek-r-grid-new">
+        <a href="kontakty.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/call.svg') center / contain no-repeat; mask:url('assets/icons/call.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Kontakty</span>
+          <span class="ek-r-d">Hlavička s e-mailem a provozní dobou, rychlá pomoc, kontaktní formulář, osobní odběr ve Fryčovicích a firemní údaje.</span>
+          <span class="ek-r-f"><code>/kontakty</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="faq.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/help-circle.svg') center / contain no-repeat; mask:url('assets/icons/help-circle.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Časté otázky (FAQ)</span>
+          <span class="ek-r-d">37 otázek v šesti tématech, vyhledávání bez diakritiky, číslovaný akordeon jako na detailu produktu.</span>
+          <span class="ek-r-f"><code>/faq</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="sledovani-zasilky.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Sledování zásilky</span>
+          <span class="ek-r-d">Kde najít číslo zásilky, odkazy na sledování u PPL a Zásilkovny a video z balení ve formátu Shorts.</span>
+          <span class="ek-r-f"><code>/sledovani-zasilky</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="vraceni-zbozi.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Vrácení zboží a reklamace</span>
+          <span class="ek-r-d">Tři kroky, situace „Co se stalo?“, otázky před nákupem, náklady na vrácení a časté otázky.</span>
+          <span class="ek-r-f"><code>/vraceni-zbozi</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="platba-a-doprava.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/credit-card.svg') center / contain no-repeat; mask:url('assets/icons/credit-card.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Platba a doprava</span>
+          <span class="ek-r-d">Způsoby dopravy s cenami, doprava zdarma, platební metody a video z balení.</span>
+          <span class="ek-r-f"><code>/platba-a-doprava</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="vychytavky.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/sparkles.svg') center / contain no-repeat; mask:url('assets/icons/sparkles.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Vychytávky pro váš nákup</span>
+          <span class="ek-r-d">Devět funkcí webu jako vrstvené karty s animovanými ukázkami ze skutečných komponent.</span>
+          <span class="ek-r-f"><code>/vychytavky</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="organic-lab.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/flower.svg') center / contain no-repeat; mask:url('assets/icons/flower.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Organic Lab – kurzy výroby</span>
+          <span class="ek-r-d">Doporučené workshopy: sedm vrstvených karet, fotogalerie s lightboxem a ukázka webu partnera.</span>
+          <span class="ek-r-f"><code>/organic-lab</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="mircina-mydla.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/body-soap.svg') center / contain no-repeat; mask:url('assets/icons/body-soap.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Mirčina mýdla</span>
+          <span class="ek-r-d">Příběh rodinné mýdlárny, spolupráce s Ekokozou a odkaz na web výrobce.</span>
+          <span class="ek-r-f"><code>/mircina-mydla</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="obchodni-podminky.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/justice-scale-01.svg') center / contain no-repeat; mask:url('assets/icons/justice-scale-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Obchodní podmínky</span>
+          <span class="ek-r-d">Rychlý přehled v šesti kartách, úplné znění s obsahem a vzorový formulář pro odstoupení.</span>
+          <span class="ek-r-f"><code>/obchodni-podminky</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="zpracovani-osobnich-udaju.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/shield-01.svg') center / contain no-repeat; mask:url('assets/icons/shield-01.svg') center / contain no-repeat;"></span></span><span class="ek-r-new">Ladíme</span></span>
+          <span class="ek-r-t">Zpracování osobních údajů</span>
+          <span class="ek-r-d">Soukromí a cookies: přehled, účely zpracování, doby uchování, cookies a vaše práva.</span>
+          <span class="ek-r-f"><code>/zpracovani-osobnich-udaju</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="eshop" style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">E-shop</p>
+        <h2 class="ek-h2">Nákup a obsah</h2>
+        <p class="ek-p" style="margin:0;">Stránky, kterými zákazník prochází při výběru a nákupu.</p>
+      </div>
+      <div class="ek-r-grid">
+        <a href="index.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/home-01.svg') center / contain no-repeat; mask:url('assets/icons/home-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Úvodní stránka</span>
+          <span class="ek-r-d">Hlavní stránka e-shopu.</span>
+          <span class="ek-r-f"><code>/index</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="kategorie.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/grid-view.svg') center / contain no-repeat; mask:url('assets/icons/grid-view.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Kategorie produktů</span>
+          <span class="ek-r-d">Výpis produktů s filtry a řazením.</span>
+          <span class="ek-r-f"><code>/kategorie</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="vysledky-vyhledavani.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/search-01.svg') center / contain no-repeat; mask:url('assets/icons/search-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Výsledky vyhledávání</span>
+          <span class="ek-r-d">Výsledky hledání s nabídkou AI asistenta.</span>
+          <span class="ek-r-f"><code>/vysledky-vyhledavani</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="produkt-material.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/droplet.svg') center / contain no-repeat; mask:url('assets/icons/droplet.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail produktu – surovina</span>
+          <span class="ek-r-d">Surovina s výběrem balení, dostupností a dokumentací.</span>
+          <span class="ek-r-f"><code>/produkt-material</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="produkt-obal.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/milk-bottle.svg') center / contain no-repeat; mask:url('assets/icons/milk-bottle.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail produktu – obal</span>
+          <span class="ek-r-d">Obal s variantami a parametry.</span>
+          <span class="ek-r-f"><code>/produkt-obal</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="produkt-vzor.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/layers-01.svg') center / contain no-repeat; mask:url('assets/icons/layers-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail produktu – vzor</span>
+          <span class="ek-r-d">Vzorový detail produktu se všemi bloky.</span>
+          <span class="ek-r-f"><code>/produkt-vzor</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="produkt.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/package.svg') center / contain no-repeat; mask:url('assets/icons/package.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail produktu – základní</span>
+          <span class="ek-r-d">Základní šablona detailu produktu.</span>
+          <span class="ek-r-f"><code>/produkt</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="kosik.dc.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/shopping-cart-01.svg') center / contain no-repeat; mask:url('assets/icons/shopping-cart-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Košík</span>
+          <span class="ek-r-d">Košík s dopravou, platbou, přednostním odesláním a přidáním k objednávce.</span>
+          <span class="ek-r-f"><code>/kosik</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="oblibene.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/favourite.svg') center / contain no-repeat; mask:url('assets/icons/favourite.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Oblíbené</span>
+          <span class="ek-r-d">Uložené produkty a recepty.</span>
+          <span class="ek-r-f"><code>/oblibene</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="receptar.dc.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/cook-book.svg') center / contain no-repeat; mask:url('assets/icons/cook-book.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Receptář</span>
+          <span class="ek-r-d">Přehled receptů s filtry.</span>
+          <span class="ek-r-f"><code>/receptar</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="recept.dc.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/chef-hat.svg') center / contain no-repeat; mask:url('assets/icons/chef-hat.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail receptu</span>
+          <span class="ek-r-d">Recept s postupem a surovinami do košíku.</span>
+          <span class="ek-r-f"><code>/recept</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="mate-doma.dc.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/jar.svg') center / contain no-repeat; mask:url('assets/icons/jar.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Recepty z toho, co máte doma</span>
+          <span class="ek-r-d">Výběr receptů podle surovin, které už máte.</span>
+          <span class="ek-r-f"><code>/mate-doma</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="slovnicek.dc.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/book-open-01.svg') center / contain no-repeat; mask:url('assets/icons/book-open-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Slovníček pojmů</span>
+          <span class="ek-r-d">Vysvětlení odborných pojmů.</span>
+          <span class="ek-r-f"><code>/slovnicek</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="o-nas.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/leaf-01.svg') center / contain no-repeat; mask:url('assets/icons/leaf-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">O nás</span>
+          <span class="ek-r-d">Příběh Ekokozy.</span>
+          <span class="ek-r-f"><code>/o-nas</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="ucet" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+      <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Po přihlášení</p>
+        <h2 class="ek-h2">Zákaznický účet</h2>
+      </div>
+      <div class="ek-r-grid">
+        <a href="muj-ucet.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/user-account.svg') center / contain no-repeat; mask:url('assets/icons/user-account.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Můj účet</span>
+          <span class="ek-r-d">Rozcestník zákaznického účtu.</span>
+          <span class="ek-r-f"><code>/muj-ucet</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="objednavky.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/task-01.svg') center / contain no-repeat; mask:url('assets/icons/task-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Objednávky</span>
+          <span class="ek-r-d">Přehled objednávek.</span>
+          <span class="ek-r-f"><code>/objednavky</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="objednavka.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/invoice-01.svg') center / contain no-repeat; mask:url('assets/icons/invoice-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Detail objednávky</span>
+          <span class="ek-r-d">Položky, stav a doklady jedné objednávky.</span>
+          <span class="ek-r-f"><code>/objednavka</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="faktury.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/file-02.svg') center / contain no-repeat; mask:url('assets/icons/file-02.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Faktury</span>
+          <span class="ek-r-d">Seznam faktur ke stažení.</span>
+          <span class="ek-r-f"><code>/faktury</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="ucet.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/user-circle.svg') center / contain no-repeat; mask:url('assets/icons/user-circle.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Správa účtu</span>
+          <span class="ek-r-d">Osobní údaje, adresy a nastavení.</span>
+          <span class="ek-r-f"><code>/ucet</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="vernostni-program.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/award-01.svg') center / contain no-repeat; mask:url('assets/icons/award-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Věrnostní program</span>
+          <span class="ek-r-d">Úrovně, výhody a podmínky pro firmy a výrobce.</span>
+          <span class="ek-r-f"><code>/vernostni-program</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="tym" style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Pro tým</p>
+        <h2 class="ek-h2">Podklady k návrhu</h2>
+      </div>
+      <div class="ek-r-grid">
+        <a href="design-system.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/param-color.svg') center / contain no-repeat; mask:url('assets/icons/param-color.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Design systém</span>
+          <span class="ek-r-d">Barvy, písma, komponenty a pravidla návrhu.</span>
+          <span class="ek-r-f"><code>/design-system</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <a href="upravy.html" class="ek-r-card">
+          <span class="ek-r-top"><span class="ek-r-ic"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/note-01.svg') center / contain no-repeat; mask:url('assets/icons/note-01.svg') center / contain no-repeat;"></span></span></span>
+          <span class="ek-r-t">Deník úprav</span>
+          <span class="ek-r-d">Co a proč se v návrhu měnilo, po dnech.</span>
+          <span class="ek-r-f"><code>/upravy</code><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div style="overflow-x:clip;">
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  // Plynulý posun na kotvy (#…) pod přilepenou hlavičku – jednou pro celou stránku
+  static ekAnchor = (() => {
+    if (typeof document === 'undefined' || window.__ekAnchor) return true;
+    window.__ekAnchor = true;
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a || e.defaultPrevented) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      let el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      // kotva uvnitř bílého trhaného pásu → zastavit na horním okraji pásu
+      if (el.parentElement && el.parentElement.querySelector(':scope > .ek-tear')) el = el.parentElement;
+      let sc = el.parentElement;
+      while (sc && sc !== document.body && sc !== document.documentElement) {
+        const o = getComputedStyle(sc).overflowY;
+        if ((o === 'auto' || o === 'scroll') && sc.scrollHeight > sc.clientHeight) break;
+        sc = sc.parentElement;
+      }
+      const root = (!sc || sc === document.body || sc === document.documentElement) ? null : sc;
+      let headH = 0;
+      document.querySelectorAll('.sc-host[data-sc-name="ui-Header"], [style*="sticky"]').forEach((n) => {
+        if (getComputedStyle(n).position !== 'sticky') return;
+        const r = n.getBoundingClientRect();
+        if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
+      });
+      const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+      const base = root ? root.getBoundingClientRect().top : 0;
+      // přilepená karta (stacking): zastavit přesně na místě, kde se karta přilepí
+      const card = el.nextElementSibling;
+      const stick = (el.dataset && el.dataset.stick && card && getComputedStyle(card).position === 'sticky') ? parseFloat(getComputedStyle(card).top) : null;
+      const top = el.getBoundingClientRect().top - base + cur - (stick != null ? stick : headH + 16);
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      (root || window).scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + id); } catch (err) {}
+    }, true);
+    return true;
+  })();
+  renderVals() {
+    return { crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Rozcestník' }] };
+  }
+}
+</script>
+</body>
+</html>
