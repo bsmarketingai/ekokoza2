@@ -160,6 +160,40 @@
   .ek-aside-li strong { font-size: 15px; font-weight: 600; color: #2A2A24; }
   @media (max-width: 1279px) { .ek-stackwrap { grid-template-columns: minmax(0,1fr) 300px; gap: 24px; } .ek-stackwrap .ek-stk { grid-template-columns: 1fr; gap: 4px; } }
   @media (max-width: 999px) { .ek-stackwrap { grid-template-columns: 1fr; } .ek-aside { display: none; } .ek-stackwrap .ek-stk { transform-origin: 50% 0%; } }
+
+  /* Jednotný lightbox galerií (produkt, Organic Lab, Mirčina mýdla) */
+  .ek-lbx { position: fixed; inset: 0; z-index: 400; display: flex; flex-direction: column; background: rgba(26,36,24,.96); color: #F6F1E7; font-family: 'Work Sans',sans-serif; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); box-sizing: border-box; }
+  .ek-lbx-top { flex: 0 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; }
+  .ek-lbx-title { margin: 0; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 24px; line-height: 1.2; color: #F6F1E7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ek-lbx-close { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 18px 0 14px; border-radius: 999px; border: 1.5px solid rgba(246,241,231,.4); background: rgba(246,241,231,.08); color: #F6F1E7; font-family: 'Work Sans',sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background .2s, border-color .2s; }
+  .ek-lbx-close:hover { background: rgba(246,241,231,.18); border-color: rgba(246,241,231,.6); }
+  .ek-lbx-stage { flex: 1 1 auto; min-height: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .ek-lbx-stage::-webkit-scrollbar { display: none; }
+  .ek-lbx-slide { flex: 0 0 100%; min-width: 100%; height: 100%; box-sizing: border-box; padding: 0 24px; scroll-snap-align: center; scroll-snap-stop: always; display: flex; align-items: center; justify-content: center; container-type: size; cursor: zoom-out; }
+  .ek-lbx-img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 14px; cursor: default; user-select: none; -webkit-user-drag: none; }
+  .ek-lbx-img.is-product { width: min(100cqw, 100cqh); height: min(100cqw, 100cqh); max-width: none; max-height: none; background: #FFFFFF; }
+  .ek-lbx-vid { display: block; width: min(100cqw, 177cqh); aspect-ratio: 16/9; max-height: 100%; border-radius: 14px; background: #1E261E; object-fit: contain; cursor: default; }
+  .ek-lbx-bar { flex: 0 0 auto; display: flex; align-items: center; gap: 24px; padding: 16px 24px 22px; }
+  .ek-lbx-thumbs { flex: 1 1 auto; min-width: 0; display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+  .ek-lbx-thumbs::-webkit-scrollbar { display: none; }
+  .ek-lbx-th { flex: 0 0 auto; position: relative; width: 64px; height: 64px; padding: 0; border-radius: 10px; border: 2px solid transparent; background: #1E261E center / cover no-repeat; opacity: .55; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: opacity .2s, border-color .2s; }
+  .ek-lbx-th.is-product { background-color: #FFFFFF; background-size: contain; }
+  .ek-lbx-th:hover { opacity: .85; }
+  .ek-lbx-th.is-on { opacity: 1; border-color: #F6F1E7; }
+  .ek-lbx-ctrl { flex: 0 0 auto; display: flex; align-items: center; gap: 10px; margin-left: auto; }
+  .ek-lbx-count { min-width: 56px; text-align: right; font-size: 15px; font-weight: 600; color: #D6E0C8; font-variant-numeric: tabular-nums; }
+  .ek-lbx-nav { width: 52px; height: 52px; padding: 0; border-radius: 50%; border: 1.5px solid rgba(246,241,231,.5); background: rgba(246,241,231,.08); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s, border-color .2s; }
+  .ek-lbx-nav:hover { background: #4C653D; border-color: #4C653D; }
+  @media (max-width: 819px) {
+    .ek-lbx-top { padding: 12px 16px; align-items: flex-start; }
+    .ek-lbx-title { font-size: 20px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; padding-top: 8px; }
+    .ek-lbx-close { width: 44px; padding: 0; }
+    .ek-lbx-close-t { display: none; }
+    .ek-lbx-slide { padding: 0 12px; }
+    .ek-lbx-bar { flex-direction: column; align-items: stretch; gap: 12px; padding: 12px 16px 18px; }
+    .ek-lbx-th { width: 54px; height: 54px; }
+    .ek-lbx-ctrl { justify-content: flex-end; }
+  }
 </style>
 </helmet>
 
@@ -341,16 +375,39 @@
         </sc-for>
       </div>
       <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
-        <div onClick="{{ lbClose }}" role="dialog" aria-label="Fotogalerie" style="position:fixed; inset:0; z-index:300; background:rgba(34,48,31,.9); display:flex; align-items:center; justify-content:center; gap:18px; padding:28px; cursor:zoom-out;">
-          <button onClick="{{ lbPrev }}" class="ek-g-nav" aria-label="Předchozí" style="flex:0 0 auto;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-left-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-left-01.svg') center / contain no-repeat;"></span></button>
-          <div onClick="{{ stop }}" style="position:relative; cursor:default; display:flex; flex-direction:column; align-items:center; gap:12px; min-width:0;">
-            <img src="{{ lbSrc }}" alt="{{ lbAlt }}" style="display:block; max-width:min(1040px,76vw); max-height:80vh; width:auto; height:auto; border-radius:16px; background:#1E261E;">
-            <span style="font-size:13px; color:#D6E0C8;">{{ lbCounter }}</span>
-          </div>
-          <button onClick="{{ lbNext }}" class="ek-g-nav" aria-label="Další" style="flex:0 0 auto;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-01.svg') center / contain no-repeat;"></span></button>
-          <span style="position:absolute; top:22px; right:24px; display:flex; align-items:center; gap:8px; color:#F6F1E7; font-size:14px; font-weight:600;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+  <div class="ek-lbx" role="dialog" aria-modal="true" aria-label="{{ lbTitle }}">
+    <div class="ek-lbx-top">
+      <p class="ek-lbx-title">{{ lbTitle }}</p>
+      <button type="button" class="ek-lbx-close" onClick="{{ lbClose }}" aria-label="Zavřít"><span style="{{ lbIcClose }}"></span><span class="ek-lbx-close-t">Zavřít</span></button>
+    </div>
+    <div class="ek-lbx-stage" ref="{{ lbTrackRef }}">
+      <sc-for list="{{ lbSlides }}" as="s" hint-placeholder-count="3">
+        <div class="ek-lbx-slide" onClick="{{ lbClose }}">
+          <sc-if value="{{ s.isImg }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ s.src }}" alt="{{ s.alt }}" class="{{ s.cls }}" onClick="{{ lbStop }}" draggable="false">
+          </sc-if>
+          <sc-if value="{{ s.isVideo }}" hint-placeholder-val="{{ false }}">
+            <video src="{{ s.src }}" poster="{{ s.poster }}" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" class="ek-lbx-vid" onClick="{{ lbStop }}"></video>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <div class="ek-lbx-bar">
+      <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ true }}">
+        <div class="ek-lbx-thumbs" ref="{{ lbThumbsRef }}">
+          <sc-for list="{{ lbThumbs }}" as="t" hint-placeholder-count="4">
+            <button type="button" class="{{ t.cls }}" onClick="{{ t.go }}" aria-label="{{ t.label }}" style="{{ t.style }}"><span style="{{ t.play }}"></span></button>
+          </sc-for>
+        </div>
+        <div class="ek-lbx-ctrl">
+          <span class="ek-lbx-count">{{ lbCounter }}</span>
+          <button type="button" class="ek-lbx-nav" onClick="{{ lbPrev }}" aria-label="Předchozí"><span style="{{ lbIcPrev }}"></span></button>
+          <button type="button" class="ek-lbx-nav" onClick="{{ lbNext }}" aria-label="Další"><span style="{{ lbIcNext }}"></span></button>
         </div>
       </sc-if>
+    </div>
+  </div>
+</sc-if>
       <div style="max-width:1040px; margin:64px auto 8px; text-align:center;">
         <p class="ek-quote">„Organic Lab je místo, odkud si neodnesete jen vlastní výrobek, ale také zážitek, inspiraci a chuť tvořit dál.“</p>
       </div>
@@ -422,9 +479,85 @@ class Component extends DCLogic {
     window.addEventListener('keydown', this.onKey);
   }
   componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
-  step(d) {
-    const n = Component.PHOTOS.length;
-    this.setState(s => ({ lb: (s.lb + d + n) % n }));
+  step(d) { this.lbGo((this.state.lb ?? 0) + d); }
+  lbIndex() { return this.state.lb ?? 0; }
+  lbSet(i) { this.setState({ lb: i }); }
+
+  // --- jednotný lightbox: swipe přes scroll-snap, miniatury, navigace vpravo dole ---
+  lbTrackRef = (el) => {
+    if (this._lbT === el) return;
+    if (this._lbT) {
+      this._lbT.removeEventListener('scroll', this._lbOnScroll);
+      window.removeEventListener('resize', this._lbOnResize);
+    }
+    this._lbT = el;
+    if (!el) { document.documentElement.style.overflow = this._lbOv || ''; return; }
+    this._lbOv = document.documentElement.style.overflow;
+    document.documentElement.style.overflow = 'hidden';
+    const align = () => { el.scrollLeft = this.lbIndex() * el.clientWidth; };
+    align(); requestAnimationFrame(() => { align(); this.lbThumbInView(this.lbIndex(), false); });
+    this._lbOnScroll = () => {
+      clearTimeout(this._lbST);
+      this._lbST = setTimeout(() => {
+        const m = Math.round(el.scrollLeft / Math.max(1, el.clientWidth));
+        if (m !== this.lbIndex()) { this.lbSet(m); this.lbThumbInView(m, true); }
+      }, 90);
+    };
+    this._lbOnResize = () => align();
+    el.addEventListener('scroll', this._lbOnScroll, { passive: true });
+    window.addEventListener('resize', this._lbOnResize);
+  };
+  lbThumbsRef = (el) => { this._lbTh = el; };
+  lbThumbInView(i, smooth) {
+    const th = this._lbTh; if (!th) return;
+    const b = th.querySelectorAll('.ek-lbx-th')[i]; if (!b) return;
+    th.scrollTo({ left: b.offsetLeft - th.clientWidth / 2 + b.offsetWidth / 2, behavior: smooth ? 'smooth' : 'auto' });
+  }
+  lbGo(i) {
+    const n = this._lbN || 1;
+    const k = ((i % n) + n) % n;
+    this.lbSet(k);
+    const el = this._lbT;
+    if (el) el.scrollTo({ left: k * el.clientWidth, behavior: Math.abs(k - Math.round(el.scrollLeft / Math.max(1, el.clientWidth))) > 1 ? 'auto' : 'smooth' });
+    this.lbThumbInView(k, true);
+  }
+  lbIcon(name, size) {
+    const base = /\/components\//.test(location.pathname) ? '../' : '';
+    const u = base + 'assets/icons/' + name + '.svg';
+    return 'display:inline-block; flex:0 0 auto; width:' + size + 'px; height:' + size + 'px; background-color:#F6F1E7; -webkit-mask:url("' + u + '") center / contain no-repeat; mask:url("' + u + '") center / contain no-repeat;';
+  }
+  lbVals(items, title, product, close) {
+    this._lbN = items.length;
+    const i = Math.min(this.lbIndex(), items.length - 1);
+    return {
+      lbTitle: title,
+      lbMulti: items.length > 1,
+      lbCounter: (i + 1) + ' / ' + items.length,
+      lbSlides: items.map((it, k) => ({
+        isImg: it.type !== 'video' || k !== i,
+        isVideo: it.type === 'video' && k === i,
+        src: it.type === 'video' && k !== i ? (it.poster || '') : it.src,
+        poster: it.poster || '',
+        alt: it.alt || '',
+        cls: 'ek-lbx-img' + (product ? ' is-product' : ''),
+      })),
+      lbThumbs: items.map((it, k) => ({
+        cls: 'ek-lbx-th' + (product && it.type !== 'video' ? ' is-product' : '') + (k === i ? ' is-on' : ''),
+        label: it.type === 'video' ? 'Přehrát video' : 'Zobrazit fotku ' + (k + 1),
+        style: (it.type === 'video' ? (it.poster ? 'background-image:url("' + it.poster + '");' : 'background-color:#4C653D;') : 'background-image:url("' + it.src + '");'),
+        play: it.type === 'video' ? this.lbIcon('play', 24) : 'display:none;',
+        go: () => this.lbGo(k),
+      })),
+      lbClose: (e) => { if (e) e.stopPropagation(); close(); },
+      lbStop: (e) => e.stopPropagation(),
+      lbPrev: (e) => { if (e) e.stopPropagation(); this.lbGo(i - 1); },
+      lbNext: (e) => { if (e) e.stopPropagation(); this.lbGo(i + 1); },
+      lbTrackRef: this.lbTrackRef,
+      lbThumbsRef: this.lbThumbsRef,
+      lbIcClose: this.lbIcon('cancel-01', 22),
+      lbIcPrev: this.lbIcon('arrow-left-01', 24),
+      lbIcNext: this.lbIcon('arrow-right-01', 24),
+    };
   }
   renderVals() {
     const P = Component.PHOTOS;
@@ -434,13 +567,7 @@ class Component extends DCLogic {
       crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Organic Lab – kurzy výroby' }],
       photos: P.map((p, idx) => ({ ...p, label: 'Zobrazit fotku ' + (idx + 1) + ' v plné velikosti', open: () => this.setState({ lb: idx }) })),
       lbOpen: i !== null,
-      lbSrc: cur.src,
-      lbAlt: cur.alt,
-      lbCounter: ((i ?? 0) + 1) + ' / ' + P.length,
-      lbClose: () => this.setState({ lb: null }),
-      lbPrev: (e) => { e.stopPropagation(); this.step(-1); },
-      lbNext: (e) => { e.stopPropagation(); this.step(1); },
-      stop: (e) => e.stopPropagation(),
+      ...this.lbVals(P.map(p => ({ type: 'img', src: p.src, alt: p.alt })), 'Fotogalerie Organic Lab', false, () => this.setState({ lb: null })),
     };
   }
 }
