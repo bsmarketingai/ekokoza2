@@ -62,6 +62,10 @@
     .ek-steps, .ek-quad { grid-template-columns: 1fr; }
     .ek-emblem { display: none !important; }
   }
+  [id] { scroll-margin-top: 140px; }
+  html, body { scroll-behavior: smooth; }
+  @media (max-width: 819px) { [id] { scroll-margin-top: 96px; } }
+  @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } }
 </style>
 </helmet>
 
@@ -348,6 +352,43 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showCalc&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Kalkulačka&quot;},&quot;turnover&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12000,&quot;min&quot;:0,&quot;max&quot;:40000,&quot;step&quot;:500,&quot;unit&quot;:&quot;Kč&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Kalkulačka&quot;}}">
 class Component extends DCLogic {
+  // Plynulý posun na kotvy (#…) pod přilepenou hlavičku – jednou pro celou stránku
+  static ekAnchor = (() => {
+    if (typeof document === 'undefined' || window.__ekAnchor) return true;
+    window.__ekAnchor = true;
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a || e.defaultPrevented) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      let el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      // kotva uvnitř bílého trhaného pásu → zastavit na horním okraji pásu
+      if (el.parentElement && el.parentElement.querySelector(':scope > .ek-tear')) el = el.parentElement;
+      let sc = el.parentElement;
+      while (sc && sc !== document.body && sc !== document.documentElement) {
+        const o = getComputedStyle(sc).overflowY;
+        if ((o === 'auto' || o === 'scroll') && sc.scrollHeight > sc.clientHeight) break;
+        sc = sc.parentElement;
+      }
+      const root = (!sc || sc === document.body || sc === document.documentElement) ? null : sc;
+      let headH = 0;
+      document.querySelectorAll('.sc-host[data-sc-name="ui-Header"], [style*="sticky"]').forEach((n) => {
+        if (getComputedStyle(n).position !== 'sticky') return;
+        const r = n.getBoundingClientRect();
+        if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
+      });
+      const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+      const base = root ? root.getBoundingClientRect().top : 0;
+      const top = el.getBoundingClientRect().top - base + cur - headH - 16;
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      (root || window).scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + id); } catch (err) {}
+    }, true);
+    return true;
+  })();
   state = { t: null };
   static T = [
     { n: 'Ekokozí fanoušek', f: 5000, d: 5 },

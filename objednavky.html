@@ -392,10 +392,10 @@ class Component extends DCLogic {
       nextPage: () => this.setState({ page: Math.min(pageCount, page + 1) }),
 
       helpLinks: [
-        { title: 'Kde je moje objednávka?', desc: 'Sledování zásilky podle čísla.', href: '#', icon: 'delivery-tracking-01' },
-        { title: 'Vrácení a reklamace', desc: 'Jak postupovat a do kdy.', href: '#', icon: 'delivery-return-01' },
-        { title: 'Platba a doprava', desc: 'Ceny, dopravci, termíny.', href: '#', icon: 'truck-delivery' },
-        { title: 'Časté otázky', desc: 'Odpovědi na to nejčastější.', href: '#', icon: 'help-circle' },
+        { title: 'Kde je moje objednávka?', desc: 'Sledování zásilky podle čísla.', href: 'sledovani-zasilky.html', icon: 'delivery-tracking-01' },
+        { title: 'Vrácení a reklamace', desc: 'Jak postupovat a do kdy.', href: 'vraceni-zbozi.html', icon: 'delivery-return-01' },
+        { title: 'Platba a doprava', desc: 'Ceny, dopravci, termíny.', href: 'platba-a-doprava.html', icon: 'truck-delivery' },
+        { title: 'Časté otázky', desc: 'Odpovědi na to nejčastější.', href: 'faq.html', icon: 'help-circle' },
       ].map(h => Object.assign({}, h, { icon: this.mask(h.icon, 24, '#4C653D') })),
 
       msdsOpen: this.state.msds,

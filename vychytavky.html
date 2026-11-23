@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vychytávky pro váš nákup | ekokoza.cz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #D14405; color: #fff; }
+  a { color: #4C653D; }
+  a:hover { color: #B23803; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
+  .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
+  .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
+  .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
+  .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
+  .ek-tear { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: 0; pointer-events: none; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28), inset 0 -14px 26px -14px rgba(45,58,46,.24); clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% calc(100% - 6.3px), 97.83% calc(100% - 11.1px), 95.65% calc(100% - 7.6px), 93.48% calc(100% - 13.4px), 91.3% calc(100% - 9.2px), 89.13% calc(100% - 5.3px), 86.96% calc(100% - 12.2px), 84.78% calc(100% - 8.7px), 82.61% calc(100% - 11.6px), 80.43% calc(100% - 6.1px), 78.26% calc(100% - 14.3px), 76.09% calc(100% - 9.6px), 73.91% calc(100% - 12.9px), 71.74% calc(100% - 7.1px), 69.57% calc(100% - 10.8px), 67.39% calc(100% - 4.8px), 65.22% calc(100% - 13.7px), 63.04% calc(100% - 8.2px), 60.87% calc(100% - 11.3px), 58.7% calc(100% - 6.7px), 56.52% calc(100% - 10.1px), 54.35% calc(100% - 14.6px), 52.17% calc(100% - 9.4px), 50% calc(100% - 5.6px), 47.83% calc(100% - 12.4px), 45.65% calc(100% - 8.9px), 43.48% calc(100% - 11.8px), 41.3% calc(100% - 6.9px), 39.13% calc(100% - 13.2px), 36.96% calc(100% - 9.7px), 34.78% calc(100% - 5.2px), 32.61% calc(100% - 12.7px), 30.43% calc(100% - 8.3px), 28.26% calc(100% - 11.5px), 26.09% calc(100% - 7.3px), 23.91% calc(100% - 14.5px), 21.74% calc(100% - 9.9px), 19.57% calc(100% - 6.2px), 17.39% calc(100% - 12.8px), 15.22% calc(100% - 8.5px), 13.04% calc(100% - 11.2px), 10.87% calc(100% - 5.8px), 8.7% calc(100% - 13.9px), 6.52% calc(100% - 9.3px), 4.35% calc(100% - 6.4px), 2.17% calc(100% - 12.3px), 0% calc(100% - 8.6px)); }
+  .ek-h1 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 42px; line-height: 1.1; color: #4C653D; margin: 0; text-wrap: pretty; }
+  .ek-h2 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 30px; line-height: 1.15; color: #4C653D; margin: 0 0 14px; text-wrap: pretty; }
+  .ek-h3 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 21px; line-height: 1.25; color: #2A2A24; margin: 0 0 8px; text-wrap: pretty; }
+  .ek-eyebrow { margin: 0 0 10px; color: #4F6E2A; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+  .ek-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: #4A4A42; text-wrap: pretty; }
+  .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
+  .ek-t { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #4A4A42; text-wrap: pretty; }
+  .ek-t:last-child { margin-bottom: 0; }
+  .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ek-ul li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4A4A42; }
+  .ek-ul li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: #4F6E2A; }
+  .ek-check li { padding-left: 30px; }
+  .ek-check li::before { left: 0; top: .15em; width: 20px; height: 20px; border-radius: 0; background: #4F6E2A; -webkit-mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; }
+  .ek-price { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; color: #4C653D; white-space: nowrap; }
+  .ek-price-free { background: #EEF4DC; border: 1px solid #D9E5BF; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: start; }
+  .ek-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+  .ek-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .ek-four { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-video { position: relative; display: block; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; text-decoration: none; }
+  .ek-video:hover .ek-play { transform: translate(-50%,-50%) scale(1.06); }
+  .ek-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #4C653D; box-shadow: 0 16px 34px -14px rgba(34,48,31,.7); transition: transform .25s; }
+  .ek-acc { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; overflow: hidden; }
+  .ek-q { display: flex; align-items: center; gap: 16px; width: 100%; padding: 18px 22px; background: transparent; border: none; border-top: 1px solid #EFE7D6; cursor: pointer; text-align: left; font-family: 'Work Sans',sans-serif; transition: background .18s; }
+  .ek-acc > div:first-child .ek-q { border-top: none; }
+  .ek-q:hover { background: #FBF8F1; }
+  .ek-q-t { flex: 1; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 20px; line-height: 1.3; color: #2A2A24; }
+  .ek-a { padding: 0 22px 22px 22px; }
+  .ek-a p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.7; color: #4A4A42; max-width: 78ch; text-wrap: pretty; }
+  .ek-a p:last-child { margin-bottom: 0; }
+  @media (max-width: 1149px) {
+    .ek-hero { gap: 36px; }
+    .ek-four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 999px) {
+    .ek-hero { grid-template-columns: 1fr; }
+    .ek-three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 819px) {
+    .ek-h1 { font-size: 31px; }
+    .ek-h2 { font-size: 25px; }
+    .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .ek-dark { padding: 32px 24px !important; }
+  }
+  @media (max-width: 549px) {
+    .ek-two, .ek-three, .ek-four { grid-template-columns: 1fr; }
+    .ek-q { padding: 16px; }
+    .ek-q-t { font-size: 18px; }
+    .ek-a { padding: 0 16px 18px; }
+  }
+  .ek-tipnav { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+  .ek-tipnav a { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; text-decoration: none; color: #2A2A24 !important; font-weight: 600; font-size: 15px; transition: border-color .2s, transform .25s, box-shadow .25s; }
+  .ek-tipnav a:hover { border-color: #4C653D; transform: translateY(-2px); box-shadow: 0 18px 40px -22px rgba(45,58,46,.45); }
+  .ek-tipnav a > span:nth-child(2) { flex: 1; min-width: 0; }
+  .ek-tips { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; align-items: start; }
+  .ek-tip { scroll-margin-top: 120px; display: flex; flex-direction: column; gap: 0; padding: 0; overflow: hidden; }
+  .ek-tip-h { display: flex; align-items: center; gap: 16px; padding: 22px 26px; border-bottom: 1px solid #ECE3D2; }
+  .ek-tip-i { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; background: #FFFDF6; box-shadow: inset 0 0 0 1px rgba(76,101,61,.12); }
+  .ek-tip-b { padding: 22px 26px 8px; }
+  .ek-tip-b .ek-p { font-size: 16px; }
+  .ek-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .ek-chips span { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E4DAC6; font-size: 14px; font-weight: 600; color: #4C653D; }
+  @media (max-width: 999px) { .ek-tipnav { grid-template-columns: repeat(2,minmax(0,1fr)); } .ek-tips { grid-template-columns: 1fr; } }
+  @media (max-width: 549px) { .ek-tipnav { grid-template-columns: 1fr; } .ek-tip-h, .ek-tip-b { padding-left: 20px; padding-right: 20px; } }
+  [id] { scroll-margin-top: 140px; }
+  html, body { scroll-behavior: smooth; }
+  @media (max-width: 819px) { [id] { scroll-margin-top: 96px; } }
+  @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } }
+  .ek-band .ek-card, .ek-band .ek-quick, .ek-band .ek-carrier, .ek-band .ek-topic, .ek-band .ek-tipnav a { background: #FFFDF6; }
+  .ek-vstack { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; }
+  .ek-anchor { display: block; height: 0; }
+  .ek-vstk { position: sticky; display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); gap: 40px; align-items: center; min-height: min(62vh, 480px); margin-bottom: 32px; padding: 40px; border: 1px solid #ECE3D2; border-radius: 28px; background: #FFFFFF; box-shadow: 0 -14px 36px -22px rgba(45,58,46,.35), 0 24px 48px -32px rgba(45,58,46,.4); transform-origin: 50% 0%; }
+  .ek-vstk-txt { padding: 8px 8px 0; }
+  .ek-vstk-flip .ek-vstk-txt { order: 2; }
+  .ek-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px 8px 12px; border-radius: 999px; background: #4C653D; color: #F6F1E7; font-size: 13px; font-weight: 700; letter-spacing: .06em; }
+  .ek-steps { display: flex; flex-direction: column; gap: 10px; margin: 4px 0 18px; }
+  .ek-step { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; font-size: 15.5px; line-height: 1.5; color: #2A2A24; }
+  .ek-step .ek-num { flex: 0 0 auto; background: #EEF4DC; }
+  .ek-callout { display: flex; align-items: flex-start; gap: 12px; padding: 16px 18px; background: #FFFFFF; border: 1px solid #ECE3D2; border-left: 4px solid #4C653D; border-radius: 14px; }
+  .ek-callout p { margin: 0; font-size: 15.5px; line-height: 1.6; color: #2A2A24; }
+  .ek-callout a { font-weight: 600; }
+  .ek-mock-col { align-self: stretch; display: flex; }
+  .ek-mock { width: 100%; padding: 0; font: inherit; text-align: left; cursor: zoom-in; transition: transform .3s ease, box-shadow .3s ease; box-shadow: 0 26px 50px -34px rgba(45,58,46,.55); }
+  .ek-mock:hover { transform: translateY(-3px); box-shadow: 0 34px 60px -32px rgba(45,58,46,.6); }
+  .ek-mock-bar em { display: inline-flex; align-items: center; gap: 5px; }
+  .ek-zoom { position: absolute; right: 14px; bottom: 14px; z-index: 4; display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: rgba(255,253,246,.96); border: 1px solid #E4DAC6; font-size: 13.5px; font-weight: 600; color: #2A2A24; box-shadow: 0 10px 24px -14px rgba(0,0,0,.35); }
+  .ek-lb { position: fixed; inset: 0; z-index: 300; background: rgba(34,48,31,.9); display: flex; align-items: center; justify-content: center; padding: 28px; cursor: zoom-out; }
+  .ek-lb-in { cursor: default; width: min(880px, 94vw); display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .ek-mock-big { min-height: min(560px, 74vh); cursor: default; }
+  .ek-mock-big .ek-mock-stage { zoom: 1.45; }
+  .ek-lb-cap { margin: 0; color: #D6E0C8; font-size: 14px; font-weight: 600; }
+  .ek-lb-x { position: absolute; top: 22px; right: 24px; display: flex; align-items: center; gap: 8px; color: #F6F1E7; font-size: 14px; font-weight: 600; }
+  .ek-vstk-txt .ek-p { font-size: 16px; }
+  .ek-vstk-txt > .ek-p:last-child { margin-bottom: 0; }
+  .ek-mock { position: relative; align-self: stretch; min-height: 320px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(76,101,61,.14); display: flex; flex-direction: column; }
+  .ek-mock-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,253,246,.7); border-bottom: 1px solid rgba(76,101,61,.12); }
+  .ek-mock-bar span { width: 9px; height: 9px; border-radius: 50%; background: #D9CDB6; }
+  .ek-mock-bar em { margin-left: 10px; font-style: normal; font-size: 12px; color: #6B6B5E; padding: 3px 12px; border-radius: 999px; background: #FFFDF6; }
+  .ek-mock-stage { position: relative; flex: 1; display: flex; align-items: center; justify-content: center; padding: 28px 20px; }
+  .ek-w { position: relative; background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 16px 18px; box-shadow: 0 22px 44px -28px rgba(45,58,46,.45); font-family: 'Work Sans',sans-serif; font-size: 13.5px; color: #2A2A24; }
+  .ek-mt { margin: 0; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; line-height: 1.2; color: #2A2A24; }
+  .ek-ms { margin: 0; font-size: 12.5px; color: #6B6B5E; }
+  .ek-mail { padding: 7px 0; border-bottom: 1px solid #EFE7D6; }
+  .ek-mail b { color: #2A2A24; font-weight: 600; }
+  .ek-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px solid #EFE7D6; }
+  .ek-pill { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .ek-pill-g { background: #EEF4DC; color: #4C653D; }
+  .ek-pill-y { background: #FBF0CF; color: #8A5A28; }
+  .ek-tip-pop { position: absolute; right: 0; bottom: calc(100% + 4px); display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 10px; background: #2A2A24; color: #F6F1E7; font-size: 12px; font-weight: 600; white-space: nowrap; box-shadow: 0 14px 30px -14px rgba(0,0,0,.5); z-index: 2; }
+  .ek-tip-pop span[style*="mask"] { background-color: #B9D096 !important; }
+  .ek-lbl { display: block; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
+  .ek-inp { display: flex; align-items: center; height: 40px; padding: 0 12px; border: 1.5px solid #D9D0BC; border-radius: 10px; background: #fff; font-size: 13.5px; }
+  .ek-ok { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 12.5px; font-weight: 600; color: #4C653D; }
+  .ek-mbtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 16px; border-radius: 999px; background: #4C653D; color: #F6F1E7; font-size: 13px; font-weight: 600; white-space: nowrap; }
+  .ek-mbtn-ghost { background: transparent; color: #4C653D; border: 1.5px solid #4C653D; }
+  .ek-chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 9px; border-radius: 8px; background: #F6F1E7; font-size: 11.5px; font-weight: 600; }
+  .ek-bub { align-self: flex-start; max-width: 88%; padding: 8px 12px; border-radius: 12px 12px 12px 4px; background: #F4F7EA; font-size: 12.5px; line-height: 1.45; }
+  .ek-bub-me { align-self: flex-end; border-radius: 12px 12px 4px 12px; background: #EFE7D6; }
+  .ek-send { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: #4C653D; flex: 0 0 auto; }
+  .ek-fav { position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,253,246,.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px -10px rgba(0,0,0,.4); }
+  .ek-fav > .ek-off, .ek-fav > .ek-on { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .ek-radio { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid #B8AE98; display: inline-block; }
+  .ek-radio-on { border: 5px solid #4C653D; }
+  .ek-check { position: relative; width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid #B8AE98; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; }
+  .ek-check > .ek-on { position: absolute; inset: 0; background: #4C653D; display: flex; align-items: center; justify-content: center; }
+  .ek-prio { margin: 0 -8px; padding: 9px 8px; border-radius: 10px; }
+  .ek-tgt { position: absolute; width: 0; height: 0; z-index: 3; pointer-events: none; }
+  .ek-cur { position: absolute; left: -3px; top: -2px; width: 26px; height: 26px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.25)); transform-origin: 4px 3px; }
+  .ek-ring { position: absolute; left: -14px; top: -14px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid #D14405; opacity: 0; }
+  .ek-on { opacity: 1; }
+  .ek-off { opacity: 0; }
+  .ek-cur { opacity: 0; transform: translate(90px,80px); transition: transform .95s cubic-bezier(.45,.05,.25,1), opacity .35s ease; }
+  .ek-ph1 .ek-cur, .ek-ph2 .ek-cur, .ek-ph3 .ek-cur { opacity: 1; transform: translate(0,0); }
+  .ek-ph4 .ek-cur { opacity: 0; transform: translate(0,0); }
+  .ek-ph2 .ek-cur { transform: scale(.82); transition-duration: .12s; }
+  .ek-ph2 .ek-ring { animation: ek-cur-ring .7s ease-out 1; }
+  .ek-on { opacity: 0; transition: opacity .25s ease; }
+  .ek-off { opacity: 1; transition: opacity .2s ease; }
+  .ek-ph2 .ek-on, .ek-ph3 .ek-on, .ek-ph4 .ek-on, .ek-still .ek-on { opacity: 1; }
+  .ek-ph2 .ek-off, .ek-ph3 .ek-off, .ek-ph4 .ek-off, .ek-still .ek-off { opacity: 0; }
+  .ek-still .ek-cur { opacity: 1; transform: none; }
+  .ek-pop-in { transform: translateY(6px); transition: opacity .25s ease, transform .25s ease; }
+  .ek-ph2 .ek-pop-in, .ek-ph3 .ek-pop-in, .ek-ph4 .ek-pop-in, .ek-still .ek-pop-in { transform: none; }
+  .ek-on.ek-pop-in { pointer-events: none; }
+  .ek-wd { transform-origin: 50% 0; scale: .78; }
+  .ek-real { position: relative; font-family: 'Work Sans',sans-serif; }
+  .ek-real .ek-h2 { font-size: 26px; }
+  .ek-k-fin { display: flex; align-items: center; height: 46px; padding: 0 14px; border: 1.5px solid #CFC4AA; border-radius: 12px; background: #fff; font-size: 15px; color: #2A2A24; }
+  .ek-k-val { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); }
+  .ek-k-btn { display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 22px; border: 1.5px solid #4C653D; border-radius: 999px; background: #4C653D; color: #F6F1E7; font-size: 15px; font-weight: 600; white-space: nowrap; }
+  .ek-k-main { align-self: flex-start; display: inline-flex; align-items: center; gap: 9px; height: 52px; padding: 0 26px; background: #D14405; color: #fff; border: 1.5px solid #D14405; border-radius: 999px; font-size: 15.5px; font-weight: 600; }
+  .ek-k-check { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border-radius: 14px; background: #F1EADC; border: 1px solid #E2D9C4; }
+  .ek-k-box { position: relative; width: 22px; height: 22px; flex: 0 0 auto; border: 1.5px solid #CFC4AA; border-radius: 6px; background: #fff; }
+  .ek-vstack { timeline-scope: --ek-v2, --ek-v3, --ek-v4, --ek-v5, --ek-v6, --ek-v7, --ek-v8, --ek-v9; }
+  .ek-vstk-1 { top: calc(150px + 0 * 14px); z-index: 1; }
+  .ek-vstk-2 { top: calc(150px + 1 * 14px); z-index: 2; view-timeline-name: --ek-v2; }
+  .ek-vstk-3 { top: calc(150px + 2 * 14px); z-index: 3; view-timeline-name: --ek-v3; }
+  .ek-vstk-4 { top: calc(150px + 3 * 14px); z-index: 4; view-timeline-name: --ek-v4; }
+  .ek-vstk-5 { top: calc(150px + 4 * 14px); z-index: 5; view-timeline-name: --ek-v5; }
+  .ek-vstk-6 { top: calc(150px + 5 * 14px); z-index: 6; view-timeline-name: --ek-v6; }
+  .ek-vstk-7 { top: calc(150px + 6 * 14px); z-index: 7; view-timeline-name: --ek-v7; }
+  .ek-vstk-8 { top: calc(150px + 7 * 14px); z-index: 8; view-timeline-name: --ek-v8; }
+  .ek-vstk-9 { top: calc(150px + 8 * 14px); z-index: 9; view-timeline-name: --ek-v9; }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-1 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v2; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-2 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v3; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-3 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v4; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-4 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v5; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-5 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v6; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-6 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v7; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-7 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v8; animation-range: contain 25% contain 60%; } } }
+  @supports (animation-timeline: view()) { @media (prefers-reduced-motion: no-preference) { .ek-vstk-8 { animation: ek-vstk-cover linear both; animation-timeline: --ek-v9; animation-range: contain 25% contain 60%; } } }
+  @keyframes ek-vstk-cover { to { transform: scale(.94); } }
+  @media (max-width: 999px) { .ek-vstk { grid-template-columns: 1fr; gap: 24px; min-height: 0; padding: 28px; } .ek-vstk-flip .ek-vstk-txt { order: 0; } .ek-mock { min-height: 300px; } .ek-mock-big .ek-mock-stage { zoom: 1.1; } }
+  @media (max-width: 549px) { .ek-vstk { position: relative; top: auto !important; animation: none !important; padding: 20px; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 18px 40px -30px rgba(45,58,46,.4); } .ek-vstk-txt { padding: 4px 0 0; } .ek-zoom { padding: 7px 12px; font-size: 12.5px; } .ek-vstk .ek-h2 { font-size: 26px !important; } }
+</style>
+</helmet>
+
+<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+  <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
+  <dc-import name="ui-Header" hint-size="100%,140px"></dc-import>
+  <div style="max-width:1720px; margin:0 auto; position:relative;">
+  <section style="padding:22px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
+      <div style="margin-top:26px; padding:48px 52px; border-radius:14px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #D9E5BF;" class="ek-dark">
+        <p class="ek-eyebrow">Praktické funkce Ekokozy</p>
+        <h1 class="ek-h1" style="max-width:20ch;">Vychytávky, které vám usnadní nakupování</h1>
+        <p class="ek-lead" style="margin-top:20px; max-width:64ch;">Méně hledání a zařizování, více času na samotné tvoření. Poznejte funkce, díky kterým si nákup lépe naplánujete, uložíte inspiraci a jednoduše vyřešíte vše kolem objednávky.</p>
+        <div class="ek-chips"><span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/sparkles.svg') center / contain no-repeat; mask:url('assets/icons/sparkles.svg') center / contain no-repeat;"></span>9 praktických funkcí</span><span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/file-02.svg') center / contain no-repeat; mask:url('assets/icons/file-02.svg') center / contain no-repeat;"></span>Objednávky a dokumentace</span><span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/idea-01.svg') center / contain no-repeat; mask:url('assets/icons/idea-01.svg') center / contain no-repeat;"></span>Inspirace pro další tvoření</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Rychlý přehled</p>
+        <h2 class="ek-h2">Vyberte, co právě potřebujete</h2>
+        <p class="ek-p" style="margin:0;">Kliknutím se přesunete rovnou k vybrané funkci.</p>
+      </div>
+      <div class="ek-tipnav"><a href="#eko-tip-01"><span class="ek-num">01</span><span>Oblíbené produkty a recepty</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-02"><span class="ek-num">02</span><span>Předpokládaný termín odeslání</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-03"><span class="ek-num">03</span><span>Přidání k objednávce</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-04"><span class="ek-num">04</span><span>Hlídací pes dostupnosti</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-05"><span class="ek-num">05</span><span>AI asistent Ekokozy</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-06"><span class="ek-num">06</span><span>Dokumentace k produktům</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-07"><span class="ek-num">07</span><span>Nákupní seznamy</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-08"><span class="ek-num">08</span><span>Individuální poptávka</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a><a href="#eko-tip-09"><span class="ek-num">09</span><span>Přednostní odeslání</span><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat; mask:url('assets/icons/arrow-down-01.svg') center / contain no-repeat;"></span></a></div>
+    </div>
+    </section>
+  </div>
+
+  <section style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div class="ek-vstack {{ phCls }}">
+        <span id="eko-tip-01" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-1" style="background:linear-gradient(135deg,#F9E4EA 0%,#FEF8FA 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/favourite.svg') center / contain no-repeat; mask:url('assets/icons/favourite.svg') center / contain no-repeat;"></span>01 · Inspirace</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Oblíbené produkty a recepty</h2>
+            <p class="ek-p">Narazili jste na produkt nebo recept, ke kterému se chcete později vrátit? Klikněte na ikonku srdíčka na jeho obrázku. Všechny uložené produkty i recepty potom najdete přehledně ve svém <a href="muj-ucet.html">zákaznickém účtu</a>.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom1 }}" aria-label="Zvětšit ukázku: Oblíbené produkty a recepty" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(470px,100%); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;">
+  <dc-import name="ui-ProductCard" title="Bambusový uzávěr na lékovku s kapátkem" price="8 Kč" img="assets/products/lahvicka-nahled-hneda.png" stockState="ready" fav="{{ false }}" hint-size="100%,380px"></dc-import>
+  <div style="position:relative;"><dc-import name="ui-ProductCard" title="Levandulové máslo, 100 g" price="189 Kč" img="assets/products/levandulove-maslo-100-g.jpg" stockState="ready" fav="{{ on }}" hint-size="100%,380px"></dc-import><span class="ek-tgt" style="left:calc(100% - 52px); top:50px;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-02" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-2 ek-vstk-flip" style="background:linear-gradient(135deg,#FBF0D2 0%,#FEFBF1 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/calendar-01.svg') center / contain no-repeat; mask:url('assets/icons/calendar-01.svg') center / contain no-repeat;"></span>02 · Plánování</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Předpokládaný termín odeslání</h2>
+            <p class="ek-p">U surovin můžete zjistit předpokládané datum odeslání. Stačí najet myší na informaci o dostupnosti konkrétní varianty a hned uvidíte, kdy očekáváme, že bude připravená k odeslání.</p><p class="ek-p">Snadněji si tak naplánujete nákup a rozhodnete se, zda na vybranou surovinu počkat, nebo zvolit variantu, kterou můžeme odeslat dříve.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom2 }}" aria-label="Zvětšit ukázku: Předpokládaný termín odeslání" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w ek-real" style="width:min(470px,100%); padding:18px 18px 14px;">
+  <div style="position:relative;">
+    <dc-import name="ui-VariantPicker" mode="qty" heading="Vyberte variantu" variants="{{ varsShip }}" hint-size="100%,230px"></dc-import>
+    <span class="ek-on" style="position:absolute; z-index:5; width:max-content; max-width:266px; padding:10px 13px; border-radius:12px; background:#2A2A24; color:#F6F1E7; font-family:Work Sans,sans-serif; font-size:13px; line-height:1.45; box-shadow:0 18px 36px -18px rgba(0,0,0,.55); left:30px; top:44px;">Navažujeme z velkého balení — odeslání o jeden pracovní den později.</span>
+    <span class="ek-tgt" style="left:172px; top:152px;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span>
+  </div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-03" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-3" style="background:linear-gradient(135deg,#EEF4DC 0%,#FBFCF6 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/shopping-cart-add-01.svg') center / contain no-repeat; mask:url('assets/icons/shopping-cart-add-01.svg') center / contain no-repeat;"></span>03 · Objednávka</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Přidání k objednávce bez dalšího poštovného</h2>
+            <p class="ek-p">Zapomněli jste něco přidat? Dokud jsme původní objednávku nezačali chystat, můžete ji jednoduše doplnit.</p><div class="ek-steps"><div class="ek-step"><span class="ek-num">1</span><span>Vytvořte nový košík s produkty, které chcete přidat.</span></div><div class="ek-step"><span class="ek-num">2</span><span>V prvním kroku košíku vložte číslo původní objednávky.</span></div><div class="ek-step"><span class="ek-num">3</span><span>Objednávky se propojí a další poštovné vám nebude účtováno.</span></div></div><p class="ek-p">Doplnění můžete zopakovat i vícekrát, vždy jen do chvíle, než začneme připravovat původní objednávku.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom3 }}" aria-label="Zvětšit ukázku: Přidání k objednávce bez dalšího poštovného" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(440px,100%); display:flex; flex-direction:column; gap:14px;">
+  <div style="display:flex; align-items:center; gap:10px;"><h2 class="ek-h2" style="margin:0;">Přidat k objednávce</h2><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span></div>
+  <div class="ek-card" style="display:flex; flex-direction:column; gap:12px; padding:18px 20px; background:#fff;">
+    <span style="font-size:15px; font-weight:600; color:#2A2A24;">Zde zadejte číslo objednávky, ke které chcete udělat doobjednávku:</span>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span class="ek-k-fin" style="position:relative; flex:1 1 180px;"><span class="ek-off" style="color:#b3ae9c;">Číslo objednávky</span><span class="ek-on ek-k-val">2026-10482</span></span>
+      <span class="ek-k-btn" style="position:relative;">Přidat<span class="ek-tgt" style="left:50%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+    </div>
+    <span class="ek-on" style="display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#3F7F2C;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#3F7F2C; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Objednávky propojeny · další poštovné neplatíte</span>
+  </div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-04" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-4 ek-vstk-flip" style="background:linear-gradient(135deg,#FBF0D2 0%,#FEFBF1 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/notification-02.svg') center / contain no-repeat; mask:url('assets/icons/notification-02.svg') center / contain no-repeat;"></span>04 · Dostupnost</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Hlídací pes dostupnosti</h2>
+            <p class="ek-p">Je produkt právě vyprodaný? Zapněte si hlídacího psa a nemusíte jeho dostupnost pravidelně kontrolovat. Jakmile bude znovu skladem, dáme vám vědět.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom4 }}" aria-label="Zvětšit ukázku: Hlídací pes dostupnosti" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="position:relative; width:min(470px,100%);">
+  <div class="ek-w" style="display:flex; flex-direction:column; gap:14px; padding:18px;">
+    <div style="display:flex; flex-direction:column; gap:8px; padding:16px; border:1px solid rgba(163,50,3,.28); border-radius:12px; background:rgba(163,50,3,.05);">
+      <span style="font-size:15px; font-weight:600; color:#A33203;">Tento produkt nelze zakoupit</span>
+      <p style="margin:0; font-size:14.5px; line-height:1.6; color:#52524a;">Může trvat několik měsíců — zapněte si hlídacího psa.</p>
+    </div>
+    <span class="ek-k-main" style="position:relative;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#fff; -webkit-mask:url('assets/icons/notification-01.svg') center / contain no-repeat; mask:url('assets/icons/notification-01.svg') center / contain no-repeat;"></span>Hlídat dostupnost<span class="ek-tgt" style="left:50%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  </div>
+  <div class="ek-on" style="position:absolute; inset:-200px; z-index:5; background:rgba(34,48,31,.28);"></div><div class="ek-on ek-pop-in ek-wd" style="position:absolute; left:50%; top:-6px; width:460px; margin-left:-230px; z-index:6;"><dc-import name="ui-WatchDog" productName="Levandulový esenciální olej" variantLabel="10 ml" loggedIn="{{ true }}" boxed="{{ true }}" hint-size="100%,330px"></dc-import></div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-05" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-5" style="background:linear-gradient(135deg,#EEF4DC 0%,#FBFCF6 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>05 · Rychlá pomoc</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">AI asistent pomůže s výběrem i objednávkou</h2>
+            <p class="ek-p">Náš AI asistent vám pomůže najít vhodné suroviny, obaly i recepty. Můžete se jej také zeptat na stav objednávky. Když si nejste jistí, kde začít nebo co zvolit, jednoduše se zeptejte.</p><p class="ek-p">Asistenta stále ladíme, aby odpovídal co nejlépe a byl pro vás užitečnou oporou při tvoření.</p><div class="ek-callout"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span><p>Potřebujete naši osobní pomoc? Napište na <a href="mailto:eshop@ekokoza.cz">eshop@ekokoza.cz</a>.</p></div>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom5 }}" aria-label="Zvětšit ukázku: AI asistent pomůže s výběrem i objednávkou" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(520px,100%);">
+  <div style="display:flex; align-items:center; gap:16px; padding:16px 18px 16px 20px; border:1px solid rgba(184,134,11,.22); border-radius:14px; background:linear-gradient(120deg, #FBF2E1 0%, #FBD870 100%); flex-wrap:wrap;">
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:44px; height:44px; background-color:#4C653D; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>
+    <div style="display:flex; flex-direction:column; gap:3px; min-width:0; flex:1 1 200px;">
+      <span style="font-weight:600; font-size:17px; line-height:1.3; color:#2A2A24;">Nenašli jste, co jste hledali?</span>
+      <span style="font-size:14.5px; line-height:1.45; color:#2A2A24;">Vyzkoušejte výraz vyhledat pomocí našeho AI asistenta.</span>
+    </div>
+    <span style="position:relative; display:inline-flex; align-items:center; gap:9px; height:44px; padding:0 20px; border:1.5px solid #4C653D; border-radius:999px; background:#4C653D; color:#F6F1E7; font-size:15px; font-weight:600; white-space:nowrap;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>Ekokozí asistent<span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  </div>
+  <div class="ek-on ek-pop-in ek-w" style="margin-top:12px; padding:0; overflow:hidden;">
+    <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#4C653D; color:#F6F1E7; font-size:13.5px; font-weight:600;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>Ekokozí asistent</div>
+    <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;"><span class="ek-bub ek-bub-me">Čím nahradit emulgátor v krému?</span><span class="ek-bub">Zkuste Olivem 1000 – stačí 4–6 %. Ukážu vám recept?</span></div>
+  </div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-06" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-6 ek-vstk-flip" style="background:linear-gradient(135deg,#F9E4EA 0%,#FEF8FA 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/file-02.svg') center / contain no-repeat; mask:url('assets/icons/file-02.svg') center / contain no-repeat;"></span>06 · Dokumentace</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Dokumentace k produktům na jednom místě</h2>
+            <p class="ek-p">K naprosté většině produktů poskytujeme potřebnou dokumentaci. Najdete ji přímo na detailu produktu. Dokumentaci k produktům z konkrétní objednávky si můžete stáhnout také najednou, jedním kliknutím v detailu objednávky ve svém <a href="objednavky.html">zákaznickém účtu</a>.</p><p class="ek-p">Pokud některý dokument chybí nebo potřebujete analytický list ke konkrétní šarži, <a href="kontakty.html#napiste-nam">napište nám</a>. Pro dohledání potřebujeme číslo šarže a datum spotřeby.</p><p class="ek-p">O dokument můžete požádat už v poznámce k objednávce. Listy pak dohledáme podle šarží, které skutečně obdržíte. Požádat lze i po doručení.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom6 }}" aria-label="Zvětšit ukázku: Dokumentace k produktům na jednom místě" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(330px,88%);">
+  <p class="ek-ms" style="margin-bottom:4px;">Detail objednávky</p>
+  <p class="ek-mt" style="margin-bottom:12px;">Objednávka 2026-10482</p>
+  <div class="ek-row"><span>Kyselina citronová 1 kg</span><span class="ek-ms">1 ks</span></div>
+  <div class="ek-row"><span>Stabilizovaný vitamin C</span><span class="ek-ms">2 ks</span></div>
+  <span class="ek-mbtn ek-mbtn-ghost" style="position:relative; margin-top:12px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#4C653D; -webkit-mask:url('assets/icons/download-01.svg') center / contain no-repeat; mask:url('assets/icons/download-01.svg') center / contain no-repeat;"></span>Stáhnout dokumentaci<span class="ek-tgt" style="left:70%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  <div class="ek-on" style="display:flex; gap:6px; margin-top:10px;"><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>BL</span><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>CoA</span><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>Spec.</span></div>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-07" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-7" style="background:linear-gradient(135deg,#FBF0D2 0%,#FEFBF1 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/task-01.svg') center / contain no-repeat; mask:url('assets/icons/task-01.svg') center / contain no-repeat;"></span>07 · Přehled</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Nákupní seznamy</h2>
+            <p class="ek-p">Vytvořte si vlastní seznamy produktů pro oblíbené receptury, pravidelnou výrobu nebo budoucí nákupy. Můžete si připravit třeba seznam na výrobu mýdla, krémů nebo svíček a vrátit se k němu, až nastane čas tvořit.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom7 }}" aria-label="Zvětšit ukázku: Nákupní seznamy" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(320px,86%);">
+  <p class="ek-mt" style="display:flex; align-items:center; gap:8px; margin-bottom:10px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/task-01.svg') center / contain no-repeat; mask:url('assets/icons/task-01.svg') center / contain no-repeat;"></span>Výroba mýdla</p>
+  <div class="ek-row"><span>Mýdlová hmota bambucká 1 kg</span></div>
+  <div class="ek-row"><span>Levandulový esenciální olej</span></div>
+  <div class="ek-row ek-on"><span>Kyselina citronová 1 kg</span><span class="ek-pill ek-pill-g">Přidáno</span></div>
+  <span class="ek-mbtn" style="position:relative; margin-top:12px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/plus-sign.svg') center / contain no-repeat; mask:url('assets/icons/plus-sign.svg') center / contain no-repeat;"></span>Přidat do seznamu<span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-08" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-8 ek-vstk-flip" style="background:linear-gradient(135deg,#EEF4DC 0%,#FBFCF6 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/package.svg') center / contain no-repeat; mask:url('assets/icons/package.svg') center / contain no-repeat;"></span>08 · Větší odběr</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Individuální poptávka</h2>
+            <div class="ek-callout"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span><p>Potřebujete větší množství suroviny, jiné balení nebo produkt, který momentálně nemáme v běžné nabídce? Napište nám na <a href="mailto:eshop@ekokoza.cz">eshop@ekokoza.cz</a>. Prověříme možnosti a ozveme se s návrhem řešení.</p></div>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom8 }}" aria-label="Zvětšit ukázku: Individuální poptávka" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(330px,88%);">
+  <p class="ek-ms ek-mail"><b>Komu:</b> eshop@ekokoza.cz</p>
+  <p class="ek-ms ek-mail"><b>Předmět:</b> Poptávka – 25 kg bambuckého másla</p>
+  <p class="ek-ms" style="line-height:1.55; padding:10px 0 12px; color:#4A4A42;">Dobrý den, potřebovali bychom větší balení na pravidelnou výrobu…</p>
+  <span class="ek-mbtn" style="position:relative;"><span class="ek-off" style="display:inline-flex; align-items:center; gap:6px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Odeslat</span><span class="ek-on" style="position:absolute; inset:0; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#EEF4DC; color:#4C653D; border-radius:999px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#4C653D; -webkit-mask:url('assets/icons/tick-01.svg') center / contain no-repeat; mask:url('assets/icons/tick-01.svg') center / contain no-repeat;"></span>Odesláno</span><span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+        <span id="eko-tip-09" class="ek-anchor" data-stick="1"></span>
+        <article class="ek-card ek-vstk ek-vstk-9" style="background:linear-gradient(135deg,#F9E4EA 0%,#FEF8FA 48%,#FFFFFF 100%);">
+          <div class="ek-vstk-txt">
+            <span class="ek-badge"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/rocket-01.svg') center / contain no-repeat; mask:url('assets/icons/rocket-01.svg') center / contain no-repeat;"></span>09 · Když spěcháte</span>
+            <h2 class="ek-h2" style="margin:16px 0 16px; font-size:32px;">Přednostní odeslání</h2>
+            <p class="ek-p">Potřebujete objednávku odeslat co nejdříve? V košíku můžete zvolit přednostní odeslání za <strong>50 Kč</strong>. Objednávku vytvořenou v pracovní den do 10:00 odešleme ještě tentýž den. Po 10. hodině ji odešleme následující pracovní den.</p><p class="ek-p">Zásilka je potom obvykle doručena následující pracovní den. Rychlost samotné přepravy ale závisí na dopravci.</p><p class="ek-p">Poplatek pomáhá zachovat tuto možnost pro zákazníky, kteří ji skutečně potřebují. Objednávky, u kterých máme vše připravené, se i bez této služby většinou snažíme odeslat hned následující pracovní den.</p>
+          </div>
+          <div class="ek-mock-col">
+            <button type="button" class="ek-mock" onClick="{{ zoom9 }}" aria-label="Zvětšit ukázku: Přednostní odeslání" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+            <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(500px,100%);">
+  <div class="ek-k-check" style="position:relative;">
+    <span class="ek-k-box"><span class="ek-on" style="position:absolute; inset:-1.5px; border-radius:6px; background:#4C653D; display:flex; align-items:center; justify-content:center;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#fff; -webkit-mask:url('assets/icons/tick-01.svg') center / contain no-repeat; mask:url('assets/icons/tick-01.svg') center / contain no-repeat;"></span></span></span>
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4C653D; -webkit-mask:url('assets/icons/rocket-01.svg') center / contain no-repeat; mask:url('assets/icons/rocket-01.svg') center / contain no-repeat;"></span>
+    <span style="flex:1 1 auto; font-family:'EB Garamond',serif; font-size:22px; font-weight:500; color:#2A2A24;">Přednostní odeslání</span>
+    <span style="font-family:'EB Garamond',serif; font-size:20px; font-weight:600; color:#4C653D;">50 Kč</span>
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span>
+    <span class="ek-tgt" style="left:31px; top:50%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span>
+  </div>
+  <p class="ek-on" style="margin:12px 2px 0; font-size:14.5px; line-height:1.6; color:#2A2A24;">Objednávku vytvořenou v pracovní den do 10:00 odešleme ještě tentýž den.</p>
+</div>
+            </div>
+            <span class="ek-zoom"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat; mask:url('assets/icons/zoom-in-01.svg') center / contain no-repeat;"></span>Kliknutím zvětšíte</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    <sc-if value="{{ z1 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Oblíbené produkty a recepty">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(470px,100%); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px;">
+  <dc-import name="ui-ProductCard" title="Bambusový uzávěr na lékovku s kapátkem" price="8 Kč" img="assets/products/lahvicka-nahled-hneda.png" stockState="ready" fav="{{ false }}" hint-size="100%,380px"></dc-import>
+  <div style="position:relative;"><dc-import name="ui-ProductCard" title="Levandulové máslo, 100 g" price="189 Kč" img="assets/products/levandulove-maslo-100-g.jpg" stockState="ready" fav="{{ on }}" hint-size="100%,380px"></dc-import><span class="ek-tgt" style="left:calc(100% - 52px); top:50px;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">01 · Oblíbené produkty a recepty</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z2 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Předpokládaný termín odeslání">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w ek-real" style="width:min(470px,100%); padding:18px 18px 14px;">
+  <div style="position:relative;">
+    <dc-import name="ui-VariantPicker" mode="qty" heading="Vyberte variantu" variants="{{ varsShip }}" hint-size="100%,230px"></dc-import>
+    <span class="ek-on" style="position:absolute; z-index:5; width:max-content; max-width:266px; padding:10px 13px; border-radius:12px; background:#2A2A24; color:#F6F1E7; font-family:Work Sans,sans-serif; font-size:13px; line-height:1.45; box-shadow:0 18px 36px -18px rgba(0,0,0,.55); left:30px; top:44px;">Navažujeme z velkého balení — odeslání o jeden pracovní den později.</span>
+    <span class="ek-tgt" style="left:172px; top:152px;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span>
+  </div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">02 · Předpokládaný termín odeslání</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z3 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Přidání k objednávce bez dalšího poštovného">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(440px,100%); display:flex; flex-direction:column; gap:14px;">
+  <div style="display:flex; align-items:center; gap:10px;"><h2 class="ek-h2" style="margin:0;">Přidat k objednávce</h2><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span></div>
+  <div class="ek-card" style="display:flex; flex-direction:column; gap:12px; padding:18px 20px; background:#fff;">
+    <span style="font-size:15px; font-weight:600; color:#2A2A24;">Zde zadejte číslo objednávky, ke které chcete udělat doobjednávku:</span>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span class="ek-k-fin" style="position:relative; flex:1 1 180px;"><span class="ek-off" style="color:#b3ae9c;">Číslo objednávky</span><span class="ek-on ek-k-val">2026-10482</span></span>
+      <span class="ek-k-btn" style="position:relative;">Přidat<span class="ek-tgt" style="left:50%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+    </div>
+    <span class="ek-on" style="display:flex; align-items:center; gap:8px; font-size:14px; font-weight:600; color:#3F7F2C;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#3F7F2C; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span>Objednávky propojeny · další poštovné neplatíte</span>
+  </div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">03 · Přidání k objednávce bez dalšího poštovného</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z4 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Hlídací pes dostupnosti">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="position:relative; width:min(470px,100%);">
+  <div class="ek-w" style="display:flex; flex-direction:column; gap:14px; padding:18px;">
+    <div style="display:flex; flex-direction:column; gap:8px; padding:16px; border:1px solid rgba(163,50,3,.28); border-radius:12px; background:rgba(163,50,3,.05);">
+      <span style="font-size:15px; font-weight:600; color:#A33203;">Tento produkt nelze zakoupit</span>
+      <p style="margin:0; font-size:14.5px; line-height:1.6; color:#52524a;">Může trvat několik měsíců — zapněte si hlídacího psa.</p>
+    </div>
+    <span class="ek-k-main" style="position:relative;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#fff; -webkit-mask:url('assets/icons/notification-01.svg') center / contain no-repeat; mask:url('assets/icons/notification-01.svg') center / contain no-repeat;"></span>Hlídat dostupnost<span class="ek-tgt" style="left:50%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  </div>
+  <div class="ek-on" style="position:absolute; inset:-200px; z-index:5; background:rgba(34,48,31,.28);"></div><div class="ek-on ek-pop-in ek-wd" style="position:absolute; left:50%; top:-6px; width:460px; margin-left:-230px; z-index:6;"><dc-import name="ui-WatchDog" productName="Levandulový esenciální olej" variantLabel="10 ml" loggedIn="{{ true }}" boxed="{{ true }}" hint-size="100%,330px"></dc-import></div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">04 · Hlídací pes dostupnosti</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z5 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: AI asistent pomůže s výběrem i objednávkou">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(520px,100%);">
+  <div style="display:flex; align-items:center; gap:16px; padding:16px 18px 16px 20px; border:1px solid rgba(184,134,11,.22); border-radius:14px; background:linear-gradient(120deg, #FBF2E1 0%, #FBD870 100%); flex-wrap:wrap;">
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:44px; height:44px; background-color:#4C653D; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>
+    <div style="display:flex; flex-direction:column; gap:3px; min-width:0; flex:1 1 200px;">
+      <span style="font-weight:600; font-size:17px; line-height:1.3; color:#2A2A24;">Nenašli jste, co jste hledali?</span>
+      <span style="font-size:14.5px; line-height:1.45; color:#2A2A24;">Vyzkoušejte výraz vyhledat pomocí našeho AI asistenta.</span>
+    </div>
+    <span style="position:relative; display:inline-flex; align-items:center; gap:9px; height:44px; padding:0 20px; border:1.5px solid #4C653D; border-radius:999px; background:#4C653D; color:#F6F1E7; font-size:15px; font-weight:600; white-space:nowrap;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:22px; height:22px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>Ekokozí asistent<span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  </div>
+  <div class="ek-on ek-pop-in ek-w" style="margin-top:12px; padding:0; overflow:hidden;">
+    <div style="display:flex; align-items:center; gap:8px; padding:10px 14px; background:#4C653D; color:#F6F1E7; font-size:13.5px; font-weight:600;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/ai-search.svg') center / contain no-repeat; mask:url('assets/icons/ai-search.svg') center / contain no-repeat;"></span>Ekokozí asistent</div>
+    <div style="padding:12px 14px; display:flex; flex-direction:column; gap:8px;"><span class="ek-bub ek-bub-me">Čím nahradit emulgátor v krému?</span><span class="ek-bub">Zkuste Olivem 1000 – stačí 4–6 %. Ukážu vám recept?</span></div>
+  </div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">05 · AI asistent pomůže s výběrem i objednávkou</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z6 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Dokumentace k produktům na jednom místě">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(330px,88%);">
+  <p class="ek-ms" style="margin-bottom:4px;">Detail objednávky</p>
+  <p class="ek-mt" style="margin-bottom:12px;">Objednávka 2026-10482</p>
+  <div class="ek-row"><span>Kyselina citronová 1 kg</span><span class="ek-ms">1 ks</span></div>
+  <div class="ek-row"><span>Stabilizovaný vitamin C</span><span class="ek-ms">2 ks</span></div>
+  <span class="ek-mbtn ek-mbtn-ghost" style="position:relative; margin-top:12px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#4C653D; -webkit-mask:url('assets/icons/download-01.svg') center / contain no-repeat; mask:url('assets/icons/download-01.svg') center / contain no-repeat;"></span>Stáhnout dokumentaci<span class="ek-tgt" style="left:70%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+  <div class="ek-on" style="display:flex; gap:6px; margin-top:10px;"><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>BL</span><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>CoA</span><span class="ek-chip"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#B23803; -webkit-mask:url('assets/icons/pdf-01.svg') center / contain no-repeat; mask:url('assets/icons/pdf-01.svg') center / contain no-repeat;"></span>Spec.</span></div>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">06 · Dokumentace k produktům na jednom místě</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z7 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Nákupní seznamy">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(320px,86%);">
+  <p class="ek-mt" style="display:flex; align-items:center; gap:8px; margin-bottom:10px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:18px; height:18px; background-color:#4C653D; -webkit-mask:url('assets/icons/task-01.svg') center / contain no-repeat; mask:url('assets/icons/task-01.svg') center / contain no-repeat;"></span>Výroba mýdla</p>
+  <div class="ek-row"><span>Mýdlová hmota bambucká 1 kg</span></div>
+  <div class="ek-row"><span>Levandulový esenciální olej</span></div>
+  <div class="ek-row ek-on"><span>Kyselina citronová 1 kg</span><span class="ek-pill ek-pill-g">Přidáno</span></div>
+  <span class="ek-mbtn" style="position:relative; margin-top:12px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/plus-sign.svg') center / contain no-repeat; mask:url('assets/icons/plus-sign.svg') center / contain no-repeat;"></span>Přidat do seznamu<span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">07 · Nákupní seznamy</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z8 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Individuální poptávka">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-w" style="width:min(330px,88%);">
+  <p class="ek-ms ek-mail"><b>Komu:</b> eshop@ekokoza.cz</p>
+  <p class="ek-ms ek-mail"><b>Předmět:</b> Poptávka – 25 kg bambuckého másla</p>
+  <p class="ek-ms" style="line-height:1.55; padding:10px 0 12px; color:#4A4A42;">Dobrý den, potřebovali bychom větší balení na pravidelnou výrobu…</p>
+  <span class="ek-mbtn" style="position:relative;"><span class="ek-off" style="display:inline-flex; align-items:center; gap:6px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Odeslat</span><span class="ek-on" style="position:absolute; inset:0; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:#EEF4DC; color:#4C653D; border-radius:999px;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:16px; height:16px; background-color:#4C653D; -webkit-mask:url('assets/icons/tick-01.svg') center / contain no-repeat; mask:url('assets/icons/tick-01.svg') center / contain no-repeat;"></span>Odesláno</span><span class="ek-tgt" style="left:55%; top:55%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span></span>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">08 · Individuální poptávka</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    <sc-if value="{{ z9 }}" hint-placeholder-val="{{ false }}">
+      <div class="ek-lb {{ phCls }}" onClick="{{ zoomClose }}" role="dialog" aria-label="Ukázka: Přednostní odeslání">
+        <div class="ek-lb-in" onClick="{{ stop }}">
+          <div class="ek-mock ek-mock-big" style="background:linear-gradient(160deg,#FDF1F4 0%,#F7DDE4 100%);">
+          <div class="ek-mock-bar"><span></span><span></span><span></span><em><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:11px; height:11px; background-color:#8a8776; -webkit-mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat; mask:url('assets/icons/square-lock-01.svg') center / contain no-repeat;"></span>ekokoza.cz</em></div>
+            <div class="ek-mock-stage">
+<div class="ek-real" style="width:min(500px,100%);">
+  <div class="ek-k-check" style="position:relative;">
+    <span class="ek-k-box"><span class="ek-on" style="position:absolute; inset:-1.5px; border-radius:6px; background:#4C653D; display:flex; align-items:center; justify-content:center;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:14px; height:14px; background-color:#fff; -webkit-mask:url('assets/icons/tick-01.svg') center / contain no-repeat; mask:url('assets/icons/tick-01.svg') center / contain no-repeat;"></span></span></span>
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:26px; height:26px; background-color:#4C653D; -webkit-mask:url('assets/icons/rocket-01.svg') center / contain no-repeat; mask:url('assets/icons/rocket-01.svg') center / contain no-repeat;"></span>
+    <span style="flex:1 1 auto; font-family:'EB Garamond',serif; font-size:22px; font-weight:500; color:#2A2A24;">Přednostní odeslání</span>
+    <span style="font-family:'EB Garamond',serif; font-size:20px; font-weight:600; color:#4C653D;">50 Kč</span>
+    <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span>
+    <span class="ek-tgt" style="left:31px; top:50%;"><svg class="ek-cur" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5l15 8.6-6.6 1.6 3.9 7.1-2.7 1.4-3.9-7.2L4 18.6z" fill="#1E261E" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="ek-ring" aria-hidden="true"></span></span>
+  </div>
+  <p class="ek-on" style="margin:12px 2px 0; font-size:14.5px; line-height:1.6; color:#2A2A24;">Objednávku vytvořenou v pracovní den do 10:00 odešleme ještě tentýž den.</p>
+</div>
+            </div>
+          </div>
+          <p class="ek-lb-cap">09 · Přednostní odeslání</p>
+        </div>
+        <span class="ek-lb-x"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/cancel-01.svg') center / contain no-repeat; mask:url('assets/icons/cancel-01.svg') center / contain no-repeat;"></span>Zavřít</span>
+      </div>
+    </sc-if>
+    </div>
+  </section>
+
+  <section style="padding:64px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div class="ek-dark" style="background:linear-gradient(155deg,#4C653D 0%,#22301F 100%); border-radius:14px; padding:48px 56px;">
+        <div style="max-width:72ch;">
+          <p class="ek-eyebrow" style="color:#B9D096;">Ekokoza v praxi</p>
+          <h2 class="ek-h2" style="color:#F6F1E7;">Méně hledání, více tvoření</h2>
+          <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#F6F1E7; text-wrap:pretty;">Naším cílem je, aby se vám na Ekokoze nakupovalo jednoduše a s jistotou. Kdykoli budete potřebovat poradit, jsme vám k dispozici na <a href="mailto:eshop@ekokoza.cz" style="color:#F6F1E7;">eshop@ekokoza.cz</a>.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="mailto:eshop@ekokoza.cz" class="ek-btn-onDark" style="display:inline-flex; align-items:center; gap:9px; background:#F6F1E7; color:#4C653D; border:1.5px solid #F6F1E7; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Napsat nám</a>
+            <a href="faq.html" class="ek-btn-ghostDark" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F6F1E7; border:1.5px solid rgba(246,241,231,.5); text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;">Časté dotazy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div style="overflow-x:clip;">
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  state = { zoom: 0, ph: 0 };
+  componentDidMount() {
+    this.still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!this.still) this.tick = setInterval(() => this.setState(s => ({ ph: (s.ph + 1) % 5 })), 1100);
+    this.onKeyZ = (e) => { if (e.key === 'Escape' && this.state.zoom) this.setState({ zoom: 0 }); };
+    window.addEventListener('keydown', this.onKeyZ);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKeyZ); clearInterval(this.tick); }
+  // Plynulý posun na kotvy (#…) pod přilepenou hlavičku – jednou pro celou stránku
+  static ekAnchor = (() => {
+    if (typeof document === 'undefined' || window.__ekAnchor) return true;
+    window.__ekAnchor = true;
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a || e.defaultPrevented) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      let el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      // kotva uvnitř bílého trhaného pásu → zastavit na horním okraji pásu
+      if (el.parentElement && el.parentElement.querySelector(':scope > .ek-tear')) el = el.parentElement;
+      let sc = el.parentElement;
+      while (sc && sc !== document.body && sc !== document.documentElement) {
+        const o = getComputedStyle(sc).overflowY;
+        if ((o === 'auto' || o === 'scroll') && sc.scrollHeight > sc.clientHeight) break;
+        sc = sc.parentElement;
+      }
+      const root = (!sc || sc === document.body || sc === document.documentElement) ? null : sc;
+      let headH = 0;
+      document.querySelectorAll('.sc-host[data-sc-name="ui-Header"], [style*="sticky"]').forEach((n) => {
+        if (getComputedStyle(n).position !== 'sticky') return;
+        const r = n.getBoundingClientRect();
+        if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
+      });
+      const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+      const base = root ? root.getBoundingClientRect().top : 0;
+      // přilepená karta (stacking): zastavit přesně na místě, kde se karta přilepí
+      const card = el.nextElementSibling;
+      const stick = (el.dataset && el.dataset.stick && card && getComputedStyle(card).position === 'sticky') ? parseFloat(getComputedStyle(card).top) : null;
+      const top = el.getBoundingClientRect().top - base + cur - (stick != null ? stick : headH + 16);
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      (root || window).scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + id); } catch (err) {}
+    }, true);
+    return true;
+  })();
+  renderVals() {
+    return {
+      crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Vychytávky pro váš nákup' }],
+      zoom1: () => this.setState({ zoom: 1 }),
+      z1: this.state.zoom === 1,
+      zoom2: () => this.setState({ zoom: 2 }),
+      z2: this.state.zoom === 2,
+      zoom3: () => this.setState({ zoom: 3 }),
+      z3: this.state.zoom === 3,
+      zoom4: () => this.setState({ zoom: 4 }),
+      z4: this.state.zoom === 4,
+      zoom5: () => this.setState({ zoom: 5 }),
+      z5: this.state.zoom === 5,
+      zoom6: () => this.setState({ zoom: 6 }),
+      z6: this.state.zoom === 6,
+      zoom7: () => this.setState({ zoom: 7 }),
+      z7: this.state.zoom === 7,
+      zoom8: () => this.setState({ zoom: 8 }),
+      z8: this.state.zoom === 8,
+      zoom9: () => this.setState({ zoom: 9 }),
+      z9: this.state.zoom === 9,
+      phCls: this.still ? 'ek-still' : 'ek-ph' + this.state.ph,
+      on: !!this.still || this.state.ph >= 2,
+      varsShip: [{ label: '100 g', price: '169 Kč', state: 'ready' }, { label: '1 kg', price: '1 091 Kč', state: 'packing' }, { label: '5 kg', price: '4 990 Kč', state: 'expected', date: '28. 11. 2026' }],
+      zoomClose: () => this.setState({ zoom: 0 }),
+      stop: (e) => e.stopPropagation(),
+    };
+  }
+}
+</script>
+</body>
+</html>

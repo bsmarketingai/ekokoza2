@@ -84,7 +84,7 @@
             <span style="display:flex; flex-direction:column; gap:2px;">
               <span style="font-weight:700; font-size:15px; color:#2A2A24;">{{ company }}</span>
               <span style="font-size:15px; color:#52524a; line-height:1.5;">{{ address }}</span>
-              <a href="{{ mapHref }}" class="ek-link-map" style="margin-top:2px; font-size:14.5px; font-weight:600; color:#4C653D; text-decoration:none;">Zobrazit na mapě</a>
+              <span style="display:flex; flex-wrap:wrap; gap:4px 16px; margin-top:2px;"><a href="{{ mapHref }}" class="ek-link-map" style="font-size:14.5px; font-weight:600; color:#4C653D; text-decoration:none;">Zobrazit na mapě</a><a href="kontakty.html" class="ek-link-map" style="font-size:14.5px; font-weight:600; color:#4C653D; text-decoration:none;">Všechny kontakty</a></span>
             </span>
           </div>
           <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-top:16px; border-top:1px solid rgba(76,101,61,.14);">
@@ -160,8 +160,8 @@
       <div style="padding:22px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13px; color:#AAC29D;">
         <span>{{ copyright }}</span>
         <span style="display:flex; gap:18px;">
-          <a href="#" style="color:#AAC29D; text-decoration:none;" class="ek-link-u">Obchodní podmínky</a>
-          <a href="#" style="color:#AAC29D; text-decoration:none;" class="ek-link-u">Ochrana soukromí</a>
+          <a href="obchodni-podminky.html" style="color:#AAC29D; text-decoration:none;" class="ek-link-u">Obchodní podmínky</a>
+          <a href="zpracovani-osobnich-udaju.html" style="color:#AAC29D; text-decoration:none;" class="ek-link-u">Ochrana soukromí</a>
         </span>
       </div>
 
@@ -198,16 +198,16 @@ class Component extends DCLogic {
       phoneHref: 'tel:' + phone.replace(/\s/g, ''),
       homeHref: this.props.homeHref ?? '#',
       copyright: this.props.copyright ?? '© 2026 Ekokoza s.r.o. — S námi víte, co tvoříte.',
-      colHelp: norm(this.props.colHelp ?? ['Sledování zásilky', 'Vrácení zboží a reklamace', 'Platba a doprava', 'Časté otázky (FAQ)', 'Kontakty', 'Vychytávky pro váš nákup']),
+      colHelp: norm(this.props.colHelp ?? [{ label: 'Sledování zásilky', href: 'sledovani-zasilky.html' }, { label: 'Vrácení zboží a reklamace', href: 'vraceni-zbozi.html' }, { label: 'Platba a doprava', href: 'platba-a-doprava.html' }, { label: 'Časté otázky (FAQ)', href: 'faq.html' }, { label: 'Kontakty', href: 'kontakty.html' }, { label: 'Vychytávky pro váš nákup', href: 'vychytavky.html' }]),
       colAccount: norm(this.props.colAccount ?? ['Moje objednávky', 'Faktury', 'Osobní a doručovací údaje', { label: 'Věrnostní program a B2B ceny', href: 'vernostni-program.html' }]),
-      colDiscover: norm(this.props.colDiscover ?? [{ label: 'O Ekokoze', href: 'o-nas.html' }, 'Recepty a návody', 'Slovníček pojmů', 'Organic Lab – kurzy výroby', 'Mirčina mýdla']),
-      colLegal: norm(this.props.colLegal ?? ['Obchodní podmínky', 'Soukromí a cookies', 'Podmínky vrácení a reklamací', 'Identifikační a kontaktní údaje']),
+      colDiscover: norm(this.props.colDiscover ?? [{ label: 'O Ekokoze', href: 'o-nas.html' }, 'Recepty a návody', 'Slovníček pojmů', { label: 'Organic Lab – kurzy výroby', href: 'organic-lab.html' }, { label: 'Mirčina mýdla', href: 'mircina-mydla.html' }]),
+      colLegal: norm(this.props.colLegal ?? [{ label: 'Obchodní podmínky', href: 'obchodni-podminky.html' }, { label: 'Soukromí a cookies', href: 'zpracovani-osobnich-udaju.html' }, { label: 'Podmínky vrácení a reklamací', href: 'vraceni-zbozi.html' }, { label: 'Identifikační a kontaktní údaje', href: 'kontakty.html#udaje' }]),
       colInfo: this.props.colInfo ?? ['Doprava a platba', 'Reklamace a vrácení', 'Obchodní podmínky', 'Časté dotazy'],
       colCoop: this.props.colCoop ?? ['B2B a velkoobchod', 'Affiliate program', 'Pro výrobce', 'Staňte se partnerem'],
       iconMail: this.mask('mail-01', 20, 'currentColor'),
       iconPhone: this.mask('call', 20, 'currentColor'),
       iconPin: this.mask('location-01', 20, '#4F6E2A') + ' margin-top:2px;',
-      mapHref: this.props.mapHref ?? '#',
+      mapHref: this.props.mapHref ?? 'kontakty.html#odber',
       socials: [
         { name: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/ekokoza/',
           bg: 'linear-gradient(135deg,#F5C63C 0%,#E9758C 52%,#B060A8 100%)' },
@@ -222,10 +222,10 @@ class Component extends DCLogic {
       })),
       btnContact: btn('secondary') + ' padding:13px 18px; white-space:nowrap; flex:0 1 auto; min-width:0; max-width:100%; overflow:hidden; text-overflow:ellipsis;',
       helpLinks: [
-        { label: 'Kde je moje objednávka?', href: '#', icon: 'delivery-tracking-01', variant: 'primary' },
-        { label: 'Vrácení a reklamace', href: '#', icon: 'delivery-return-01', variant: 'secondary' },
-        { label: 'Platba a doprava', href: '#', icon: 'credit-card', variant: 'secondary' },
-        { label: 'Časté otázky (FAQ)', href: '#', icon: 'help-circle', variant: 'secondary' },
+        { label: 'Kde je moje objednávka?', href: 'sledovani-zasilky.html', icon: 'delivery-tracking-01', variant: 'primary' },
+        { label: 'Vrácení a reklamace', href: 'vraceni-zbozi.html', icon: 'delivery-return-01', variant: 'secondary' },
+        { label: 'Platba a doprava', href: 'platba-a-doprava.html', icon: 'credit-card', variant: 'secondary' },
+        { label: 'Časté otázky (FAQ)', href: 'faq.html', icon: 'help-circle', variant: 'secondary' },
       ].map(l => ({
         label: l.label, href: l.href,
         cls: 'ek-btn-' + l.variant,

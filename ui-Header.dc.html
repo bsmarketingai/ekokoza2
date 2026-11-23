@@ -173,13 +173,13 @@
     <div class="ek-pad" style="max-width:1624px; margin:0 auto; padding:5px 32px; display:flex; align-items:center; justify-content:space-between; font-size:13px; letter-spacing:.02em;">
       <span class="ek-topbar-txt" style="padding-left:158px;">{{ topbarText }}</span>
       <span class="ek-util-hide" style="display:flex; align-items:center; gap:8px;">
-        <a href="#" class="ek-link-u ek-util-track ek-util-v1" style="color:#EFE7D6; text-decoration:none;">Sledování objednávky</a>
+        <a href="sledovani-zasilky.html" class="ek-link-u ek-util-track ek-util-v1" style="color:#EFE7D6; text-decoration:none;">Sledování objednávky</a>
         <span style="opacity:.5;" class="ek-util-track ek-util-v1">·</span>
         <a href="{{ loyaltyHref }}" class="ek-util-loyal" style="display:none; align-items:center; gap:6px; color:#EFE7D6; text-decoration:none;"><span style="{{ iconLoyalTop }}"></span><span class="ek-link-u">Věrnostní program</span></a>
         <span style="display:none; opacity:.5;" class="ek-util-loyal-sep">·</span>
-        <a href="#" class="ek-link-u" style="color:#EFE7D6; text-decoration:none;">FAQ</a>
+        <a href="faq.html" class="ek-link-u" style="color:#EFE7D6; text-decoration:none;">FAQ</a>
         <span style="opacity:.5;">·</span>
-        <a href="#" class="ek-link-u" style="color:#EFE7D6; text-decoration:none;">Kontakt</a>
+        <a href="kontakty.html" class="ek-link-u" style="color:#EFE7D6; text-decoration:none;">Kontakty</a>
         <span style="display:flex; align-items:center; gap:4px; margin-left:14px; padding-left:14px; border-left:1px solid rgba(239,231,214,.25);">
           <button type="button" title="Čeština" aria-pressed="{{ czActive }}" onClick="{{ setCz }}" class="ek-flag {{ czFlagCls }}"><img src="assets/flags/cz.svg" alt="Čeština" width="20" height="16" style="display:block; width:20px; height:16px;"></button>
           <button type="button" title="Slovenčina" aria-pressed="{{ skActive }}" onClick="{{ setSk }}" class="ek-flag {{ skFlagCls }}"><img src="assets/flags/sk.svg" alt="Slovenčina" width="20" height="16" style="display:block; width:20px; height:16px;"></button>
@@ -577,8 +577,8 @@ class Component extends DCLogic {
         : [
             { label: 'Přihlásit se', href: 'muj-ucet.html', icon: this.mask('user', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:15px 20px; min-height:44px; text-decoration:none; color:#2A2A24; font-size:15px; margin-top:6px;' },
             { label: 'Oblíbené položky', href: 'oblibene.html', icon: this.mask('favourite', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:6px 20px 13px; text-decoration:none; color:#2A2A24; font-size:15px;' },
-            { label: 'Sledování objednávky', href: '#', icon: this.mask('delivery-tracking-01', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:6px 20px 13px; text-decoration:none; color:#2A2A24; font-size:15px;' },
-            { label: 'Kontakt', href: '#', icon: this.mask('mail-01', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:6px 20px 15px; text-decoration:none; color:#2A2A24; font-size:15px;' },
+            { label: 'Sledování objednávky', href: 'sledovani-zasilky.html', icon: this.mask('delivery-tracking-01', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:6px 20px 13px; text-decoration:none; color:#2A2A24; font-size:15px;' },
+            { label: 'Kontakty', href: 'kontakty.html', icon: this.mask('mail-01', 20, '#4C653D'), style: 'display:flex; align-items:center; gap:10px; padding:6px 20px 15px; text-decoration:none; color:#2A2A24; font-size:15px;' },
           ],
 
       drawerMenu,

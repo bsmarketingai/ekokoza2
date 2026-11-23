@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platba a doprava | ekokoza.cz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #D14405; color: #fff; }
+  a { color: #4C653D; }
+  a:hover { color: #B23803; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
+  .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
+  .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
+  .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
+  .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
+  .ek-tear { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: 0; pointer-events: none; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28), inset 0 -14px 26px -14px rgba(45,58,46,.24); clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% calc(100% - 6.3px), 97.83% calc(100% - 11.1px), 95.65% calc(100% - 7.6px), 93.48% calc(100% - 13.4px), 91.3% calc(100% - 9.2px), 89.13% calc(100% - 5.3px), 86.96% calc(100% - 12.2px), 84.78% calc(100% - 8.7px), 82.61% calc(100% - 11.6px), 80.43% calc(100% - 6.1px), 78.26% calc(100% - 14.3px), 76.09% calc(100% - 9.6px), 73.91% calc(100% - 12.9px), 71.74% calc(100% - 7.1px), 69.57% calc(100% - 10.8px), 67.39% calc(100% - 4.8px), 65.22% calc(100% - 13.7px), 63.04% calc(100% - 8.2px), 60.87% calc(100% - 11.3px), 58.7% calc(100% - 6.7px), 56.52% calc(100% - 10.1px), 54.35% calc(100% - 14.6px), 52.17% calc(100% - 9.4px), 50% calc(100% - 5.6px), 47.83% calc(100% - 12.4px), 45.65% calc(100% - 8.9px), 43.48% calc(100% - 11.8px), 41.3% calc(100% - 6.9px), 39.13% calc(100% - 13.2px), 36.96% calc(100% - 9.7px), 34.78% calc(100% - 5.2px), 32.61% calc(100% - 12.7px), 30.43% calc(100% - 8.3px), 28.26% calc(100% - 11.5px), 26.09% calc(100% - 7.3px), 23.91% calc(100% - 14.5px), 21.74% calc(100% - 9.9px), 19.57% calc(100% - 6.2px), 17.39% calc(100% - 12.8px), 15.22% calc(100% - 8.5px), 13.04% calc(100% - 11.2px), 10.87% calc(100% - 5.8px), 8.7% calc(100% - 13.9px), 6.52% calc(100% - 9.3px), 4.35% calc(100% - 6.4px), 2.17% calc(100% - 12.3px), 0% calc(100% - 8.6px)); }
+  .ek-h1 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 42px; line-height: 1.1; color: #4C653D; margin: 0; text-wrap: pretty; }
+  .ek-h2 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 30px; line-height: 1.15; color: #4C653D; margin: 0 0 14px; text-wrap: pretty; }
+  .ek-h3 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 21px; line-height: 1.25; color: #2A2A24; margin: 0 0 8px; text-wrap: pretty; }
+  .ek-eyebrow { margin: 0 0 10px; color: #4F6E2A; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+  .ek-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: #4A4A42; text-wrap: pretty; }
+  .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
+  .ek-t { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #4A4A42; text-wrap: pretty; }
+  .ek-t:last-child { margin-bottom: 0; }
+  .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ek-ul li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4A4A42; }
+  .ek-ul li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: #4F6E2A; }
+  .ek-check li { padding-left: 30px; }
+  .ek-check li::before { left: 0; top: .15em; width: 20px; height: 20px; border-radius: 0; background: #4F6E2A; -webkit-mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; }
+  .ek-price { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; color: #4C653D; white-space: nowrap; }
+  .ek-price-free { background: #EEF4DC; border: 1px solid #D9E5BF; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: start; }
+  .ek-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+  .ek-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .ek-four { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-video { position: relative; display: block; aspect-ratio: 9/16; width: 100%; max-width: 340px; margin: 0 auto; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; text-decoration: none; }
+  .ek-video:hover .ek-play { transform: translate(-50%,-50%) scale(1.06); }
+  .ek-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #4C653D; box-shadow: 0 16px 34px -14px rgba(34,48,31,.7); transition: transform .25s; }
+  .ek-acc { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; overflow: hidden; }
+  .ek-q { display: flex; align-items: center; gap: 16px; width: 100%; padding: 18px 22px; background: transparent; border: none; border-top: 1px solid #EFE7D6; cursor: pointer; text-align: left; font-family: 'Work Sans',sans-serif; transition: background .18s; }
+  .ek-acc > div:first-child .ek-q { border-top: none; }
+  .ek-q:hover { background: #FBF8F1; }
+  .ek-q-t { flex: 1; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 20px; line-height: 1.3; color: #2A2A24; }
+  .ek-a { padding: 0 22px 22px 22px; }
+  .ek-a p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.7; color: #4A4A42; max-width: 78ch; text-wrap: pretty; }
+  .ek-a p:last-child { margin-bottom: 0; }
+  @media (max-width: 1149px) {
+    .ek-hero { gap: 36px; }
+    .ek-four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 999px) {
+    .ek-hero { grid-template-columns: 1fr; }
+    .ek-three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 819px) {
+    .ek-h1 { font-size: 31px; }
+    .ek-h2 { font-size: 25px; }
+    .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .ek-dark { padding: 32px 24px !important; }
+  }
+  @media (max-width: 549px) {
+    .ek-two, .ek-three, .ek-four { grid-template-columns: 1fr; }
+    .ek-q { padding: 16px; }
+    .ek-q-t { font-size: 18px; }
+    .ek-a { padding: 0 16px 18px; }
+  }
+  [id] { scroll-margin-top: 140px; }
+  html, body { scroll-behavior: smooth; }
+  @media (max-width: 819px) { [id] { scroll-margin-top: 96px; } }
+  @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } }
+  .ek-band .ek-card, .ek-band .ek-quick, .ek-band .ek-carrier, .ek-band .ek-topic, .ek-band .ek-tipnav a { background: #FFFDF6; }
+  .ek-two-short { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); align-items: center; }
+  @media (max-width: 999px) { .ek-two-short { grid-template-columns: 1fr; } }
+</style>
+</helmet>
+
+<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+  <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
+  <dc-import name="ui-Header" hint-size="100%,140px"></dc-import>
+  <div style="max-width:1720px; margin:0 auto; position:relative;">
+  <section style="padding:22px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
+      <div class="ek-hero" style="margin-top:26px; align-items:center;">
+        <div>
+          <p class="ek-eyebrow">Platba a doprava</p>
+          <h1 class="ek-h1">Aby vaše objednávka dorazila tak, jak potřebujete.</h1>
+          <p class="ek-lead" style="margin-top:20px; max-width:62ch;">V košíku vám vždy nabídneme možnosti dopravy a platby, které odpovídají obsahu, hmotnosti a rozměrům konkrétní objednávky. Níže najdete přehled běžně dostupných variant.</p>
+          <div style="margin-top:22px; max-width:62ch;"><div style="display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:14px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #D9E5BF;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4C653D; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span><div style="font-size:15.5px; line-height:1.6; color:#2A2A24;">Rozhodující je vždy aktuální nabídka v nákupním košíku. Některé způsoby dopravy a platby nemusí být možné vzájemně kombinovat.</div></div></div>
+          <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:24px;">
+            <a href="#doprava" class="ek-btn-primary" style="display:inline-flex; align-items:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/truck-delivery.svg') center / contain no-repeat; mask:url('assets/icons/truck-delivery.svg') center / contain no-repeat;"></span>Doprava</a>
+            <a href="#platba" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/credit-card.svg') center / contain no-repeat; mask:url('assets/icons/credit-card.svg') center / contain no-repeat;"></span>Platba</a>
+            <a href="#doprava-zdarma" class="ek-btn-secondary" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#4C653D; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;">Doprava zdarma</a>
+          </div>
+        </div>
+        <img src="assets/usp/6-doprava.png" alt="" aria-hidden="true" style="display:block; width:100%; max-width:440px; justify-self:center;">
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="doprava" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Doprava</p>
+        <h2 class="ek-h2">Vyberte si doručení, které vám vyhovuje.</h2>
+        <p class="ek-p" style="margin:0;">Dostupnost konkrétní dopravy se může lišit podle hmotnosti, rozměrů nebo obsahu zásilky. V košíku proto vždy uvidíte jen možnosti, které lze pro vaši objednávku skutečně použít.</p>
+      </div>
+      <div class="ek-four">
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><img src="assets/carriers/carrier-1.svg" alt="PPL" width="84" height="52" style="display:block; width:84px; height:52px;"><span class="ek-price">100 Kč</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">PPL na adresu</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Doručení na konkrétní adresu v České republice</p>
+            <p class="ek-t">Zásilku vám dopravce PPL doručí přímo na zvolenou adresu.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><img src="assets/carriers/carrier-1.svg" alt="PPL" width="84" height="52" style="display:block; width:84px; height:52px;"><span class="ek-price">60 Kč</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">PPL Parcelshop nebo Parcelbox</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Doručení na vybrané výdejní místo v České republice</p>
+            <p class="ek-t">Pokud se zásilka nevejde do zvoleného boxu, dopravce ji může přesměrovat do nejbližšího dostupného Parcelshopu.</p><p class="ek-t">Rozměry a hmotnost zásilky se řídí aktuálními podmínkami dopravce.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><img src="assets/carriers/carrier-5.svg" alt="Zásilkovna" width="84" height="52" style="display:block; width:84px; height:52px;"><span class="ek-price">90 Kč</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Zásilkovna</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Doručení do Z-BOXu nebo na pobočku Zásilkovny</p>
+            <p class="ek-t">Objednávku si vyzvednete ve zvoleném Z-BOXu nebo na výdejním místě Zásilkovny v České republice.</p><p class="ek-t">Rozměry a hmotnost zásilky se řídí aktuálními podmínkami dopravce.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:12px; background:#F6F1E7; border:1px solid #ECE3D2;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/store-01.svg') center / contain no-repeat; mask:url('assets/icons/store-01.svg') center / contain no-repeat;"></span></span><span class="ek-price ek-price-free">Zdarma</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Osobní odběr</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">V sídle Ekokoza s.r.o. ve Fryčovicích</p>
+            <p class="ek-t">Objednávku si můžete vyzvednout na adrese <a href="kontakty.html#odber">Fryčovice 297, 739 45 Fryčovice</a>. Nejedná se o kamennou prodejnu, proto je potřeba mít objednávku vytvořenou a uhrazenou předem.</p><p class="ek-t">Na místě není možné platit v hotovosti. Výdej probíhá pouze v pracovních dnech od 7:00 do 12:00.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  <section id="doprava-zdarma" style="padding:56px 32px 0;" class="ek-pad">
+      <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Doprava zdarma</p>
+        <h2 class="ek-h2">Kdy dopravu neplatíte?</h2>
+        <p class="ek-p" style="margin:0;">Dopravu zdarma můžete získat několika způsoby. V košíku se vždy automaticky zobrazí, pokud na ni vaše objednávka splňuje podmínky.</p>
+      </div>
+        <div class="ek-three">
+          <div class="ek-card">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/shopping-bag-03.svg') center / contain no-repeat; mask:url('assets/icons/shopping-bag-03.svg') center / contain no-repeat;"></span><span class="ek-num">1</span></div>
+            <p class="ek-t" style="font-size:16px;">Pro registrované i neregistrované zákazníky platí doprava zdarma při objednávce v hodnotě <strong style="color:#2A2A24;">nad 2 000 Kč</strong>.</p>
+          </div>
+          <div class="ek-card">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/tag-01.svg') center / contain no-repeat; mask:url('assets/icons/tag-01.svg') center / contain no-repeat;"></span><span class="ek-num">2</span></div>
+            <p class="ek-t" style="font-size:16px;">Pokud máte v košíku alespoň jeden produkt označený příznakem <a href="kategorie.html">Doprava zdarma</a>, získáte dopravu zdarma na celý nákup.</p>
+          </div>
+          <div class="ek-card">
+            <div style="display:flex; align-items:center; justify-content:space-between;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/percent-circle.svg') center / contain no-repeat; mask:url('assets/icons/percent-circle.svg') center / contain no-repeat;"></span><span class="ek-num">3</span></div>
+            <p class="ek-t" style="font-size:16px;">Další výhody můžete získat také v našem <a href="vernostni-program.html">věrnostním programu a B2B cenách</a>.</p>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="platba" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Platba</p>
+        <h2 class="ek-h2">Zvolte způsob, který vám vyhovuje.</h2>
+        <p class="ek-p" style="margin:0;">Dostupné platební metody se vždy zobrazí přímo v košíku. Některé platby lze použít pouze s konkrétním dopravcem nebo do určité hodnoty objednávky.</p>
+      </div>
+      <div class="ek-four">
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:12px; background:#F6F1E7; border:1px solid #ECE3D2;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/credit-card.svg') center / contain no-repeat; mask:url('assets/icons/credit-card.svg') center / contain no-repeat;"></span></span><span class="ek-price ek-price-free">Zdarma</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Online platba kartou</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Nejrychlejší způsob úhrady</p>
+            <p class="ek-t">Platba proběhne online platební kartou. Tato možnost je dostupná pouze pro objednávky do 5 000 Kč včetně.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><span style="display:inline-flex; align-items:center; justify-content:center; width:52px; height:52px; border-radius:12px; background:#F6F1E7; border:1px solid #ECE3D2;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/building-03.svg') center / contain no-repeat; mask:url('assets/icons/building-03.svg') center / contain no-repeat;"></span></span><span class="ek-price ek-price-free">Zdarma</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Bankovní převod</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Připsání trvá 1 až 3 pracovní dny</p>
+            <p class="ek-t">Zboží můžeme odeslat až ve chvíli, kdy se úhrada připíše na náš účet a spáruje s objednávkou.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><img src="assets/carriers/carrier-1.svg" alt="PPL" width="84" height="52" style="display:block; width:84px; height:52px;"><span class="ek-price">20 Kč</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Dobírka PPL</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Platba při převzetí</p>
+            <p class="ek-t">Objednávku zaplatíte při převzetí od dopravce. Dobírku lze zvolit pouze v kombinaci s dopravcem PPL.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:52px;"><img src="assets/carriers/carrier-5.svg" alt="Zásilkovna" width="84" height="52" style="display:block; width:84px; height:52px;"><span class="ek-price">15 Kč</span></div>
+          <div>
+            <p class="ek-h3" style="font-size:21px; margin-bottom:4px;">Dobírka Zásilkovna</p>
+            <p style="margin:0 0 10px; font-size:14px; font-weight:600; color:#4F6E2A;">Platba při převzetí</p>
+            <p class="ek-t">Objednávku zaplatíte při převzetí. Dobírku lze zvolit pouze v kombinaci s dopravcem Zásilkovna.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:16px;"><div style="display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:14px; background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%); border:1px solid #EADCA8;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#8A5A28; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span><div style="font-size:15.5px; line-height:1.6; color:#2A2A24;"><strong>Dobré vědět:</strong> Dostupnost konkrétní platby se vždy řídí aktuální nabídkou v košíku a zvoleným způsobem dopravy.</div></div></div>
+    </div>
+    </section>
+  </div>
+
+  <section style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div class="ek-hero ek-two-short">
+        <div>
+          <p class="ek-eyebrow">Jak balíme</p>
+          <h2 class="ek-h2">Nejekologičtější balení, na jaké jsme zatím přišli.</h2>
+          <p class="ek-p">Chceme, aby vaše suroviny dorazily bezpečně, ale zároveň nechceme používat více obalového materiálu, než je opravdu potřeba. Podívejte se, jak u nás objednávky připravujeme na cestu.</p>
+          <div style="margin-top:24px; padding-top:22px; border-top:1px solid #E4DAC6;">
+            <p class="ek-eyebrow">Přehledně od začátku</p>
+            <p class="ek-h3" style="font-size:24px;">Než objednávku odešlete, vždy uvidíte konečnou cenu dopravy i platby.</p>
+            <p class="ek-t" style="font-size:15.5px;">Košík vám nabídne pouze možnosti, které lze pro konkrétní objednávku skutečně použít. Nemusíte tak nic složitě dopočítávat ani ověřovat.</p>
+          </div>
+        </div>
+        <div>
+        <a href="https://www.youtube.com/watch?v=AOFIqPn0fYQ" target="_blank" rel="noopener" class="ek-video" aria-label="Přehrát video z balení objednávek na YouTube">
+          <img src="assets/maskot-balicek.png" alt="" style="position:absolute; left:50%; transform:translateX(-50%); bottom:0; width:92%; height:auto; filter:drop-shadow(0 14px 20px rgba(76,101,61,.2));">
+          <span class="ek-play"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:30px; height:30px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/play.svg') center / contain no-repeat; mask:url('assets/icons/play.svg') center / contain no-repeat;"></span></span>
+        </a>
+        <p style="margin:12px auto 0; max-width:340px; font-size:13.5px; line-height:1.5; color:#6B6B5E; font-style:italic;">Krátké video z balení objednávek v Ekokoze.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+  <div style="overflow-x:clip;">
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  // Plynulý posun na kotvy (#…) pod přilepenou hlavičku – jednou pro celou stránku
+  static ekAnchor = (() => {
+    if (typeof document === 'undefined' || window.__ekAnchor) return true;
+    window.__ekAnchor = true;
+    document.addEventListener('click', (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+      if (!a || e.defaultPrevented) return;
+      const id = decodeURIComponent(a.getAttribute('href').slice(1));
+      let el = id && document.getElementById(id);
+      if (!el) return;
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+      // kotva uvnitř bílého trhaného pásu → zastavit na horním okraji pásu
+      if (el.parentElement && el.parentElement.querySelector(':scope > .ek-tear')) el = el.parentElement;
+      let sc = el.parentElement;
+      while (sc && sc !== document.body && sc !== document.documentElement) {
+        const o = getComputedStyle(sc).overflowY;
+        if ((o === 'auto' || o === 'scroll') && sc.scrollHeight > sc.clientHeight) break;
+        sc = sc.parentElement;
+      }
+      const root = (!sc || sc === document.body || sc === document.documentElement) ? null : sc;
+      let headH = 0;
+      document.querySelectorAll('.sc-host[data-sc-name="ui-Header"], [style*="sticky"]').forEach((n) => {
+        if (getComputedStyle(n).position !== 'sticky') return;
+        const r = n.getBoundingClientRect();
+        if (r.top <= 1 && r.height > 0 && r.height < 260) headH = Math.max(headH, r.bottom);
+      });
+      const cur = root ? root.scrollTop : (window.scrollY || document.documentElement.scrollTop);
+      const base = root ? root.getBoundingClientRect().top : 0;
+      const top = el.getBoundingClientRect().top - base + cur - headH - 16;
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      (root || window).scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
+      try { if (history.replaceState) history.replaceState(null, '', '#' + id); } catch (err) {}
+    }, true);
+    return true;
+  })();
+  renderVals() {
+    return { crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: 'Platba a doprava' }] };
+  }
+}
+</script>
+</body>
+</html>

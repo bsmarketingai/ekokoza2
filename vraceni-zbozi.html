@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vrácení zboží a reklamace | ekokoza.cz</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #D14405; color: #fff; }
+  a { color: #4C653D; }
+  a:hover { color: #B23803; }
+  .ek-btn-primary:hover { background: #3E5432 !important; border-color: #3E5432 !important; }
+  .ek-btn-secondary:hover { background: #4C653D !important; color: #F6F1E7 !important; }
+  .ek-btn-secondary:hover span[style*="mask"] { background-color: #F6F1E7 !important; }
+  .ek-btn-onDark:hover { background: #EDE4D0 !important; border-color: #EDE4D0 !important; }
+  .ek-btn-ghostDark:hover { background: rgba(246,241,231,.12) !important; border-color: #F6F1E7 !important; }
+  .sc-host[data-sc-name="ui-Header"] { display: block; position: sticky; top: 0; z-index: 50; }
+  .ek-tear { position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; margin-left: -50vw; z-index: 0; pointer-events: none; box-shadow: inset 0 14px 26px -14px rgba(45,58,46,.28), inset 0 -14px 26px -14px rgba(45,58,46,.24); clip-path: polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 9.9px, 15.22% 13.6px, 17.39% 7.4px, 19.57% 11.2px, 21.74% 6.1px, 23.91% 10.4px, 26.09% 14.2px, 28.26% 8.1px, 30.43% 4.7px, 32.61% 9.3px, 34.78% 12.8px, 36.96% 6.8px, 39.13% 10.9px, 41.3% 5.2px, 43.48% 13.1px, 45.65% 8.6px, 47.83% 11.7px, 50% 6.4px, 52.17% 9.8px, 54.35% 14.4px, 56.52% 7.9px, 58.7% 11.4px, 60.87% 5.7px, 63.04% 10.2px, 65.22% 13.3px, 67.39% 8.4px, 69.57% 4.9px, 71.74% 12.1px, 73.91% 7.2px, 76.09% 10.7px, 78.26% 14.1px, 80.43% 6.6px, 82.61% 11.9px, 84.78% 8.8px, 86.96% 5.1px, 89.13% 12.6px, 91.3% 9.1px, 93.48% 13.8px, 95.65% 7.7px, 97.83% 10.3px, 100% 5.9px, 100% calc(100% - 6.3px), 97.83% calc(100% - 11.1px), 95.65% calc(100% - 7.6px), 93.48% calc(100% - 13.4px), 91.3% calc(100% - 9.2px), 89.13% calc(100% - 5.3px), 86.96% calc(100% - 12.2px), 84.78% calc(100% - 8.7px), 82.61% calc(100% - 11.6px), 80.43% calc(100% - 6.1px), 78.26% calc(100% - 14.3px), 76.09% calc(100% - 9.6px), 73.91% calc(100% - 12.9px), 71.74% calc(100% - 7.1px), 69.57% calc(100% - 10.8px), 67.39% calc(100% - 4.8px), 65.22% calc(100% - 13.7px), 63.04% calc(100% - 8.2px), 60.87% calc(100% - 11.3px), 58.7% calc(100% - 6.7px), 56.52% calc(100% - 10.1px), 54.35% calc(100% - 14.6px), 52.17% calc(100% - 9.4px), 50% calc(100% - 5.6px), 47.83% calc(100% - 12.4px), 45.65% calc(100% - 8.9px), 43.48% calc(100% - 11.8px), 41.3% calc(100% - 6.9px), 39.13% calc(100% - 13.2px), 36.96% calc(100% - 9.7px), 34.78% calc(100% - 5.2px), 32.61% calc(100% - 12.7px), 30.43% calc(100% - 8.3px), 28.26% calc(100% - 11.5px), 26.09% calc(100% - 7.3px), 23.91% calc(100% - 14.5px), 21.74% calc(100% - 9.9px), 19.57% calc(100% - 6.2px), 17.39% calc(100% - 12.8px), 15.22% calc(100% - 8.5px), 13.04% calc(100% - 11.2px), 10.87% calc(100% - 5.8px), 8.7% calc(100% - 13.9px), 6.52% calc(100% - 9.3px), 4.35% calc(100% - 6.4px), 2.17% calc(100% - 12.3px), 0% calc(100% - 8.6px)); }
+  .ek-h1 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 42px; line-height: 1.1; color: #4C653D; margin: 0; text-wrap: pretty; }
+  .ek-h2 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 30px; line-height: 1.15; color: #4C653D; margin: 0 0 14px; text-wrap: pretty; }
+  .ek-h3 { font-family: 'EB Garamond',serif; font-weight: 500; font-size: 21px; line-height: 1.25; color: #2A2A24; margin: 0 0 8px; text-wrap: pretty; }
+  .ek-eyebrow { margin: 0 0 10px; color: #4F6E2A; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }
+  .ek-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: #4A4A42; text-wrap: pretty; }
+  .ek-lead { margin: 0; font-size: 18px; line-height: 1.65; font-weight: 500; color: #4A4A42; text-wrap: pretty; }
+  .ek-t { margin: 0 0 10px; font-size: 15px; line-height: 1.65; color: #4A4A42; text-wrap: pretty; }
+  .ek-t:last-child { margin-bottom: 0; }
+  .ek-card { background: #FFFFFF; border: 1px solid #ECE3D2; border-radius: 14px; padding: 24px 24px 26px; display: flex; flex-direction: column; gap: 14px; }
+  .ek-num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 16px; color: #4C653D; }
+  .ek-ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .ek-ul li { position: relative; padding-left: 20px; font-size: 15px; line-height: 1.6; color: #4A4A42; }
+  .ek-ul li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: #4F6E2A; }
+  .ek-check li { padding-left: 30px; }
+  .ek-check li::before { left: 0; top: .15em; width: 20px; height: 20px; border-radius: 0; background: #4F6E2A; -webkit-mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask: url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; }
+  .ek-price { flex: 0 0 auto; display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 999px; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 18px; font-weight: 500; color: #4C653D; white-space: nowrap; }
+  .ek-price-free { background: #EEF4DC; border: 1px solid #D9E5BF; }
+  .ek-hero { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 56px; align-items: start; }
+  .ek-two { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+  .ek-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+  .ek-four { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; }
+  .ek-video { position: relative; display: block; aspect-ratio: 9/16; width: 100%; max-width: 340px; margin: 0 auto; border-radius: 14px; overflow: hidden; background: linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border: 1px solid #D9E5BF; text-decoration: none; }
+  .ek-video:hover .ek-play { transform: translate(-50%,-50%) scale(1.06); }
+  .ek-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; border-radius: 50%; background: #4C653D; box-shadow: 0 16px 34px -14px rgba(34,48,31,.7); transition: transform .25s; }
+  .ek-acc { display: flex; flex-direction: column; gap: 14px; }
+  .ek-acc > div { border: 1px solid #ECE3D2; border-radius: 14px; overflow: hidden; background: #FFFFFF; }
+  .ek-q { display: flex; align-items: center; gap: 16px; width: 100%; padding: 20px 22px; background: #FDFBF5; border: none; cursor: pointer; text-align: left; font: inherit; transition: background .18s; }
+  .ek-q:hover { background: #F4F7EA; }
+  .ek-q-n { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: #EFE7D6; font-family: 'EB Garamond',serif; font-size: 17px; font-weight: 500; color: #4C653D; }
+  .ek-q-t { flex: 1; min-width: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 24px; line-height: 1.22; color: #4C653D; text-wrap: pretty; }
+  .ek-a-wrap { display: grid; transition: grid-template-rows .32s ease; }
+  .ek-a-in { min-height: 0; overflow: hidden; }
+  .ek-a { padding: 20px 22px 26px 72px; }
+  .ek-a p { margin: 0 0 12px; font-size: 15.5px; line-height: 1.7; color: #4A4A42; max-width: 78ch; text-wrap: pretty; }
+  .ek-a p:last-child { margin-bottom: 0; }
+  @media (max-width: 1149px) {
+    .ek-hero { gap: 36px; }
+    .ek-four { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 999px) {
+    .ek-hero { grid-template-columns: 1fr; }
+    .ek-three { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width: 819px) {
+    .ek-h1 { font-size: 31px; }
+    .ek-h2 { font-size: 25px; }
+    .ek-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .ek-dark { padding: 32px 24px !important; }
+  }
+  @media (max-width: 549px) {
+    .ek-two, .ek-three, .ek-four { grid-template-columns: 1fr; }
+    .ek-q { padding: 16px; gap: 12px; }
+    .ek-q-t { font-size: 20px; }
+    .ek-q-n { width: 30px; height: 30px; font-size: 15px; }
+    .ek-a { padding: 16px 16px 20px; }
+    .ek-a { padding: 0 16px 18px; }
+  }
+  .ek-band .ek-card, .ek-band .ek-quick, .ek-band .ek-carrier, .ek-band .ek-topic, .ek-band .ek-tipnav a { background: #FFFDF6; }
+</style>
+</helmet>
+
+<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+  <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
+  <dc-import name="ui-Header" hint-size="100%,140px"></dc-import>
+  <div style="max-width:1720px; margin:0 auto; position:relative;">
+  <section style="padding:22px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="320px,20px"></dc-import>
+      <div class="ek-hero" style="margin-top:26px;">
+        <div>
+          <p class="ek-eyebrow">Vrácení zboží a reklamace</p>
+          <h1 class="ek-h1">Když něco není v pořádku, vyřešíme to s vámi.</h1>
+          <p class="ek-lead" style="margin-top:20px; max-width:64ch;">Každou objednávku kontrolujeme a balíme pečlivě. Přesto se může výrobek poškodit při přepravě, při balení může vzniknout chyba nebo vás může překvapit přirozená vlastnost některé suroviny. V takové chvíli nám napište. Situaci prověříme, postavíme se čelem k tomu, co je na naší straně, a společně najdeme férové a praktické řešení.</p>
+          <div style="margin-top:22px; max-width:64ch;"><div style="display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:14px; background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border:1px solid #D9E5BF;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#4C653D; -webkit-mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat; mask:url('assets/icons/checkmark-circle-01.svg') center / contain no-repeat;"></span><div style="font-size:15.5px; line-height:1.6; color:#2A2A24;"><strong>Jak rychle odpovídáme:</strong> v pracovní dny zpravidla do 24 hodin — často výrazně dříve, protože se každou situaci snažíme řešit co nejrychleji.</div></div></div>
+          <p class="ek-p" style="margin-top:18px; max-width:64ch;">Uveďte číslo objednávky, dotčený produkt, krátký popis a přiložte užitečné fotografie. Čím úplnější informace pošlete, tím spíš dokážeme už v první odpovědi navrhnout nebo rovnou provést řešení bez dalších otázek.</p>
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px;">
+            <a href="mailto:eshop@ekokoza.cz" class="ek-btn-primary" style="display:inline-flex; align-items:center; gap:9px; background:#4C653D; color:#F6F1E7; border:1.5px solid #4C653D; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>eshop@ekokoza.cz</a>
+            <span style="font-size:14.5px; color:#6B6B5E;">Pro zahájení není nutný žádný zvláštní formulář.</span>
+          </div>
+        </div>
+        <div class="ek-card" style="padding:28px; gap:20px;">
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="ek-num" style="flex:0 0 auto;">1</span>
+            <div><p class="ek-h3" style="font-size:20px; margin-bottom:4px;">Popište, co se stalo</p><p class="ek-t">Stačí číslo objednávky, dotčený produkt a krátký věcný popis.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="ek-num" style="flex:0 0 auto;">2</span>
+            <div><p class="ek-h3" style="font-size:20px; margin-bottom:4px;">Přidejte užitečné podklady</p><p class="ek-t">Fotografie produktu, balíku, etikety, šarže, úniku nebo poškození nám často umožní rozhodnout hned.</p></div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="ek-num" style="flex:0 0 auto;">3</span>
+            <div><p class="ek-h3" style="font-size:20px; margin-bottom:4px;">Navrhneme další krok</p><p class="ek-t">Podle situace vrácení na naše náklady, výměnu, doposlání, kompenzaci, refundaci nebo jiné férové řešení.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="co-se-stalo" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Co se stalo?</p>
+        <h2 class="ek-h2">Začněte situací, která se nejvíc podobá té vaší.</h2>
+        <p class="ek-p" style="margin:0;">Nemusíte řešit, jestli jde právně o vrácení, reklamaci nebo škodu při přepravě. Jednoduše nám popište, co se stalo — správný postup už vybereme my.</p>
+      </div>
+      <div class="ek-three">
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Rozmysleli jste si nákup</p>
+            <p class="ek-h3" style="font-size:20px;">Chci zboží vrátit bez udání důvodu</p>
+            <p class="ek-t">Jako spotřebitel nám můžete do 14 dnů od převzetí oznámit, že od smlouvy odstupujete. Poté máte dalších 14 dnů na odeslání zboží zpět.</p><ul class="ek-ul" style="margin-top:4px;"><li>Obal může být otevřený.</li><li>Se zbožím lze zacházet jen v rozsahu nutném k seznámení s jeho povahou a vlastnostmi.</li><li>U surovin proto očekáváme, že zůstanou nepoužité, nesmíchané, neznečištěné, kompletní a bez úbytku množství.</li><li>Před odesláním nám napište. Vrácení na naše náklady lze využít pouze tehdy, když ho předem domluvíme a použijete námi určený způsob dopravy.</li></ul>
+          </div>
+        </div>
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/package-open.svg') center / contain no-repeat; mask:url('assets/icons/package-open.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Poškození při přepravě</p>
+            <p class="ek-h3" style="font-size:20px;">Balík nebo produkt dorazil poškozený</p>
+            <p class="ek-t">Ještě před vyhozením vnějšího obalu pořiďte několik fotografií a pošlete je spolu s číslem objednávky. Reklamaci u dopravce obvykle řešíme sami.</p><p class="ek-t">Podle rozsahu škody produkt vyměníme, vrátíme cenu poškozeného nebo ztraceného množství, případně se domluvíme na přiměřené částečné či úplné kompenzaci. Je-li nutné zboží vrátit, zajistíme vrácení na naše náklady.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/package.svg') center / contain no-repeat; mask:url('assets/icons/package.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Chyba při balení</p>
+            <p class="ek-h3" style="font-size:20px;">Něco chybí nebo přišel jiný produkt</p>
+            <p class="ek-t">Napište nám přesně, co chybí nebo nesouhlasí. Fotografie obsahu zásilky a přepravního štítku nám často umožní vše ověřit bez dalších dotazů.</p><p class="ek-t">Chybějící nebo správný produkt zpravidla dopošleme, vrátíme odpovídající částku nebo ho — jen pokud vám to vyhovuje — přidáme k další objednávce. Případné vrácení nesprávného zboží zajistíme na naše náklady.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-tracking-01.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Problém s doručením</p>
+            <p class="ek-h3" style="font-size:20px;">Sledování ukazuje „doručeno“, ale balík nemám</p>
+            <p class="ek-t">Nejprve prosím zkontrolujte obvyklé místo uložení, recepci, sousedy a zprávy od výdejního místa. Pokud zásilku stále nenajdete, ozvěte se nám.</p><p class="ek-t">Můžeme vás požádat o krátké prohlášení o nepřevzetí. Následně vše řešíme s dopravcem a podle okolností rychle zajistíme novou zásilku nebo vrácení peněz. Nenecháme vás, abyste spor s dopravcem řešili sami.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/dropper.svg') center / contain no-repeat; mask:url('assets/icons/dropper.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Otázka k produktu</p>
+            <p class="ek-h3" style="font-size:20px;">Surovina vypadá, voní nebo se chová jinak</p>
+            <p class="ek-t">Přírodní suroviny se mohou mezi šaržemi mírně lišit barvou, vůní, strukturou nebo viskozitou. Přirozená odchylka odpovídající popisu produktu není automaticky vadou.</p><p class="ek-t">Ozvěte se, pokud je změna nečekaná, neodpovídá uvedené specifikaci, naznačuje kontaminaci nebo produkt neodpovídá objednanému typu, koncentraci, množství či kvalitě. U skutečné vady produkt vyměníme, vrátíme peníze nebo se domluvíme na přiměřené kompenzaci.</p>
+          </div>
+        </div>
+        <div class="ek-card">
+          <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/chemistry-01.svg') center / contain no-repeat; mask:url('assets/icons/chemistry-01.svg') center / contain no-repeat;"></span>
+          <div>
+            <p class="ek-eyebrow" style="font-size:12px; margin-bottom:6px;">Výsledek receptury</p>
+            <p class="ek-h3" style="font-size:20px;">Recept se nepovedl podle očekávání</p>
+            <p class="ek-t">Rádi pomůžeme hledat příčinu. Rozpadlá emulze, neobvyklá konzistence nebo odlišná výsledná vůně však automaticky neznamenají, že je surovina vadná.</p><p class="ek-t">Pošlete nám celé složení, procenta, postup, teploty, pH a způsob skladování. Pokud vše ukazuje na problém suroviny, budeme situaci řešit jako reklamaci produktu. Pokud je pravděpodobnější příčina v receptuře nebo postupu, vysvětlíme vám náš pohled a pomůžeme najít další smysluplný krok.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+  </div>
+
+  <section style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Co je dobré vědět před nákupem</p>
+        <h2 class="ek-h2">Odpovědi na otázky, které zákazníci řeší nejčastěji.</h2>
+      </div>
+        <div class="ek-acc">
+          <sc-for list="{{ pre }}" as="q" hint-placeholder-count="6">
+            <div>
+              <button type="button" onClick="{{ q.toggle }}" aria-expanded="{{ q.open }}" class="ek-q">
+                <span class="ek-q-n">{{ q.num }}</span>
+                <span class="ek-q-t">{{ q.q }}</span>
+                <span style="{{ q.chevron }}"></span>
+              </button>
+              <div class="ek-a-wrap" style="grid-template-rows:{{ q.rows }};"><div class="ek-a-in">
+                <div class="ek-a">
+                  <sc-for list="{{ q.p }}" as="p" hint-placeholder-count="2"><p>{{ p.t }}<sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ false }}"> <a href="{{ p.h }}" target="_blank" rel="noopener">{{ p.l }}</a></sc-if></p></sc-for>
+                </div>
+              </div></div>
+            </div>
+          </sc-for>
+        </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+      <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Náklady a odeslání</p>
+        <h2 class="ek-h2">Kdo hradí dopravu zpět?</h2>
+      </div>
+        <div class="ek-three">
+          <div class="ek-card" style="background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%); border-color:#EADCA8;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat; mask:url('assets/icons/delivery-return-01.svg') center / contain no-repeat;"></span>
+            <div>
+              <p class="ek-h3" style="font-size:20px;">Vrácení bez udání důvodu</p>
+              <p class="ek-t">Nejdříve nás kontaktujte. Pokud pro vás předem zajistíme štítek nebo jiný způsob vrácení, je nutné použít právě tento postup.</p>
+              <p class="ek-t">Není-li vrácení na naše náklady předem domluveno, přímé náklady na odeslání zpět nese zákazník.</p>
+              <p class="ek-t">Při odstoupení od celé objednávky vracíme také cenu nejlevnějšího nabízeného standardního doručení. Příplatek za expresní nebo jinou dražší dopravu se nevrací.</p>
+            </div>
+          </div>
+          <div class="ek-card" style="background:linear-gradient(160deg,#FCFAF3 0%,#EEF4DC 60%,#E2EFCB 100%); border-color:#D9E5BF;">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/security-check.svg') center / contain no-repeat; mask:url('assets/icons/security-check.svg') center / contain no-repeat;"></span>
+            <div>
+              <p class="ek-h3" style="font-size:20px;">Oprávněná reklamace</p>
+              <p class="ek-t">U vadného, nesprávného, chybějícího nebo při přepravě poškozeného zboží hradíme nezbytné náklady na vrácení, výměnu nebo doposlání.</p>
+              <p class="ek-t">Před odesláním nám vždy napište. Vybereme nejvhodnější postup a zabráníme zbytečně vysokým nákladům.</p>
+              <p class="ek-t">Podle situace přichází v úvahu výměna, doposlání, oprava, přiměřená sleva, částečná či úplná refundace nebo jiné společně dohodnuté řešení.</p>
+            </div>
+          </div>
+          <div class="ek-card">
+            <span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:28px; height:28px; background-color:#4F6E2A; -webkit-mask:url('assets/icons/location-01.svg') center / contain no-repeat; mask:url('assets/icons/location-01.svg') center / contain no-repeat;"></span>
+            <div>
+              <p class="ek-h3" style="font-size:20px;">Kam zboží poslat</p>
+              <p class="ek-t">Po předchozí domluvě se zboží obvykle vrací na adresu:</p>
+              <p class="ek-t" style="color:#2A2A24;"><strong>Ekokoza s.r.o.</strong><br>Fryčovice 297<br>739 45 Fryčovice</p>
+              <p class="ek-t">Zásilku neposílejte na dobírku. Takovou zásilku nemůžeme převzít. Do balíku stačí přiložit číslo objednávky a krátkou informaci, zda jde o vrácení nebo reklamaci.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:16px;"><div style="display:flex; align-items:flex-start; gap:12px; padding:16px 18px; border-radius:14px; background:linear-gradient(160deg,#FEF8E6 0%,#F3E3B4 100%); border:1px solid #EADCA8;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:24px; height:24px; background-color:#8A5A28; -webkit-mask:url('assets/icons/information-circle.svg') center / contain no-repeat; mask:url('assets/icons/information-circle.svg') center / contain no-repeat;"></span><div style="font-size:15.5px; line-height:1.6; color:#2A2A24;"><strong>Důležité:</strong> vrácení na naše náklady je možné pouze po předchozí domluvě a při použití námi doporučeného způsobu přepravy. Vaše zákonná spotřebitelská práva tím samozřejmě nejsou omezena.</div></div></div>
+      </div>
+    </section>
+  </div>
+
+  <section style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Férový vztah funguje oběma směry</p>
+        <h2 class="ek-h2">Ke svým chybám se stavíme čelem. Zároveň potřebujeme pravdivé a úplné informace.</h2>
+      </div>
+      <div class="ek-two">
+        <div class="ek-card">
+          <p class="ek-h3" style="font-size:22px;">Co můžete očekávat od nás</p>
+          <ul class="ek-ul ek-check">
+            <li>V pracovní dny odpovídáme zpravidla do 24 hodin, často výrazně dříve.</li>
+            <li>Nenecháme vás samotné řešit problém s dopravcem.</li>
+            <li>Jasně vysvětlíme, co potřebujeme a proč.</li>
+            <li>Navrhneme přiměřené řešení: výměnu, doposlání, částečnou či úplnou refundaci nebo jinou praktickou možnost.</li>
+            <li>Poukaz nabídneme jako řešení pouze tehdy, když s ním souhlasíte.</li>
+            <li>Oprávněnou spotřebitelskou reklamaci vyřídíme bez zbytečného odkladu, nejpozději v zákonné lhůtě; většinu běžných situací uzavíráme mnohem dříve.</li>
+          </ul>
+        </div>
+        <div class="ek-card">
+          <p class="ek-h3" style="font-size:22px;">Co nám pomůže vše rychle vyřešit</p>
+          <ul class="ek-ul ek-check">
+            <li>Kontaktujte nás před vrácením, zvlášť pokud očekáváte úhradu dopravy.</li>
+            <li>Uveďte číslo objednávky, produkt, dotčené množství a preferované řešení.</li>
+            <li>Přiložte jasné fotografie a podle potřeby číslo šarže.</li>
+            <li>Do uzavření případu si ponechte produkt, obal a přepravní etiketu.</li>
+            <li>Popište pravdivě skladování, zacházení a použití, pokud mohly ovlivnit výsledek.</li>
+            <li>Neposílejte zásilku na dobírku ani neobjednávejte drahou zpětnou dopravu bez předchozí dohody.</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:28px; max-width:78ch;">
+        <p class="ek-h3" style="font-size:22px; color:#4C653D;">Děkujeme za vstřícnost a důvěru.</p>
+        <p class="ek-p">Naprostá většina našich zákazníků přistupuje k vrácení a reklamacím otevřeně, trpělivě a férově. Opravdu si toho vážíme.</p>
+        <p class="ek-p" style="margin:0;">Právě díky vzájemné důvěře můžeme držet servis osobní a prozákaznický, aniž bychom náklady každého možného vrácení automaticky promítali do cen. Pomáhá nám to zůstat dostupní a nabízet férové ceny všem.</p>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:relative; margin:64px 0 0; padding:34px 0 44px;">
+    <div aria-hidden="true" class="ek-tear" style="background:linear-gradient(168deg,#FFFFFF 0%,#FFFFFF 62%,#FAFDF4 100%);"></div>
+    <section id="caste-otazky" class="ek-pad ek-band" style="position:relative; z-index:1; padding:44px 32px;">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div style="max-width:74ch; margin-bottom:28px;">
+        <p class="ek-eyebrow">Časté otázky</p>
+        <h2 class="ek-h2">Odpovědi, které se nejčastěji hledají po doručení.</h2>
+      </div>
+        <div class="ek-acc">
+          <sc-for list="{{ faq }}" as="q" hint-placeholder-count="6">
+            <div>
+              <button type="button" onClick="{{ q.toggle }}" aria-expanded="{{ q.open }}" class="ek-q">
+                <span class="ek-q-n">{{ q.num }}</span>
+                <span class="ek-q-t">{{ q.q }}</span>
+                <span style="{{ q.chevron }}"></span>
+              </button>
+              <div class="ek-a-wrap" style="grid-template-rows:{{ q.rows }};"><div class="ek-a-in">
+                <div class="ek-a">
+                  <sc-for list="{{ q.p }}" as="p" hint-placeholder-count="2"><p>{{ p.t }}<sc-if value="{{ p.hasLink }}" hint-placeholder-val="{{ false }}"> <a href="{{ p.h }}" target="_blank" rel="noopener">{{ p.l }}</a></sc-if></p></sc-for>
+                </div>
+              </div></div>
+            </div>
+          </sc-for>
+        </div>
+    </div>
+    </section>
+  </div>
+
+  <section style="padding:56px 32px 0;" class="ek-pad">
+    <div style="max-width:1560px; margin:0 auto;">
+      <div class="ek-dark" style="background:linear-gradient(155deg,#4C653D 0%,#22301F 100%); border-radius:14px; padding:48px 56px;">
+        <div style="max-width:70ch;">
+          <p class="ek-eyebrow" style="color:#B9D096;">Pojďme to společně vyřešit</p>
+          <h2 class="ek-h2" style="color:#F6F1E7;">Začněte jednou jasnou zprávou.</h2>
+          <p style="margin:0 0 26px; font-size:17px; line-height:1.7; color:#F6F1E7; text-wrap:pretty;">Popište, co se stalo, a přidejte co nejvíc užitečných informací. V pracovní dny zpravidla odpovídáme do 24 hodin — často výrazně dříve.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:12px;">
+            <a href="mailto:eshop@ekokoza.cz?subject=Vr%C3%A1cen%C3%AD%20nebo%20reklamace" class="ek-btn-onDark" style="display:inline-flex; align-items:center; gap:9px; background:#F6F1E7; color:#4C653D; border:1.5px solid #F6F1E7; text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;"><span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:20px; height:20px; background-color:#4C653D; -webkit-mask:url('assets/icons/mail-01.svg') center / contain no-repeat; mask:url('assets/icons/mail-01.svg') center / contain no-repeat;"></span>Napsat na eshop@ekokoza.cz</a>
+            <a href="kontakty.html" class="ek-btn-ghostDark" style="display:inline-flex; align-items:center; gap:9px; background:transparent; color:#F6F1E7; border:1.5px solid rgba(246,241,231,.5); text-decoration:none; padding:13px 24px; border-radius:999px; font-weight:600; font-size:15px; transition:background .2s, border-color .2s, color .2s;">Všechny kontakty<span aria-hidden="true" style="display:inline-block; flex:0 0 auto; width:17px; height:17px; background-color:#F6F1E7; -webkit-mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat; mask:url('assets/icons/arrow-right-02.svg') center / contain no-repeat;"></span></a>
+          </div>
+        </div>
+      </div>
+      <p style="margin:16px 0 0; font-size:13.5px; line-height:1.55; color:#6B6B5E;">Tato stránka slouží jako praktický průvodce a nijak neomezuje zákonná práva spotřebitele. Podrobná smluvní pravidla najdete v našich <a href="obchodni-podminky.html">obchodních podmínkách</a>.</p>
+    </div>
+  </section>
+  </div>
+  <div style="overflow-x:clip;">
+  <div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+  <div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  state = { open: {}, open2: {} };
+  static PRE = [{"q": "Mohu produkt otevřít?", "p": ["Ano. Samotné otevření obalu nebrání vrácení. Při odstoupení bez udání důvodu však surovina nesmí být použitá, odebraná v množství přesahujícím běžné seznámení, smíchaná, kontaminovaná nebo jinak změněná. Případné snížení hodnoty může ovlivnit vracenou částku."]}, {"q": "Jak dlouho suroviny obvykle vydrží?", "p": ["Trvanlivost závisí na konkrétní surovině a nejčastěji se pohybuje přibližně mezi 6 a 36 měsíci. Rozhodující údaj najdete u produktu nebo šarže. Správné skladování — dobře uzavřený obal, čisté a suché prostředí, ochrana před teplem a přímým světlem — pomáhá zachovat surovinu v dobrém stavu po zamýšlenou dobu."]}, {"q": "Co může být vadou produktu?", "p": ["Například jiný produkt, koncentrace, množství nebo kvalita, kontaminace přítomná už při dodání, vadný obal nebo neobvykle krátká zbývající trvanlivost oproti uvedeným informacím."]}, {"q": "Co zpravidla není vadou?", "p": ["Běžné uplynutí trvanlivosti, nevhodné skladování, kontaminace po otevření, nesprávné dávkování, nevhodná receptura nebo postup a přirozené změny, na které jsme upozornili v popisu produktu."]}, {"q": "Co zboží připravené na přání?", "p": ["Zboží skutečně namíchané, upravené, naplněné nebo připravené podle vašich individuálních požadavků může být z práva na odstoupení vyloučeno. Pokud se výjimka vztahuje na konkrétní objednávku, upozorníme na ni před nákupem."]}, {"q": "Co firemní objednávky?", "p": ["U nákupů v rámci podnikání neplatí automaticky stejná práva na vrácení jako u spotřebitelů. To ale neznamená, že každou žádost předem odmítneme. Hledáme oboustranně férové řešení, zejména u neotevřeného standardního zboží nebo tam, kde je možná jiná praktická dohoda. Dlouhodobá spolupráce funguje jen tehdy, když se obě strany cítí férově — a právě takový vztah chceme budovat."]}];
+  static FAQ = [{"q": "Jak rychle mi odpovíte?", "p": ["V pracovní dny zpravidla do 24 hodin, často výrazně dříve. Úplné informace a jasné fotografie nám často umožní navrhnout nebo rovnou spustit řešení už v první odpovědi."]}, {"q": "Zaplatí Ekokoza dopravu zpět?", "p": ["U oprávněné reklamace hradíme nezbytné náklady na vrácení nebo výměnu. U vrácení z důvodu změny rozhodnutí je doprava na naše náklady možná pouze tehdy, když ji nabízíme a předem ji s námi domluvíte. Neobjednávejte prosím drahou zpětnou dopravu s očekáváním automatického proplacení."]}, {"q": "Jaké řešení mohu očekávat?", "p": ["Záleží na problému. Nejčastěji jde o výměnu, doposlání chybějícího množství, přiměřenou částečnou refundaci, vrácení celé částky nebo přidání náhrady k další objednávce, pokud vám to vyhovuje. Je-li nutné vrácení, sdělíme vám přesný postup i to, kdo hradí dopravu."]}, {"q": "Co mám uvést ve zprávě?", "p": ["Číslo objednávky, dotčený produkt, krátký popis a řešení, kterému byste dali přednost. Podle situace přidejte fotografie produktu, obalu, přepravního štítku, čísla šarže a data na obalu. Fotografie vyřízení urychlují, ale jejich okamžitá absence sama o sobě neruší vaše práva."]}, {"q": "Musím přiložit fakturu nebo účtenku?", "p": ["Ne nutně. Potřebujeme spolehlivě dohledat nákup — zpravidla stačí číslo objednávky, e-mail použitý při nákupu nebo jiný doklad o koupi. Originál daňového dokladu do zásilky vkládat nemusíte."]}, {"q": "Kdy dostanu peníze zpět?", "p": ["Refundaci obvykle odesíláme do 5 pracovních dnů od přijetí vráceného zboží, vždy v rámci povinné zákonné lhůty. U odstoupení můžeme s vrácením peněz počkat do chvíle, kdy zboží obdržíme nebo doložíte jeho odeslání."]}, {"q": "Jakým způsobem peníze vrátíte?", "p": ["Zpravidla stejným způsobem, kterým byla objednávka zaplacena. Jiný způsob použijeme jen po dohodě a bez dodatečných nákladů pro vás. Číslo bankovního účtu proto není nutné automaticky přikládat ke každé zásilce."]}, {"q": "Co se stane, když jsem balík nevyzvedl/a?", "p": ["Nevyzvednutí balíku samo o sobě není odstoupením od smlouvy. Pokud chcete objednávku zrušit, dejte nám to jasně vědět. Když se nám nevyzvednutý balík vrátí, po ověření adresy obvykle nabídneme jedno opětovné odeslání bez dalšího dopravného. Při opakované situaci je před novým odesláním nutné uhradit skutečné náklady další dopravy."]}, {"q": "Mám opožděný balík řešit s dopravcem, nebo s Ekokozou?", "p": ["Sledování zásilky můžete samozřejmě zkontrolovat, ale pokud se balík nehýbe, ztratil se nebo byl doručen nesprávně, napište nám. Pokud jsme dopravu sjednali my, riziko zásilky neseme až do jejího převzetí."]}, {"q": "Mám vytékající nebo podezřelý produkt vyhodit?", "p": ["Bezpečně ho oddělte, dále nepoužívejte a pokud je to možné, kontaktujte nás před likvidací. Ponechte si etiketu, číslo šarže a obal. Pokud hrozí bezprostřední riziko, má samozřejmě přednost bezpečnost — jen nám následně přesně popište, co bylo zlikvidováno a proč."]}, {"q": "Vrátíte i původní cenu dopravy?", "p": ["Při platném odstoupení od celé objednávky vracíme cenu nejlevnějšího standardního způsobu dodání, který jsme nabízeli. Příplatek za expresní nebo jinou dražší dopravu se nevrací. U částečného vrácení záleží na struktuře původní ceny dopravy a příslušných pravidlech."]}, {"q": "Jak dlouho může trvat reklamace?", "p": ["Většinu běžných případů dokážeme uzavřít během několika dnů. Spotřebitelskou reklamaci vyřizujeme bez zbytečného odkladu, nejpozději do 30 dnů od jejího uplatnění, pokud se společně nedohodneme na delší lhůtě. K vyřízení potřebujeme možnost reklamovaný produkt posoudit a vaši nezbytnou součinnost."]}, {"q": "Co když se společně nedomluvíme?", "p": ["Nejprve se vždy snažíme spor vyřešit přímo a k oboustranné spokojenosti. Pokud se to nepodaří, může spotřebitel podat návrh na mimosoudní řešení spotřebitelského sporu u České obchodní inspekce.", {"t": "Česká obchodní inspekce, oddělení ADR, Gorazdova 1969/24, 120 00 Praha 2,", "h": "https://coi.gov.cz/informace-o-adr/", "l": "coi.gov.cz/informace-o-adr"}]}];
+  mask(name, size, color) {
+    const url = 'assets/icons/' + name + '.svg';
+    return 'display:inline-block; flex:0 0 auto; width:' + size + 'px; height:' + size + 'px; background-color:' + color + '; -webkit-mask:url("' + url + '") center / contain no-repeat; mask:url("' + url + '") center / contain no-repeat;';
+  }
+  accItems(list, key) {
+    const st = this.state[key] || {};
+    return list.map((f, i) => {
+      const open = !!st[i];
+      return {
+        q: f.q, open, num: String(i + 1).padStart(2, '0'), rows: open ? '1fr' : '0fr',
+        toggle: () => this.setState(s => ({ [key]: Object.assign({}, s[key], { [i]: !open }) })),
+        chevron: this.mask('arrow-down-01', 22, open ? '#4C653D' : '#8a8776') + 'transition:transform .28s ease; transform:rotate(' + (open ? '180deg' : '0deg') + ');',
+        p: f.p.map(x => (typeof x === 'string' ? { t: x, hasLink: false, h: '', l: '' } : { t: x.t, hasLink: true, h: x.h, l: x.l })),
+      };
+    });
+  }
+  renderVals() {
+    return {
+      crumbs: [{ label: 'Úvod', href: 'index.html' }, { label: "Vrácení zboží a reklamace" }],
+      faq: this.accItems(Component.FAQ, 'open'),
+      pre: this.accItems(Component.PRE, 'open2'),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -93,7 +93,266 @@
 
   <section class="day">
     <h2>20. listopadu 2026</h2>
-    <p class="sum">Věrnostní program: „Co je dobré vědět“ ve stejných číslovaných kartách jako čtyři kroky; barevné karty v sekci Pro firmy a výrobce; tmavě zelená výzva k B2B poptávce.</p>
+    <p class="sum">Vychytávky: ukázky postavené ze skutečných komponent webu (karta produktu, výběr varianty, košík, hlídací pes, AI asistent) s kurzorem řízeným v cyklu; odkazy z rychlého přehledu zastaví kartu na jejím místě, nepřekrytou další kartou; nové stránky Obchodní podmínky a Zpracování osobních údajů; Vychytávky: devět funkcí jako vrstvené karty (stacking) s ukázkami webu a animovaným kurzorem; Vrácení zboží: „Co je dobré vědět před nákupem“ jako číslovaný akordeon; Sledování zásilky: video na výšku ve formátu Shorts; střídání béžových a bílých sekcí od béžové hlavičky na stránkách Platba a doprava, Sledování zásilky, Vrácení zboží, Vychytávky a Mirčina mýdla; plynulý posun na kotvy pod hlavičku na stránkách FAQ, Kontakty, Platba a doprava, Sledování zásilky, Vychytávky a Věrnostní program; Kontakty: sekce se střídají béžová – bílá od hlavičky; plynulý posun na formulář bez schování pod hlavičku; časy všude ve formátu 8:00–14:00 (dvojtečka místo tečky); Kontakty: hlavička ve stejném rozvržení jako Organic Lab; Časté otázky (FAQ i Vrácení zboží) ve stejném akordeonu jako detail produktu, s čísly otázek; Organic Lab: sekce se střídají béžová (úvod) – bílá (karty v trhaném pásu) – béžová, obsah karet svisle na střed; úvod jako hlavička stránky včetně drobečkové navigace; sedm karet jako vrstvený balíček při scrollu (stacking); ukázka webu workshopů v okně prohlížeče v závěrečné tmavé výzvě; Organic Lab a Mirčina mýdla: větší závěrečný citát; Organic Lab: fotogalerie šesti fotek s lightboxem; vlastní fotka z workshopu, úvod v samostatné sekci s trhaným pásem a sedm stejných karet; nové stránky Vychytávky pro váš nákup, Organic Lab a Mirčina mýdla; nové stránky Vrácení zboží a reklamace a Platba a doprava; nové stránky Časté otázky (FAQ) a Sledování zásilky; nová stránka Kontakty (obsah ze současného webu); „Kontakt“ přejmenováno na „Kontakty“ v hlavičce a menu; Věrnostní program: „Co je dobré vědět“ ve stejných číslovaných kartách jako čtyři kroky; barevné karty v sekci Pro firmy a výrobce; tmavě zelená výzva k B2B poptávce.</p>
+
+    <div class="item">
+      <span class="tag">Vychytávky · Ukázky 1:1</span>
+      <h3>Vychytávky: ukázky ze skutečných komponent návrhu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Animované ukázky mají vypadat 1:1 jako skutečné části webu v návrhu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">01 Oblíbené: dvě skutečné komponenty Karta produktu (ui-ProductCard) – kurzor klikne na srdíčko a karta přepne do stavu „v oblíbených“ přímo přes vlastnost komponenty. 02 Termín odeslání: skutečný Výběr varianty (ui-VariantPicker) se stavy Ihned k odeslání / Nabalíme po objednání / Očekáváme a bublinou ve stylu komponenty Dostupnost. 03 Přidání k objednávce: blok „Přidat k objednávce“ 1:1 z košíku (nadpis, pole Číslo objednávky, tlačítko Přidat). 04 Hlídací pes: stav „Tento produkt nelze zakoupit“ a oranžové tlačítko z detailu produktu, po kliknutí se nad ztmaveným pozadím otevře skutečná komponenta Hlídací pes (ui-WatchDog). 05 AI asistent: lišta „Nenašli jste, co jste hledali?“ s tlačítkem Ekokozí asistent 1:1 z výsledků vyhledávání. 09 Přednostní odeslání: řádek se zaškrtávátkem, raketou a cenou 50 Kč 1:1 z košíku. Dokumentace, nákupní seznamy a poptávka zatím nemají v návrhu vlastní obrazovku, ukázky jsou v jeho stylu. Kurzor a stavy řídí jeden společný cyklus (přijede – klikne – výsledek – zmizí, cca 5,5 s), stejně i ve zvětšeném lightboxu; při omezení pohybu se ukáže rovnou výsledný stav.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vychytávky · Posun na kartu</span>
+      <h3>Vychytávky: posun z rychlého přehledu na nepřekrytou kartu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Odkaz z rychlého přehledu (např. 02) odscrolloval tak daleko, že vybranou kartu už překrývala další karta.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Posun se teď zastaví přesně v místě, kde se karta přilepí pod hlavičku (150 px + 14 px na každou předchozí kartu), takže je celá vidět a další karta je až pod ní. Zmenšení zakryté karty začíná teprve ve chvíli, kdy ji další karta opravdu začne překrývat (dřív už při jejím vjezdu do obrazovky). Na mobilu, kde se karty nevrství, zůstává běžný posun pod hlavičku.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Obchodní podmínky · Osobní údaje</span>
+      <h3>Nové stránky Obchodní podmínky a Zpracování osobních údajů</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Převést stránky ekokoza.cz/obchodni-podminky-m4 a ekokoza.cz/podminky-o-zpracovani-osobnich-udaju-m30 do designu Ekokozy; hlavička a trhaný pás jako u ostatních stránek.</p>
+        <span class="k">Řešení</span>
+        <p class="v">obchodni-podminky.html a zpracovani-osobnich-udaju.html mají stejnou stavbu: béžová hlavička (nadtitulek, nadpis, úvod, tlačítka na přehled / úplné znění / formulář nebo práva, datum účinnosti, fotka Fryčovic se štítkem) → bílý trhaný pás „Rychlý přehled“ se šesti číslovanými kartami s ikonami → béžové úplné znění: čtyři karty s údaji prodávajícího / správce, vlevo přilepený obsah s odkazy na všechny články, vpravo číslované články. Obchodní podmínky: 18 článků + vzorový formulář pro odstoupení jako čárkovaný „papírový“ formulář s řádky k vyplnění. Osobní údaje: 13 článků, účely zpracování, druhy cookies a vaše práva jako mřížky karet s ikonami, doby uchování jako tabulka. Adresy ČOI a ÚOOÚ ve zvýrazněném boxu. Na konci tmavě zelená výzva s e-mailem. Texty převzaté beze změny.</p>
+        <span class="k">Odkazy</span>
+        <p class="v">Patička: „Obchodní podmínky“, „Soukromí a cookies“, „Podmínky vrácení a reklamací“ i spodní lišta (Obchodní podmínky, Ochrana soukromí). FAQ: odkaz Obchodní podmínky. Vrácení zboží: „obchodních podmínkách“. Kontakty: „zpracováním osobních údajů“ u formuláře. Obě stránky se odkazují navzájem, na Platbu a dopravu, Vrácení zboží a Věrnostní program.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vychytávky · Scroll efekt · Ukázky</span>
+      <h3>Vychytávky: vrstvené karty s ukázkami webu a kurzorem</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Na karty funkcí použít scroll efekt Stacking, doplnit ukázky částí webu, o kterých se v kartě mluví, a k nim fiktivní kurzor, který na funkci kliká.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Devět karet je v jednom sloupci (max. 1240 px) a při scrollu se vrství přes sebe – každá se přilepí pod hlavičku o 14 px níž než předchozí, zakrytá karta se jemně zmenší na 94 % (bez ztmavení). Vlevo ikona, číslo, nadtitulek, nadpis a text, vpravo okno prohlížeče v barvě karty s ukázkou rozhraní: karta produktu se srdíčkem, varianty s bublinou předpokládaného odeslání, pole „Číslo původní objednávky“ v košíku, tlačítko Hlídat dostupnost, okno AI asistenta, detail objednávky se staženou dokumentací, nákupní seznam, e-mail s poptávkou a volba Přednostní odeslání v košíku. Kurzor ve smyčce (5 s) přijede, klikne (pulz v oranžové) a ukázka se přepne do výsledného stavu. Ukázky jsou kreslené v designu webu, ne snímky obrazovky. Na mobilu jsou karty pod sebou bez vrstvení, ukázka pod textem; při omezení pohybu se zobrazí rovnou výsledný stav. Kotvy z rychlého přehledu vedou na začátek karty.</p>
+        <span class="k">Doladění</span>
+        <p class="v">Podle klientské předlohy a lépe: karty mají jemný barevný přechod podle tónu (zelená / žlutá / růžová) a rámeček, ukázka se střídá vpravo a vlevo, nadtitulek je tmavě zelený štítek s ikonou, tři kroky přidání k objednávce jsou číslované bílé karty, „Potřebujete naši osobní pomoc?“ je zvýrazněný box se zelenou linkou. Každá ukázka má tlačítko „Kliknutím zvětšíte“ a otevře se zvětšená v lightboxu (tmavě zelený závoj, Zavřít, Esc) i s animovaným kurzorem.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vrácení zboží · Akordeon</span>
+      <h3>Vrácení zboží: „Co je dobré vědět před nákupem“ jako FAQ</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Sekci „Co je dobré vědět před nákupem“ udělat stejně jako časté otázky.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Šest otázek (Mohu produkt otevřít? … Co firemní objednávky?) je teď ve stejném akordeonu jako Časté otázky: samostatné boxy s krémovou hlavičkou, číslo 01–06 v béžovém kolečku, zelený nadpis, šipka dolů a plynulé rozbalení odpovědi. Akordeon má vlastní stav, otevírá se nezávisle na sekci Časté otázky. Texty beze změny.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Sledování zásilky · Video</span>
+      <h3>Sledování zásilky: video ve formátu Shorts</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Video v sekci Jak balíme má mít opět formu Shorts.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Stejně jako na stránce Platba a doprava: náhled na výšku 9 : 16, nejvýš 340 px široký a na středu sloupce, maskot s balíčkem dole uprostřed. Textový sloupec je širší (poměr 1,5 : 1) a obsah je svisle na středu. Odkaz na YouTube zůstal. Opraveno i na stránce Platba a doprava: na tabletu a mobilu je video pod textem (dřív zůstávaly dva úzké sloupce).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Nové stránky · Střídání sekcí</span>
+      <h3>Jednotné střídání sekcí na nových stránkách</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Na všech nově převáděných stránkách musí být první sekce béžová hlavička zakončená trhaným pásem a dál se sekce střídají béžová / bílá – stejně jako na Kontaktech a Organic Lab.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Upraveno pořadí na stránkách Platba a doprava (hlavička → Doprava bílá → Doprava zdarma béžová → Platba bílá → Jak balíme béžová), Sledování zásilky (hlavička → Kde číslo hledat bílá → Dopravci béžová → Jak balíme bílá), Vrácení zboží (hlavička → Co se stalo bílá → Před nákupem béžová → Náklady bílá → Férový vztah béžová → Časté otázky bílá → tmavá výzva), Vychytávky (hlavička → Rychlý přehled bílá → karty funkcí béžová → tmavá výzva) a Mirčina mýdla (hlavička → V jejich dílně bílá → Příběh béžová → Řemeslo a další bloky bílá → Na co se těšit béžová → tmavá výzva). FAQ, Kontakty a Organic Lab už pravidlo splňovaly. Karty v bílých pásech mají krémový podklad #FFFDF6. Tmavé závěrečné výzvy stojí mimo střídání.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Více stránek · Posun na kotvy</span>
+      <h3>Plynulý posun na kotvy, cíl vždy pod hlavičkou</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Odscrollování na kotvy musí být plynulé, ne okamžité (např. dlaždice témat na FAQ); tlačítko „Napsat zprávu“ na Kontaktech stále schovávalo horní část formuláře pod hlavičku.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Kliknutí na odkaz na kotvu (#…) zachytí stránka dřív než běhové prostředí a sama posune plynule tak, aby cíl skončil 16 px pod přilepenou hlavičkou (její výšku změří). Leží-li cíl v bílém trhaném pásu, zastaví se na horním okraji pásu. Jako pojistka mají všechny kotvy rezervu shora (scroll-margin-top 140 px, na mobilu 96 px) a posun je plynulý i přes CSS. Při omezení pohybu v systému bez animace. Platí pro FAQ, Kontakty, Platbu a dopravu, Sledování zásilky, Vychytávky a Věrnostní program.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Kontakty · Střídání sekcí</span>
+      <h3>Kontakty: střídání béžových a bílých sekcí</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Hlavička stránky má být zakončená trhaným pásem, pak má navazovat světlá sekce a tak dál na střídačku.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Pořadí sekcí: béžová hlavička → bílý trhaný pás „Co právě řešíte?“ → béžový kontaktní formulář → bílý trhaný pás „Osobní odběr“ → béžové „Identifikační a kontaktní údaje“. Karty a rychlé odkazy v bílých pásech mají krémový podklad #FFFDF6, aby se od bílé odlišily.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Kontakty · Posun na kotvy</span>
+      <h3>Kontakty: „Napsat zprávu“ plynule posune na celý formulář</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Tlačítko „Napsat zprávu“ odscrollovalo stránku tak, že horní část formuláře zůstala pod přilepenou hlavičkou; posun má být plynulý.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Odkazy na kotvy v rámci stránky (#napiste-nam, #odber, #udaje) se posouvají plynule a cíl se zastaví pod přilepenou hlavičkou webu – její výšku stránka změří sama, takže to sedí na počítači i na mobilu. U formuláře se navíc zobrazí i horní trhaný okraj bílého pásu. Při omezení pohybu v systému se posune bez animace.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Celý web · Časy</span>
+      <h3>Časy ve formátu s dvojtečkou</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Časy psát ve formátu 8:00–16:00 všude na webu, nikde neoddělovat hodiny a minuty tečkou.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Prošel jsem všechny stránky a komponenty. Tečkou byly zapsané jen časy na stránce Kontakty: provozní doba v hlavičce a u e-mailového kontaktu (Po–pá 8:00–14:00) a osobní odběr (v pracovní dny 7:00–12:00). Ostatní stránky už dvojtečku používaly (např. 10:00 u přednostního odeslání).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Kontakty</span>
+      <h3>Kontakty: hlavička ve stejném rozvržení jako Organic Lab</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Hlavičku stránky Kontakty udělat ve stejném rozvržení jako hlavičku Organic Lab.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Sloupce v poměru 1,2 : 1 a obsah svisle na střed. Fotka zázemí ve Fryčovicích je ve výřezu 5 : 4 a místo popisku pod fotkou má dole krémový štítek „Naše zázemí ve Fryčovicích“ s podtitulkem „sklad, balení objednávek a osobní odběr pod Beskydami“. Texty, tlačítka a údaje o provozní době zůstaly.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ · Vrácení zboží</span>
+      <h3>Časté otázky v akordeonu podle detailu produktu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Akordeony s častými otázkami udělat co nejpodobněji akordeonům na detailu produktu, jen otázky očíslovat.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Každá otázka je samostatný box (rámeček #ECE3D2, zaoblení 14 px, mezera 14 px) s krémovou hlavičkou #FDFBF5, po najetí světle zelenou #F4F7EA. Otázka je zelená v EB Garamond (24 px, na mobilu 20 px), vlevo číslo v béžovém kolečku, vpravo šipka dolů, která se při otevření otočí a zezelená. Odpověď se rozbalí plynulou animací výšky na bílém podkladu, odsazená pod text otázky. Platí pro stránku Časté otázky (FAQ, čísla 01–37 napříč tématy) i pro sekci Časté otázky na stránce Vrácení zboží (01–13).</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab · Střídání sekcí</span>
+      <h3>Organic Lab: béžová hlavička, bílý pás s kartami, obsah karet na střed</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">První sekce (hlavička stránky) má být béžová, pod ní bílá a dál na střídačku – stránka vždy začíná béžovou sekcí. Obsah karet zarovnat svisle na střed.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Úvod s drobečkovou navigací je na béžovém podkladu stránky (bez bílého pásu). Sedm vrstvených karet je v bílém pásu s trhanými okraji, karty mají krémový podklad #FFFDF6, aby se od bílé odlišily. Sekce „Co můžete zažít“ s galerií a závěrečná výzva jsou opět na béžové. Levá část karty (ikona, nadtitulek, nadpis) i text vpravo jsou svisle na středu karty.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab · Hlavička stránky</span>
+      <h3>Organic Lab: úvod jako hlavička stránky</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Úvodní sekce má být první sekcí stránky jako její hlavička; drobečková navigace nemá být oddělená trhaným pásem.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Bílý pás začíná hned pod hlavičkou webu s rovným horním okrajem; drobečková navigace, nadpis Organic Lab, texty, tlačítka a fotka jsou uvnitř něj. Trhaný okraj je jen dole a odděluje úvod od karet.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab · Scroll efekt</span>
+      <h3>Organic Lab: karty jako vrstvený balíček (stacking)</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Použít na sedm karet scroll efekt Stacking (vrstvení karet) z katalogu UX vzorů.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Karty jsou v jednom sloupci (max. 1120 px), každá je přilepená pod hlavičkou s odsazením o 18 px víc než předchozí, takže z předchozích karet zůstává vidět horní okraj. Další karta přijede zespodu přes předchozí; zakrytá karta se plynule zmenší na 94 % (ztmavení na přání odebráno; řízeno scrollem přes CSS scroll-driven animations, bez knihovny). Uvnitř karty je vlevo ikona, číslo, nadtitulek a nadpis, vpravo text; zaoblení 24 px a stín shora. Na mobilu je efekt vypnutý (karty pod sebou), aby se dlouhé texty daly dočíst; při omezení pohybu v systému a v prohlížečích bez podpory zůstává jen přilepení bez zmenšování.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab · Výzva</span>
+      <h3>Organic Lab: ukázka webu workshopů v tmavé výzvě</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Do pravé části tmavé výzvy „Dopřejte si čas, který voní po tvoření“ vložit dodaný snímek nabídky workshopů jako ukázku ve webovém prohlížeči (mockup), včetně zobrazení na telefonu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Výzva má dva sloupce: vlevo text s tlačítky, vpravo okno prohlížeče (krémová lišta se třemi tečkami a adresou organiclab.cz/workshopy se zámkem). Snímek (assets/partneri/organic-lab-web-workshopy.jpg) je ve výřezu 4 : 3, okno je lehce natočené a po najetí myší se narovná a snímek se pomalu posune dolů na další workshopy. Celé okno je odkaz na nabídku workshopů. Na tabletu a mobilu je okno pod textem bez natočení, na telefonu má výřez 1 : 1 a menší lištu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab · Fotogalerie</span>
+      <h3>Organic Lab: fotogalerie s lightboxem</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Pod sekci Vůně, kosmetika i svíčky přidat fotogalerii z dodaných fotek, které se dají rozkliknout v designu našeho lightboxu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Šest fotek (assets/partneri/organic-lab-galerie-1 až 6.jpg) v mřížce 3 sloupce, na tabletu a mobilu 2 sloupce; dlaždice 4 : 3 se zaoblením 14 px, po najetí se fotka lehce přiblíží a objeví se kulaté tlačítko s lupou (na mobilu je vidět vždy). Kliknutím se otevře lightbox stejný jako v galerii produktu: tmavě zelený závoj, kulaté šipky předchozí/další, počítadlo „1 / 6“ a „Zavřít“ vpravo nahoře; ovládání i šipkami na klávesnici a Esc, zavření kliknutím mimo fotku. Fotka se v lightboxu zobrazuje celá, bez ořezu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Organic Lab</span>
+      <h3>Organic Lab: fotka z workshopu, úvod s trhaným pásem a sedm karet</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Použít dodanou fotku z workshopu v prvním bloku, úvodní sekci Organic Lab udělat jako samostatnou sekci zakončenou trhaným pásem a sedm textových bloků převést na samostatné karty stejného designu.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Fotka uložena jako assets/partneri/organic-lab-workshop.jpg (1280 × 1280 px, poměr výřezu 5 : 4) a použita v úvodu vedle textu. Úvod je v bílém trhaném pásu, drobečková navigace zůstává nad ním. Bloky Proč je doporučujeme, Příběh, Jak kurzy probíhají, Spolupráce s Ekokozou, Pro koho jsou, Společné zážitky a Proč to sedí k Ekokoze jsou bílé karty ve dvou sloupcích; každá má zelenou ikonu v rámečku Rozkvetlé louky, nadtitulek, nadpis a text, poslední karta se roztáhne přes celou šířku. Na mobilu jsou karty pod sebou. Texty beze změny.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vychytávky · Organic Lab · Mirčina mýdla</span>
+      <h3>Nové stránky Vychytávky pro váš nákup, Organic Lab a Mirčina mýdla</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Převést stránky ekokoza.cz/ekokoza-funkce-webu-m63, ekokoza.cz/organic-lab-kurzy-vyroby-prirodni-kosmetiky-m52 a ekokoza.cz/nova-mircina-mydla-m62 do designu Ekokozy.</p>
+        <span class="k">Řešení</span>
+        <p class="v">vychytavky.html: zelený úvod se třemi štítky; rychlý přehled devíti funkcí s odkazy na kotvy #eko-tip-01 až #eko-tip-09; devět karet funkcí s ikonou a barevnou hlavičkou (Rozkvetlá louka, Poledne, Květ); tmavě zelená výzva s e-mailem. organic-lab.html a mircina-mydla.html: úvod s fotografií a štítkem, střídané bloky text + fotografie (Proč je doporučujeme / V jejich dílně vzniká, Příběh), dvousloupcové textové bloky, tři karty s obrázky, citát a tmavě zelená výzva s odkazem na web partnera a na suroviny. Texty převzaté beze změny. Fotografie z ekokoza.cz nešly stáhnout, použity jsou ilustrační obrázky z projektu.</p>
+        <span class="k">Odkazy</span>
+        <p class="v">Patička: „Vychytávky pro váš nákup“ → vychytavky.html, „Organic Lab – kurzy výroby“ → organic-lab.html, „Mirčina mýdla“ → mircina-mydla.html. FAQ: odkaz „Ekokozí vychytávky“ → vychytavky.html.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Vrácení a reklamace · Platba a doprava</span>
+      <h3>Nové stránky Vrácení zboží a reklamace a Platba a doprava</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Převést stránky ekokoza.cz/vraceni-zbozi-m5 a ekokoza.cz/platba-a-doprava-m29 do designu Ekokozy.</p>
+        <span class="k">Řešení</span>
+        <p class="v">vraceni-zbozi.html: úvod s e-mailem a třemi kroky; „Co se stalo?“ jako šest karet situací; „Co je dobré vědět před nákupem“; náklady a odeslání (žlutá karta vrácení bez udání důvodu, zelená oprávněná reklamace, adresa pro vrácení); „Férový vztah funguje oběma směry“ se dvěma seznamy; 13 častých otázek v akordeonu; tmavě zelená výzva. platba-a-doprava.html: čtyři karty dopravy s cenou (loga PPL a Zásilkovny, osobní odběr zdarma), doprava zdarma jako tři číslované karty, čtyři karty plateb, Jak balíme s videem. Odkazy na obě stránky vedou z patičky, Kontaktů, FAQ, nápovědy u objednávek a faktur a z Mého účtu (dlaždice Vrácení a reklamace už není „připravujeme“). Texty v původním znění; e-mail sjednocen na eshop@ekokoza.cz.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">FAQ · Sledování zásilky</span>
+      <h3>Nové stránky Časté otázky (FAQ) a Sledování zásilky</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Převést stránky FAQ (ekokoza.cz/faq-m67) a Sledování zásilky (ekokoza.cz/sledovani-zasilky-m58) do designu Ekokozy.</p>
+        <span class="k">Řešení</span>
+        <p class="v">faq.html: všech 37 otázek v původním znění v šesti tématech; vyhledávání (bez ohledu na diakritiku, výsledky se rozbalí), Rozbalit vše / Sbalit vše, karty témat s počtem otázek, akordeon s číslem otázky; na konci tmavě zelená karta „Napište nám konkrétní situaci“ s odkazy. sledovani-zasilky.html: úvod s upozorněním, kde číslo najdete; dvě číslované karty „Kde číslo hledat“; karty dopravců PPL a Zásilkovna (loga z patičky, odkaz na sledování u dopravce); upozornění „Číslo zatím nevidíte?“; Jak balíme s odkazem na video na YouTube. Na obě stránky vedou odkazy z horní lišty a mobilního menu hlavičky, z patičky, ze stránky Kontakty, z nápovědy u objednávek a v Mém účtu (dlaždice Sledování zásilky už není „připravujeme“). Bloky výhod, sítí, newsletteru a ocenění vynechány, jsou v patičce.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Kontakty · Hlavička · Patička</span>
+      <h3>Nová stránka Kontakty</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Převést obsah stránky Kontakty ze současného webu (ekokoza.cz/kontakty-m2) do designu Ekokozy a všude přejmenovat „Kontakt“ na „Kontakty“.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Stránka kontakty.html: úvod s e-mailem a provozní dobou a fotkou zázemí; „Co právě řešíte?“ jako dvě číslované karty (Objednávky a dotazy, Reklamace) a čtyři rychlé odkazy; kontaktní formulář (Jméno, Telefon, E-mail, Zpráva); osobní odběr ve Fryčovicích s upozorněním „Nejsme kamenná prodejna“ a odkazem na trasu v Mapách Google; firemní, platební a vratkové údaje (IČ, DIČ, Fio banka). Odkaz „Kontakt“ v horní liště hlavičky a v mobilním menu přejmenován na „Kontakty“ a vede na novou stránku; v patičce na ni vedou „Kontakty“ a „Identifikační a kontaktní údaje“. Bloky z původní stránky, které na webu už jsou jinde (výhody, sítě, newsletter, ocenění), vynechány. Na stránku Kontakty dále odkazuje: patička (u adresy „Všechny kontakty“, „Zobrazit na mapě“ vede na osobní odběr), detail produktu v bloku Poradíme vám („Všechny kontakty“) a úvodní text kategorie („napište nám“).</p>
+      </div>
+    </div>
 
     <div class="item">
       <span class="tag">Věrnostní program</span>
