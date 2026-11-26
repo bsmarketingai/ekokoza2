@@ -96,9 +96,82 @@
     .ek-sechead-r { align-self: stretch; justify-content: space-between; }
     .ek-scrollrow { grid-auto-columns: 78% !important; margin-left: -20px !important; margin-right: -20px !important; padding-left: 20px !important; padding-right: 20px !important; scroll-padding-left: 20px !important; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 52px), rgba(0,0,0,0) 100%) !important; mask-image: linear-gradient(to right, #000 calc(100% - 52px), rgba(0,0,0,0) 100%) !important; }
   }
+  /* Tisk – verze A: stránka receptu ve webovém layoutu, jen suroviny a postup, odstíny šedi.
+     Při tisku platí @media print, na obrazovce totéž jako náhled přes recept.dc.html?tisk=a */
+  .ek-pa-logo { display: none; }
+  .ek-pabar { display: none; }
+  .ek-root.ek-pm { background: #6F6E66 !important; padding: 20px 16px 48px; }
+  .ek-root.ek-pm .ek-pabar { position: sticky; top: 12px; z-index: 60; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 210mm; margin: 0 auto 14px; padding: 12px 14px 12px 18px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E4DAC6; box-shadow: 0 18px 40px -22px rgba(0,0,0,.5); }
+  .ek-pabar-t { margin: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 22px; color: #2A2A24; }
+  .ek-pabar-b { display: flex; gap: 8px; }
+  .ek-pabtn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font-family: 'Work Sans',sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; transition: background .2s, border-color .2s; }
+  .ek-pabtn-p { background: #4C653D; color: #F6F1E7; border: 1.5px solid #4C653D; }
+  .ek-pabtn-p:hover { background: #3E5432; border-color: #3E5432; color: #F6F1E7; }
+  .ek-pabtn-s { background: transparent; color: #4C653D; border: 1.5px solid #4C653D; }
+  .ek-pabtn-s:hover { background: #EFE7D6; color: #4C653D; }
+  .ek-root.ek-pm .ek-pa-page { box-sizing: border-box; width: 210mm; max-width: 100% !important; min-height: 297mm; padding: 11mm 13mm 12mm; background: #FFFFFF; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); filter: grayscale(1); }
+  @media (max-width: 549px) { .ek-root.ek-pm .ek-pa-page { padding: 7mm 6mm; min-height: 0; } .ek-root.ek-pm .ek-sec > div:has(> .ek-phase) { grid-template-columns: 1fr !important; } }
+  .ek-root.ek-pm .ek-pa-x { display: none !important; }
+    .ek-root.ek-pm .ek-pa-x, .ek-root.ek-pm .ek-noprint, .ek-root.ek-pm .ek-step-ph, .ek-root.ek-pm .sc-host[data-sc-name="ui-InfoBar"], .ek-root.ek-pm .sc-host[data-sc-name="ui-Header"], .ek-root.ek-pm .sc-host[data-sc-name="ui-Footer"], .ek-root.ek-pm .sc-host[data-sc-name="ui-Breadcrumb"] { display: none !important; }
+    .ek-root.ek-pm .ek-pad { padding: 0 !important; }
+    .ek-root.ek-pm .ek-rgrid { display: block !important; margin-top: 0 !important; }
+    .ek-root.ek-pm .ek-pa-logo { display: block !important; height: 26px; width: auto; margin: 0 0 10px; filter: brightness(0); }
+    .ek-root.ek-pm .ek-h1 { font-size: 26px !important; margin-top: 4px !important; color: #000 !important; }
+    .ek-root.ek-pm .ek-h2 { font-size: 19px !important; color: #000 !important; }
+    .ek-root.ek-pm .ek-h3 { font-size: 14.5px !important; color: #000 !important; }
+    .ek-root.ek-pm .ek-eyebrow { font-size: 11px !important; color: #444 !important; }
+    .ek-root.ek-pm .ek-meta { height: auto !important; padding: 0 !important; border: none !important; background: none !important; font-size: 13px !important; color: #222 !important; }
+    .ek-root.ek-pm .ek-meta + .ek-meta::before { content: '·'; margin-right: 6px; color: #888; }
+    .ek-root.ek-pm .ek-meta span[style*="mask"] { display: none !important; }
+    .ek-root.ek-pm .ek-sec { padding-top: 12px !important; gap: 6px !important; }
+    .ek-root.ek-pm div:has(> .ek-meta) { margin-top: 6px !important; }
+    .ek-root.ek-pm .ek-sec > p { font-size: 11.5px !important; }
+    .ek-root.ek-pm .ek-sec > div:has(> .ek-phase) { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px !important; }
+    .ek-root.ek-pm .ek-phase { padding: 8px 0 0 !important; border: none !important; border-top: 1px solid #999 !important; border-radius: 0 !important; background: none !important; }
+    .ek-root.ek-pm .ek-phase > span { font-size: 10px !important; color: #333 !important; margin-bottom: 4px !important; }
+    .ek-root.ek-pm .ek-phase > span span[style*="mask"] { display: none !important; }
+    .ek-root.ek-pm .ek-ing { padding: 3px 0 !important; font-size: 12px !important; border-bottom: 1px dotted #bbb !important; }
+    .ek-root.ek-pm .ek-note { padding: 8px 10px !important; border: 1px solid #bbb !important; border-radius: 8px !important; background: none !important; }
+    .ek-root.ek-pm .ek-note p { font-size: 11.5px !important; line-height: 1.45 !important; color: #222 !important; }
+    .ek-root.ek-pm .ek-note span[style*="mask"] { display: none !important; }
+    .ek-root.ek-pm .ek-step { grid-template-columns: 24px minmax(0,1fr) !important; gap: 8px !important; padding: 4px 0 !important; border-bottom: 1px solid #ddd !important; break-inside: avoid; }
+    .ek-root.ek-pm .ek-num { width: 21px !important; height: 21px !important; font-size: 12px !important; background: none !important; border: 1px solid #444 !important; color: #000 !important; }
+    .ek-root.ek-pm .ek-step .ek-p { margin-top: 1px !important; font-size: 12px !important; line-height: 1.42 !important; color: #222 !important; }
+    .ek-root.ek-pm .ek-step .ek-note { margin-top: 6px !important; }
+    .ek-root.ek-pm a, .ek-root.ek-pm .ek-gl { color: inherit !important; text-decoration: none !important; }
   @media print {
-    .sc-host[data-sc-name="ui-Header"], .sc-host[data-sc-name="ui-Footer"], .ek-noprint { display: none !important; }
-    .ek-rgrid { grid-template-columns: 1fr !important; }
+    @page { size: A4; margin: 12mm 13mm; }
+    html, body { background: #FFFFFF !important; }
+    .ek-root { background: none !important; min-height: 0 !important; padding: 0 !important; }
+    .ek-pabar { display: none !important; }
+    .ek-pa-page { max-width: none !important; width: auto !important; min-height: 0 !important; padding: 0 !important; box-shadow: none !important; filter: grayscale(1); }
+    .ek-pa-x, .ek-noprint, .ek-step-ph, .sc-host[data-sc-name="ui-InfoBar"], .sc-host[data-sc-name="ui-Header"], .sc-host[data-sc-name="ui-Footer"], .sc-host[data-sc-name="ui-Breadcrumb"] { display: none !important; }
+    .ek-pad { padding: 0 !important; }
+    .ek-rgrid { display: block !important; margin-top: 0 !important; }
+    .ek-pa-logo { display: block !important; height: 26px; width: auto; margin: 0 0 10px; filter: brightness(0); }
+    .ek-h1 { font-size: 26px !important; margin-top: 4px !important; color: #000 !important; }
+    .ek-h2 { font-size: 19px !important; color: #000 !important; }
+    .ek-h3 { font-size: 14.5px !important; color: #000 !important; }
+    .ek-eyebrow { font-size: 11px !important; color: #444 !important; }
+    .ek-meta { height: auto !important; padding: 0 !important; border: none !important; background: none !important; font-size: 13px !important; color: #222 !important; }
+    .ek-meta + .ek-meta::before { content: '·'; margin-right: 6px; color: #888; }
+    .ek-meta span[style*="mask"] { display: none !important; }
+    .ek-sec { padding-top: 12px !important; gap: 6px !important; }
+    div:has(> .ek-meta) { margin-top: 6px !important; }
+    .ek-sec > p { font-size: 11.5px !important; }
+    .ek-sec > div:has(> .ek-phase) { display: grid !important; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px !important; }
+    .ek-phase { padding: 8px 0 0 !important; border: none !important; border-top: 1px solid #999 !important; border-radius: 0 !important; background: none !important; }
+    .ek-phase > span { font-size: 10px !important; color: #333 !important; margin-bottom: 4px !important; }
+    .ek-phase > span span[style*="mask"] { display: none !important; }
+    .ek-ing { padding: 3px 0 !important; font-size: 12px !important; border-bottom: 1px dotted #bbb !important; }
+    .ek-note { padding: 8px 10px !important; border: 1px solid #bbb !important; border-radius: 8px !important; background: none !important; }
+    .ek-note p { font-size: 11.5px !important; line-height: 1.45 !important; color: #222 !important; }
+    .ek-note span[style*="mask"] { display: none !important; }
+    .ek-step { grid-template-columns: 24px minmax(0,1fr) !important; gap: 8px !important; padding: 4px 0 !important; border-bottom: 1px solid #ddd !important; break-inside: avoid; }
+    .ek-num { width: 21px !important; height: 21px !important; font-size: 12px !important; background: none !important; border: 1px solid #444 !important; color: #000 !important; }
+    .ek-step .ek-p { margin-top: 1px !important; font-size: 12px !important; line-height: 1.42 !important; color: #222 !important; }
+    .ek-step .ek-note { margin-top: 6px !important; }
+    a, .ek-gl { color: inherit !important; text-decoration: none !important; }
   }
   /* mobil (S a menší): ovládání karuselu pod kartami — odkaz vlevo, šipky vpravo */
   @media (max-width: 819px) {
@@ -110,18 +183,27 @@
 </style>
 </helmet>
 
-<div style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+<div class="{{ rootCls }}" style="background:linear-gradient(rgba(255,254,248,.55), rgba(255,254,248,.55)), url('assets/background.png') repeat #FFFDF6; background-size:auto, 620px; font-family:'Work Sans',sans-serif; color:#2A2A24; min-height:100vh; overflow-x:clip;">
+
 
   <dc-import name="ui-InfoBar" hint-size="100%,40px"></dc-import>
   <dc-import name="ui-Header" active="receptar" hint-size="100%,140px"></dc-import>
 
-  <div style="max-width:1720px; margin:0 auto;">
+  <div class="ek-pabar">
+    <p class="ek-pabar-t">Náhled tisku – verze A</p>
+    <div class="ek-pabar-b">
+      <a class="ek-pabtn ek-pabtn-s" href="recept.dc.html"><span style="{{ iconBack }}"></span>Zpět na recept</a>
+      <button type="button" class="ek-pabtn ek-pabtn-p" onClick="{{ doPrintNow }}"><span style="{{ iconPrintW }}"></span>Vytisknout</button>
+    </div>
+  </div>
+  <div class="ek-pa-page" style="max-width:1720px; margin:0 auto;">
   <section style="padding:22px 32px 0;" class="ek-pad">
     <div style="max-width:1560px; margin:0 auto;">
       <dc-import name="ui-Breadcrumb" items="{{ crumbs }}" hint-size="620px,20px"></dc-import>
 
       <div class="ek-rgrid" style="margin-top:24px;">
         <div style="min-width:0;">
+          <img class="ek-pa-logo" src="assets/ekokoza-logo-green.png" alt="Ekokoza">
           <p class="ek-eyebrow">Péče a barvy na vlasy</p>
           <h1 class="ek-h1" style="margin-top:10px;">Lehký bezoplachový kondicionér pro hebké a lesklé vlasy</h1>
 
@@ -129,11 +211,11 @@
             <span class="ek-meta"><span style="{{ iconClock }}"></span>30 min</span>
             <span class="ek-meta"><span style="{{ iconLevel }}"></span>Pro pokročilé</span>
             <span class="ek-meta"><span style="{{ iconYield }}"></span>~100 g výrobku</span>
-            <button onClick="{{ doPrint }}" class="ek-act ek-noprint"><span style="{{ iconPrint }}"></span>Vytisknout recept</button>
+            <a href="recept.dc.html?tisk=a" class="ek-act ek-noprint" style="text-decoration:none;"><span style="{{ iconPrint }}"></span>Vytisknout recept</a>
             <button onClick="{{ toggleFav }}" class="ek-act ek-noprint"><span style="{{ iconFav }}"></span>{{ favLabel }}</button>
           </div>
 
-          <div style="position:relative; margin-top:24px; border-radius:14px; overflow:hidden; aspect-ratio:16/10; background:#EFE7D6;">
+          <div class="ek-pa-x" style="position:relative; margin-top:24px; border-radius:14px; overflow:hidden; aspect-ratio:16/10; background:#EFE7D6;">
             <div style="{{ heroImg }}"></div>
             <button onClick="{{ openVid }}" class="ek-vid-btn" title="Přehrát video k receptu" style="position:absolute; right:14px; bottom:14px; z-index:3; display:flex; align-items:center; gap:7px; box-sizing:border-box; height:40px; line-height:1; background:#FFFFFF; border:1px solid #ECE3D2; border-radius:999px; padding:0 14px; font-family:'Work Sans',sans-serif; font-size:12.5px; font-weight:600; color:#4C653D; cursor:pointer; box-shadow:0 6px 18px -8px rgba(45,58,46,.45);"><span style="{{ iconVid }}"></span>Video</button>
             <button onClick="{{ toggleFav }}" class="ek-fav-btn" title="{{ favTitle }}" aria-pressed="{{ favOn }}" style="{{ favBtnStyle }}"><span style="{{ favIcon }}"></span></button>
@@ -147,10 +229,10 @@
               </div>
             </sc-if>
           </div>
-          <span style="display:block; margin-top:8px; font-size:12.5px; color:#8a8776;">Obrázek je pouze ilustrační.</span>
+          <span class="ek-pa-x" style="display:block; margin-top:8px; font-size:12.5px; color:#8a8776;">Obrázek je pouze ilustrační.</span>
 
-          <p class="ek-p" style="margin-top:22px; font-size:18px; max-width:70ch;">Lehký bezoplachový kondicionér pomáhá uhladit vlasové vlákno, omezit krepatění a usnadnit rozčesávání. Hydratační složky, lehké emolienty a hydrolyzované proteiny pečují o suché délky a konečky bez výrazného zatížení vlasů.</p>
-          <p style="margin:14px 0 0; font-size:14.5px; color:#6B6B5E;">Recept pro Ekokozu připravila Bianka z Holistické zdraví.</p>
+          <p class="ek-p ek-pa-x" style="margin-top:22px; font-size:18px; max-width:70ch;">Lehký bezoplachový kondicionér pomáhá uhladit vlasové vlákno, omezit krepatění a usnadnit rozčesávání. Hydratační složky, lehké emolienty a hydrolyzované proteiny pečují o suché délky a konečky bez výrazného zatížení vlasů.</p>
+          <p class="ek-pa-x" style="margin:14px 0 0; font-size:14.5px; color:#6B6B5E;">Recept pro Ekokozu připravila Bianka z Holistické zdraví.</p>
 
           <div class="ek-sec">
             <h2 class="ek-h2">Co budete potřebovat</h2>
@@ -184,7 +266,7 @@
             </div>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Co se vám bude hodit</h2>
             <div class="ek-two">
               <div class="ek-phase">
@@ -216,7 +298,6 @@
           <div class="ek-sec">
             <h2 class="ek-h2">Postup krok za krokem</h2>
             <div class="ek-noprint" style="display:flex; flex-wrap:wrap; gap:10px; align-self:flex-start;">
-              <button onClick="{{ openGuide }}" class="ek-btn-secondary ek-noprint" style="display:inline-flex; align-items:center; gap:10px; border:1.5px solid #4C653D; background:transparent; color:#4C653D; border-radius:999px; padding:13px 24px; font-family:'Work Sans',sans-serif; font-size:15.5px; font-weight:600; cursor:pointer; transition:background .2s, color .2s;"><span style="{{ iconGuide }}"></span>Provést krok za krokem</button>
               <button onClick="{{ openVid }}" class="ek-btn-secondary ek-noprint" style="display:inline-flex; align-items:center; gap:10px; border:1.5px solid #4C653D; background:transparent; color:#4C653D; border-radius:999px; padding:13px 24px; font-family:'Work Sans',sans-serif; font-size:15.5px; font-weight:600; cursor:pointer; transition:background .2s, color .2s;"><span style="{{ iconVidBtn }}"></span>Video</button>
             </div>
             <div>
@@ -303,19 +384,19 @@
             </div>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Jak má výsledek vypadat</h2>
             <p class="ek-p" style="max-width:74ch;">Hotový kondicionér má být hladký a jednotný, bez oddělené olejové vrstvy nebo viditelných částeček emulgátoru. Podle způsobu míchání a rychlosti chladnutí může mít podobu tekutějšího mléka nebo lehkého krému.</p>
             <p class="ek-p" style="max-width:74ch;">Pokud je výrobek bezprostředně po výrobě řidší, než jste čekali, nechte jej do druhého dne ustálit. Struktura emulze se může během úplného vychladnutí ještě mírně změnit.</p>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Jak kondicionér používat</h2>
             <p class="ek-p" style="max-width:74ch;">Po umytí vlasů naneste malé množství do vlhkých délek a konečků. Jemně jej rozetřete prsty nebo vlasy pročešte hřebenem se širšími zuby. Kondicionér se neoplachuje.</p>
             <p class="ek-p" style="max-width:74ch;">Použít jej můžete také mezi jednotlivými mytími na suché vlasy — velmi malé množství nejprve rozetřete v dlaních a poté zapracujte do konečků nebo krepatých délek. Začněte raději menší dávkou: jemným vlasům často stačí opravdu málo, silnější nebo sušší vlasy mohou potřebovat o něco více.</p>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Možné alternativy</h2>
             <div class="ek-two">
               <div class="ek-alt">
@@ -341,12 +422,12 @@
             </div>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Když se něco nepovede</h2>
             <dc-import name="ui-FAQ" items="{{ troubles }}" hint-size="100%,420px"></dc-import>
           </div>
 
-          <div class="ek-sec">
+          <div class="ek-sec ek-pa-x">
             <h2 class="ek-h2">Uchovávání a trvanlivost</h2>
             <p class="ek-p" style="max-width:74ch;">Kondicionér uchovávejte v dobře uzavřeném obalu při pokojové teplotě, mimo přímé slunce a zdroje tepla. Při používání dbejte na to, aby se do výrobku nedostávala voda ani nečistoty.</p>
             <p class="ek-p" style="max-width:74ch;">Skutečná trvanlivost závisí na zvoleném konzervantu, čistotě výroby, obalu a mikrobiologické stabilitě receptury. Pokud se změní vůně, barva nebo vzhled, případně se začnou oddělovat vrstvy, kondicionér dále nepoužívejte.</p>
@@ -374,7 +455,6 @@
                 <span style="{{ r.thumb }}"></span>
                 <span style="display:flex; flex-direction:column; gap:2px; min-width:0;">
                   <span class="ek-row-n" style="font-size:14.5px; font-weight:600; line-height:1.35; color:#2A2A24; transition:color .2s;">{{ r.name }}</span>
-                  <span style="font-size:12.5px; color:#8a8776;">{{ r.note }}</span>
                 </span>
                 <span style="font-size:14.5px; font-weight:700; white-space:nowrap; color:#2A2A24;">{{ r.price }}</span>
               </div>
@@ -386,9 +466,6 @@
               <span style="font-size:14.5px; color:#6B6B5E;">{{ sumLabel }}</span>
               <span style="font-family:'EB Garamond',serif; font-weight:500; font-size:28px; color:#2A2A24;">{{ sumPrice }}</span>
             </div>
-            <sc-if value="{{ hasSaving }}" hint-placeholder-val="{{ true }}">
-              <span style="display:block; margin-top:4px; font-size:13px; color:#4F6E2A;">{{ savingLabel }}</span>
-            </sc-if>
             <button onClick="{{ addAll }}" class="ek-btn-main" style="display:flex; align-items:center; justify-content:center; gap:10px; width:100%; height:52px; margin-top:14px; border:1.5px solid #D14405; border-radius:999px; background:#D14405; color:#fff; font-family:'Work Sans',sans-serif; font-size:16px; font-weight:600; cursor:pointer; transition:background .2s, border-color .2s;"><span style="{{ iconCart }}"></span>{{ ctaLabel }}</button>
             <p style="margin:14px 0 0; font-size:12.5px; line-height:1.55; color:#8a8776;">Ceny jsou za celá balení surovin — vystačí i na další výrobu. Odklikněte, co už máte doma.</p>
           </div>
@@ -444,7 +521,7 @@
     </div>
   </section>
 
-  <section style="padding:64px 32px 0;" class="ek-pad">
+  <section style="padding:64px 32px 0;" class="ek-pad ek-pa-x">
     <div style="max-width:1560px; margin:0 auto;">
       <div class="ek-sechead" style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:18px;">
         <h2 class="ek-h2">Podobné recepty</h2>
@@ -462,8 +539,8 @@
     </div>
   </section>
 
-<div aria-hidden="true" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
-<div style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
+<div aria-hidden="true" class="ek-pa-x" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw; height:30px; margin-top:56px; background:#4C653D; clip-path:polygon(0% 3.6px, 2.17% 6.2px, 4.35% 8.3px, 6.52% 4.3px, 8.7% 12.3px, 10.87% 5.4px, 13.04% 7.1px, 15.22% 7.1px, 17.39% 12.6px, 19.57% 7.4px, 21.74% 5.8px, 23.91% 3.9px, 26.09% 11.7px, 28.26% 10.7px, 30.43% 6.6px, 32.61% 8.4px, 34.78% 11.9px, 36.96% 11.2px, 39.13% 7.9px, 41.3% 11px, 43.48% 4.7px, 45.65% 14.4px, 47.83% 10.4px, 50% 9.7px, 52.17% 7.3px, 54.35% 18.1px, 56.52% 3.8px, 58.7% 11.8px, 60.87% 11px, 63.04% 10.6px, 65.22% 7.3px, 67.39% 4px, 69.57% 11px, 71.74% 6.5px, 73.91% 3.9px, 76.09% 12.3px, 78.26% 5px, 80.43% 7.2px, 82.61% 6.6px, 84.78% 11.5px, 86.96% 9.9px, 89.13% 11.1px, 91.3% 14.3px, 93.48% 8.2px, 95.65% 5.5px, 97.83% 14.1px, 100% 9.9px, 100% 100%, 0% 100%);"></div>
+<div class="ek-pa-x" style="position:relative; z-index:1; left:50%; width:100vw; margin-left:-50vw;"><dc-import name="ui-Footer" hint-size="100%,520px"></dc-import></div>
   </div>
 
   <sc-if value="{{ guideOn }}" hint-placeholder-val="{{ false }}">
@@ -576,6 +653,7 @@ class Component extends DCLogic {
   ];
 
   componentDidMount() {
+    if (/[?&]tisk=a/.test(location.search)) this.setState({ pm: true });
     this.onKey = (e) => {
       if (this.state.guide === null) return;
       if (e.key === 'Escape') this.setState({ guide: null });
@@ -704,7 +782,10 @@ class Component extends DCLogic {
       iconFav: this.mask(S.fav ? 'favourite-filled' : 'favourite', 18, S.fav ? '#D8763B' : '#4C653D'),
       favLabel: S.fav ? 'Uloženo v mých receptech' : 'Uložit do mých receptů',
       toggleFav: () => this.setState({ fav: !S.fav }),
-      doPrint: () => window.print(),
+      rootCls: 'ek-root' + (this.state.pm ? ' ek-pm' : ''),
+      doPrintNow: () => { try { window.print(); } catch (err) {} },
+      iconPrintW: this.mask('printer', 18, '#F6F1E7'),
+      iconBack: this.mask('arrow-left-01', 18, '#4C653D'),
 
       iconWater: this.mask('droplet', 17, '#4F6E2A'),
       iconOil: this.mask('dropper', 17, '#4F6E2A'),
@@ -772,8 +853,6 @@ class Component extends DCLogic {
 
       sumLabel: (S.tab === 'tools' ? 'Vybrané pomůcky' : 'Vybrané suroviny') + ' (' + selected.length + ')',
       sumPrice: Component.czk(sum),
-      hasSaving: selected.length > 0,
-      savingLabel: 'Vystačí na několik výrob — na 100 g receptu padne jen část balení.',
       ctaLabel: 'Vložit ' + Component.plural(selected.length, 'položku', 'položky', 'položek') + ' do košíku',
       addAll: () => window.dispatchEvent(new CustomEvent('ek-add-recipe-cart', { detail: selected })),
       selectLabel: allIngOn && S.tab === 'ing' ? 'Označit, co už mám doma' : 'Vybrat vše',

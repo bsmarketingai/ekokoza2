@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tisk receptu B — Lehký bezoplachový kondicionér | ekokoza.cz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { background: #6F6E66; min-height: 100vh; padding: 20px 16px 48px; font-family: 'Work Sans', sans-serif; }
+  .ek-pvbar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; max-width: 210mm; margin: 0 auto 14px; padding: 12px 14px 12px 18px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E4DAC6; box-shadow: 0 18px 40px -22px rgba(0,0,0,.5); font-family: 'Work Sans',sans-serif; }
+  .ek-pvbar-t { margin: 0; font-family: 'EB Garamond',serif; font-weight: 500; font-size: 22px; color: #2A2A24; }
+  .ek-pvbar-b { display: flex; gap: 8px; }
+  .ek-pvbtn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font-family: 'Work Sans',sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .2s, border-color .2s; }
+  .ek-pvbtn-p { background: #4C653D; color: #F6F1E7; border: 1.5px solid #4C653D; }
+  .ek-pvbtn-p:hover { background: #3E5432; border-color: #3E5432; }
+  .ek-pvbtn-s { background: transparent; color: #4C653D; border: 1.5px solid #4C653D; }
+  .ek-pvbtn-s:hover { background: #EFE7D6; }
+  .ek-paper { box-sizing: border-box; width: 210mm; max-width: 100%; min-height: 297mm; margin: 0 auto; padding: 11mm 13mm 12mm; background: #FFFFFF; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+  .ek-print { font-family: 'Work Sans', Helvetica, Arial, sans-serif; font-size: 9.4pt; line-height: 1.42; color: #222; text-align: left; }
+  .ek-pr-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 7px; border-bottom: 0.6pt solid #999; }
+  .ek-pr-logo { display: block; height: 7.5mm; width: auto; filter: grayscale(1) brightness(0); }
+  .ek-pr-site { font-size: 8pt; color: #555; letter-spacing: .04em; }
+  .ek-pr-kicker { margin: 9px 0 0; font-size: 7.6pt; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #555; }
+  .ek-pr-title { margin: 3px 0 0; font-family: 'EB Garamond', Georgia, serif; font-weight: 500; font-size: 21pt; line-height: 1.08; color: #000; }
+  .ek-pr-meta { margin: 6px 0 0; font-size: 8.6pt; color: #444; }
+  .ek-pr-meta b { font-weight: 600; color: #111; }
+  .ek-pr-grid { display: grid; grid-template-columns: 62mm minmax(0,1fr); gap: 7mm; margin-top: 10px; align-items: start; }
+  .ek-pr-h { margin: 0 0 5px; font-family: 'EB Garamond', Georgia, serif; font-weight: 500; font-size: 13.5pt; line-height: 1.15; color: #000; }
+  .ek-pr-sub { margin: -2px 0 6px; font-size: 7.8pt; color: #666; }
+  .ek-pr-phase { margin: 0 0 7px; break-inside: avoid; }
+  .ek-pr-phase-t { margin: 0 0 2px; font-size: 7.4pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #444; }
+  .ek-pr-ing { display: flex; align-items: baseline; gap: 6px; padding: 2.2px 0; border-bottom: 0.4pt dotted #aaa; }
+  .ek-pr-box { flex: 0 0 auto; width: 7.5pt; height: 7.5pt; border: 0.7pt solid #777; border-radius: 1.5pt; transform: translateY(1pt); }
+  .ek-pr-ing-n { flex: 1 1 auto; min-width: 0; }
+  .ek-pr-ing-n small { font-size: 7.6pt; color: #666; }
+  .ek-pr-ing-q { flex: 0 0 auto; font-weight: 600; color: #000; white-space: nowrap; }
+  .ek-pr-steps { margin: 0; padding: 0; list-style: none; }
+  .ek-pr-step { display: grid; grid-template-columns: 16pt minmax(0,1fr); gap: 6px; padding: 0 0 6px; break-inside: avoid; }
+  .ek-pr-n { display: flex; align-items: center; justify-content: center; width: 14pt; height: 14pt; border: 0.7pt solid #555; border-radius: 50%; font-size: 7.8pt; font-weight: 600; color: #111; }
+  .ek-pr-st { margin: 0; font-weight: 600; color: #000; }
+  .ek-pr-sx { margin: 1px 0 0; color: #333; }
+  .ek-pr-tip { margin: 2px 0 0; font-size: 8.2pt; color: #555; font-style: italic; }
+  .ek-pr-foot { margin-top: 8px; padding-top: 6px; border-top: 0.6pt solid #999; display: flex; justify-content: space-between; gap: 12px; font-size: 7.6pt; color: #666; }
+  .ek-pvbar a.ek-pvbtn { text-decoration: none; }
+  .ek-pvicon { display: inline-block; flex: 0 0 auto; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: center / contain no-repeat; mask: center / contain no-repeat; }
+  @media (max-width: 549px) { .ek-paper { padding: 7mm 6mm; min-height: 0; } .ek-pr-grid { grid-template-columns: 1fr !important; } .ek-pvbtn { padding: 0 16px; } }
+  @media print {
+    @page { size: A4; margin: 11mm 13mm 12mm; }
+    body { background: #FFFFFF; padding: 0; min-height: 0; }
+    .ek-pvbar { display: none !important; }
+    .ek-paper { width: auto !important; min-height: 0 !important; padding: 0 !important; box-shadow: none !important; }
+    .ek-print { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+  <div class="ek-pvbar">
+    <p class="ek-pvbar-t">Tisk receptu – verze B</p>
+    <div class="ek-pvbar-b">
+      <a class="ek-pvbtn ek-pvbtn-s" href="recept.dc.html"><span class="ek-pvicon" style="-webkit-mask-image:url('assets/icons/arrow-left-01.svg'); mask-image:url('assets/icons/arrow-left-01.svg');"></span>Zpět na recept</a>
+      <button type="button" class="ek-pvbtn ek-pvbtn-p" onclick="window.print()"><span class="ek-pvicon" style="-webkit-mask-image:url('assets/icons/printer.svg'); mask-image:url('assets/icons/printer.svg');"></span>Vytisknout</button>
+    </div>
+  </div>
+  <main class="ek-paper">
+  <div class="ek-print">
+    <div class="ek-pr-head">
+      <img class="ek-pr-logo" src="assets/ekokoza-logo-green.png" alt="Ekokoza">
+      <span class="ek-pr-site">ekokoza.cz · Recept</span>
+    </div>
+    <p class="ek-pr-kicker">Péče a barvy na vlasy</p>
+    <h1 class="ek-pr-title">Lehký bezoplachový kondicionér pro hebké a lesklé vlasy</h1>
+    <p class="ek-pr-meta"><b>Čas:</b> 30 min &nbsp;·&nbsp; <b>Obtížnost:</b> pro pokročilé &nbsp;·&nbsp; <b>Výtěžek:</b> ~100&nbsp;g výrobku</p>
+    <div class="ek-pr-grid">
+      <div>
+        <h2 class="ek-pr-h">Suroviny</h2>
+        <p class="ek-pr-sub">Na přibližně 100&nbsp;g hotového kondicionéru</p>
+        <div class="ek-pr-phase">
+          <p class="ek-pr-phase-t">Fáze A — vodná</p>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Rozmarýnový hydrolát</span><span class="ek-pr-ing-q">82,5&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Aloe vera 10:1</span><span class="ek-pr-ing-q">1&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Glycerin</span><span class="ek-pr-ing-q">3&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Inulin</span><span class="ek-pr-ing-q">0,5&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Panthenol <small>— provitamin B5 75&nbsp;%</small></span><span class="ek-pr-ing-q">2&nbsp;g</span></div>
+        </div>
+        <div class="ek-pr-phase">
+          <p class="ek-pr-phase-t">Fáze B — olejová</p>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Varisoft® EQ 65 <small>— emulgátor</small></span><span class="ek-pr-ing-q">2,5&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">MCT Caprylis</span><span class="ek-pr-ing-q">3&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Brokolicový olej</span><span class="ek-pr-ing-q">1,5&nbsp;g</span></div>
+        </div>
+        <div class="ek-pr-phase">
+          <p class="ek-pr-phase-t">Fáze C — po vychladnutí</p>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Vege-Keratin</span><span class="ek-pr-ing-q">2&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Tekuté hedvábí</span><span class="ek-pr-ing-q">1&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Cosgard <small>— konzervant</small></span><span class="ek-pr-ing-q">1&nbsp;g</span></div>
+          <div class="ek-pr-ing"><span class="ek-pr-box"></span><span class="ek-pr-ing-n">Kyselina mléčná</span><span class="ek-pr-ing-q">dle pH</span></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="ek-pr-h">Postup</h2>
+        <ol class="ek-pr-steps">
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">1</span>
+            <div>
+              <p class="ek-pr-st">Připravte si čisté pomůcky</p>
+              <p class="ek-pr-sx">Nádoby, míchací pomůcky a obal ošetřete ethanolem. Nechte je volně oschnout nebo je jemně otřete čistou papírovou utěrkou.</p>
+              <p class="ek-pr-tip">Čím čistěji budete pracovat, tím lépe podpoříte trvanlivost hotového kondicionéru.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">2</span>
+            <div>
+              <p class="ek-pr-st">Připravte vodnou fázi</p>
+              <p class="ek-pr-sx">Do první žáruvzdorné nádoby odvažte rozmarýnový hydrolát, aloe vera, glycerin, inulin a panthenol. Směs promíchejte, aby se všechny složky rovnoměrně rozptýlily.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">3</span>
+            <div>
+              <p class="ek-pr-st">Zahřejte fázi A</p>
+              <p class="ek-pr-sx">Nádobu vložte do vodní lázně a směs zahřejte na 70–75 °C. Během zahřívání ji občas klidnými pohyby promíchejte.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">4</span>
+            <div>
+              <p class="ek-pr-st">Připravte olejovou fázi</p>
+              <p class="ek-pr-sx">Do druhé nádoby odvažte Varisoft® EQ 65, MCT Caprylis a brokolicový olej.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">5</span>
+            <div>
+              <p class="ek-pr-st">Rozpusťte Varisoft</p>
+              <p class="ek-pr-sx">Olejovou fázi zahřejte rovněž na 70–75 °C. Emulgátor se rozpouští pomaleji než tekuté oleje, proto směs průběžně míchejte.</p>
+              <p class="ek-pr-tip">Vyčkejte, dokud nebude fáze jednotná a bez viditelných pevných částeček.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">6</span>
+            <div>
+              <p class="ek-pr-st">Spojte obě fáze</p>
+              <p class="ek-pr-sx">Jakmile mají obě fáze přibližně stejnou teplotu, pomalu přilévejte olejovou fázi do vodné. Směs současně míchejte a poté ji přibližně jednu minutu homogenizujte.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">7</span>
+            <div>
+              <p class="ek-pr-st">Nechte emulzi chladnout</p>
+              <p class="ek-pr-sx">Po homogenizaci pokračujte v pomalém míchání. Během chladnutí začne směs získávat mléčnou až lehce krémovou konzistenci. Míchejte do poklesu teploty přibližně na 40 °C.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">8</span>
+            <div>
+              <p class="ek-pr-st">Přidejte fázi C</p>
+              <p class="ek-pr-sx">Při teplotě nejvýše 40 °C přidejte keratin, hedvábný protein a konzervant. Každou složku pečlivě, ale šetrně vmíchejte.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">9</span>
+            <div>
+              <p class="ek-pr-st">Upravte pH</p>
+              <p class="ek-pr-sx">Změřte pH kondicionéru. Kyselinu mléčnou přidávejte pipetou po jednotlivých kapkách. Po každém přidání směs promíchejte a znovu přeměřte.</p>
+              <p class="ek-pr-tip">Cílem je pH přibližně 4,5. Kyselinu přidávejte postupně, aby pH nekleslo víc, než potřebujete.</p>
+            </div>
+          </li>
+          <li class="ek-pr-step">
+            <span class="ek-pr-n">10</span>
+            <div>
+              <p class="ek-pr-st">Naplňte kondicionér do obalu</p>
+              <p class="ek-pr-sx">Hotový výrobek přelijte do čisté lahvičky a nechte jej přibližně 24 hodin ustálit. Konečnou hustotu posuzujte až po úplném vychladnutí.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="ek-pr-foot">
+      <span>Recept pro Ekokozu připravila Bianka z Holistické zdraví.</span>
+      <span>Suroviny a další recepty na www.ekokoza.cz</span>
+    </div>
+  </div>
+  </main>
+</body>
+</html>

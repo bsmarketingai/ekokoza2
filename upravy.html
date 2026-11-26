@@ -92,6 +92,55 @@
   </section>
 
   <section class="day">
+    <h2>26. listopadu 2026</h2>
+    <p class="sum">Recept: dvě verze tisku – A (stránka receptu v jejím layoutu) a B (samostatná stránka recept-tisk-b.html); nákupní panel bez šedých poznámek a textu o vystačení, bez tlačítka Provést krok za krokem; Nová samostatná stránka Tisk receptu (recept-tisk.html); Recept: náhled tisku po kliknutí na „Vytisknout recept“; Recept: tisková verze na jednu A4 v odstínech šedi.</p>
+
+    <div class="item">
+      <span class="tag">Recept</span>
+      <h3>Tisk receptu ve dvou verzích A a B, úpravy nákupního panelu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Dosavadní tiskovou stránku uložit jako Tisk receptu B (layout odlišný od webu, kódovaný pro tisk). Verzi A udělat ze stránky receptu: tisk jen s důležitými informacemi (postup a soupis surovin, bez velké fotky). Odebrat šedý text pod názvem suroviny v nákupním seznamu („hydrolát · 82,5 g v receptu“), text „Vystačí na několik výrob…“ nad tlačítkem hromadného vložení do košíku a tlačítko „Provést krok za krokem“.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Verze B je stránka recept-tisk-b.html (původní recept-tisk.html je přejmenovaná). Verze A je tisk samotné stránky receptu: skryje hlavičku, drobečkovou navigaci, fotku, úvodní text, pomůcky, další sekce, fotky ke krokům, nákupní panel, podobné recepty i patičku. Zůstane černé logo, název, čas/obtížnost/výtěžek, suroviny po fázích ve třech sloupcích s poznámkou k množství a deset kroků postupu, vše v odstínech šedi bez pozadí; vejde se na jednu A4. Tlačítko „Vytisknout recept“ otevře náhled verze A (recept.dc.html?tisk=a) s lištou Zpět na recept / Vytisknout. V rozcestníku jsou obě verze (42 stránek a stavů). V nákupním panelu jsou u surovin a pomůcek jen názvy a ceny, zmizel text o vystačení na více výrob a tlačítko „Provést krok za krokem“ u postupu.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Recept</span>
+      <h3>Tisková verze receptu jako samostatná stránka</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Udělat tiskovou verzi jako samostatnou stránku, aby se na ni dalo podívat samostatně.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Nová stránka recept-tisk.html: list A4 s tiskovou verzí receptu (černé logo, název, údaje, suroviny po fázích, postup s tipy, patička) na šedém podkladu, nad ním lišta Zpět na recept / Vytisknout. Při tisku zůstane jen list. Tlačítko „Vytisknout recept“ v detailu receptu na stránku vede místo náhledu přes stránku. Stránka je i v rozcestníku (příznak Ladíme), rozcestník nově ukazuje 41 stránek a stavů.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Recept</span>
+      <h3>Náhled tisku receptu</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Po kliknutí na „Vytisknout recept“ se v náhledu nic nedělo, tiskovou verzi nebylo jak zobrazit.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Tlačítko teď otevře náhled tisku: tiskovou verzi receptu na bílém listu A4 přes stránku a nad ním lištu se Zavřít a Vytisknout (otevře dialog tisku prohlížeče). Zavírá se i klávesou Esc nebo klikem mimo list. Náhled jde otevřít přímo odkazem recept.dc.html?tisk=1. Tisk z prohlížeče (Cmd/Ctrl + P) tiskne vždy jen tiskovou verzi. Náhled návrhu v editoru může dialog tisku blokovat, na webu funguje.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <span class="tag">Recept</span>
+      <h3>Tisková verze receptu na jednu A4</h3>
+      <div class="row">
+        <span class="k">Požadavek</span>
+        <p class="v">Připravit tisk tak, aby neobsahoval podklad, velkou fotku a podobně, šetrně ke spotřebě inkoustu, jen v odstínech šedi a co nejkompaktněji (ideálně na jednu A4). Nadpis, postup receptu a soupis surovin, případně logo v černé.</p>
+        <span class="k">Řešení</span>
+        <p class="v">Tlačítko „Vytisknout recept“ tiskne samostatnou tiskovou verzi: černé logo Ekokozy, kategorie, název, řádek s časem, obtížností a výtěžkem. Pod tím ve dvou sloupcích suroviny podle fází (se čtverečkem k odškrtnutí při vážení) a deset kroků postupu včetně tipů. Patička uvádí autorku receptu a web. Bez pozadí, fotek, hlavičky, patičky, nákupního panelu a recenzí, jen černá a šedé linky; vejde se na jednu A4.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="day">
     <h2>23. listopadu 2026</h2>
     <p class="sum">Jednotná galerie po rozkliknutí fotky (produkt, Organic Lab, Mirčina mýdla): název nahoře, swipe, miniatury, navigace vpravo dole; Číslované karty: ikony všude oranžově; Oblíbené: sjednocený hover srdíčka u produktů a receptů, odebrání srdíčkem ze seznamu a prázdný stav; Prázdné okno košíku s fotkou; Křížek ve vyhledávání, rozcestník se stavy a systémovými stránkami; Nová stránka 404; Košík: stav Prázdný košík, poznámka k objednávce v souhrnu, nadpis Doporučujeme vlevo, Děkovná v ukázkovém panelu; Tlačítka Přihlásit se s ikonou uživatele; Nová děkovná stránka po objednávce (převod s QR, varianty platby); Košík: souhlas s podmínkami pod obsahem a nižší lišta, „až −15 %“ se vejde do kolečka, „Jak to funguje“ jako tlačítko s otazníkem; Rozcestník: oranžové ikony bez podbarvení, příznak Ladíme u Máte doma; Hlavička: plynulé zavírání mobilního menu i rozbalování podkategorií; Mirčina mýdla a Organic Lab: karty na tabletu a mobilu na střed; Mirčina mýdla: karty bez obrázků; Mirčina mýdla a Organic Lab: panel V kostce jen na desktopu; Organic Lab: karty vlevo a sticky panel V kostce; Mirčina mýdla: karty zarovnané vlevo; Mirčina mýdla a Organic Lab: oranžové ikony karet bez podbarvení; Mirčina mýdla: sticky panel V kostce vedle karet; Mirčina mýdla a Organic Lab: číslované barevné karty; Organic Lab: nadpis Fotogalerie; Mirčina mýdla: náhled webu v prohlížeči, fotogalerie na konci stránky, nová fotka v hlavičce, sekce jako vrstvené karty; Věrnostní program: nadpis Chci B2B spolupráci, ikona opakovaných nákupů, karty skupin jako číslované karty, Profesionál tmavě zelený; FAQ: obrázek u tématu Obaly, výroba a odborná pomoc; O nás: číslované karty jako na ostatních stránkách; FAQ: obrázky u témat Vrácení, reklamace a refundace Suroviny, dokumentace a použití a Účet, věrnostní program a B2B; O nás: výraznější nadpis sekce o Evropě; hlavička a střídání sekcí podle nového layoutu; FAQ: obrázky u témat Objednávka a expedice a Doručení a sledování zásilky, oranžové ikony témat bez podkladu; témata v obtaženém kontejneru; počet otázek v kartách témat jako chip; Rozbalit vše / Sbalit vše přímo nad otázkami; vyhledávání bez modrého křížku prohlížeče, Vymazat jako tlačítko v poli; Vychytávky a Organic Lab: vrstvené karty mají stejnou výšku, na konci balíčku už nevykukuje delší karta; reklamační formulář: odebrán řádek „Formulář se nezobrazuje?“; čísla a ceny se už nikde nezalamují (2&nbsp;000&nbsp;Kč); „nad 2&nbsp;000&nbsp;Kč“ na vlastním řádku; Platba a doprava: karty dopravy v barvách PPL, Zásilkovny a Ekokozy; nová stránka Reklamační formulář s vloženým formulářem; posun na kotvy (např. Kontakty → „Napsat zprávu“) se zastaví pod hlavičkou i když je stránka nahoře; Sledování zásilky: poslední bílý pás navazuje přímo na zápatí; karty dopravců v barvách PPL a Zásilkovny; tlačítka „Otevřít sledování zásilky“ jako primární; ikona otazníku u tlačítka „Kde číslo hledat“; nová stránka Rozcestník s odkazy na všechny stránky návrhu.</p>
 
