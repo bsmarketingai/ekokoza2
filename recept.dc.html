@@ -298,6 +298,7 @@
           <div class="ek-sec">
             <h2 class="ek-h2">Postup krok za krokem</h2>
             <div class="ek-noprint" style="display:flex; flex-wrap:wrap; gap:10px; align-self:flex-start;">
+              <button onClick="{{ openGuide }}" class="ek-btn-secondary ek-noprint" style="display:inline-flex; align-items:center; gap:10px; border:1.5px solid #4C653D; background:transparent; color:#4C653D; border-radius:999px; padding:13px 24px; font-family:'Work Sans',sans-serif; font-size:15.5px; font-weight:600; cursor:pointer; transition:background .2s, color .2s;"><span style="{{ iconGuide }}"></span>Provést krok za krokem</button>
               <button onClick="{{ openVid }}" class="ek-btn-secondary ek-noprint" style="display:inline-flex; align-items:center; gap:10px; border:1.5px solid #4C653D; background:transparent; color:#4C653D; border-radius:999px; padding:13px 24px; font-family:'Work Sans',sans-serif; font-size:15.5px; font-weight:600; cursor:pointer; transition:background .2s, color .2s;"><span style="{{ iconVidBtn }}"></span>Video</button>
             </div>
             <div>
@@ -455,6 +456,7 @@
                 <span style="{{ r.thumb }}"></span>
                 <span style="display:flex; flex-direction:column; gap:2px; min-width:0;">
                   <span class="ek-row-n" style="font-size:14.5px; font-weight:600; line-height:1.35; color:#2A2A24; transition:color .2s;">{{ r.name }}</span>
+                  <span style="font-size:12.5px; color:#8a8776;">{{ r.note }}</span>
                 </span>
                 <span style="font-size:14.5px; font-weight:700; white-space:nowrap; color:#2A2A24;">{{ r.price }}</span>
               </div>
